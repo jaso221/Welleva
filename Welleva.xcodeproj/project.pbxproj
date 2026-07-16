@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1BFB767C30086A1B00E24BB7 /* Welleva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Welleva.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding Welcome.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		1BFB767330086A1B00E24BB7 = {
 			isa = PBXGroup;
 			children = (
+				1BFB769330088AC300E24BB7 /* Views */,
 				1BFB767E30086A1B00E24BB7 /* Welleva */,
 				1BFB767D30086A1B00E24BB7 /* Products */,
 			);
@@ -43,6 +49,14 @@
 				1BFB767C30086A1B00E24BB7 /* Welleva.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1BFB769330088AC300E24BB7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

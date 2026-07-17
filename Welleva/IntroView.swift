@@ -25,7 +25,7 @@ struct IntroView: View {
                         .padding(10)
                         .background(Color.black)
                         .clipShape(RoundedRectangle(cornerRadius: 100))
-                        .offset(x: 0, y: -100)
+                        .offset(x: -(UIScreen.main.bounds.width/3), y:-(UIScreen.main.bounds.height/2.5))
                 }
                 }
             }

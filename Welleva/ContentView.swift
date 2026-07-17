@@ -20,16 +20,16 @@ struct ContentView: View {
             VStack{
                 
                 Text("Welcome to")
-                    .font(.system(size: 50))
+                    .font(.largeTitle)
                     .bold()
                 
                 Text("SafeGuard")
-                    .font(.system(size: 40))
+                    .font(.title)
                     .foregroundColor(.red)
                     .bold()
                 
                 Text("Your digital companion for a safer online experience")
-                    .font(.system(size: 18))
+                    .font(.callout)
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .padding()
@@ -105,7 +105,7 @@ struct ContentView: View {
             VStack{
                 NavigationLink(destination: IntroView()){
                         Text("Get Started")
-                            .font(.system(size: 20))
+                        .font(.title)
                             .foregroundStyle(Color.white)
                             .bold()
                             .frame(width: UIScreen.main.bounds.width * 2/3)
@@ -121,7 +121,7 @@ struct ContentView: View {
                             .offset(x: -35)
                         
                         Text("Encrypted")
-                            .font(Font.system(size: 20))
+                            .font(.callout)
                             .foregroundStyle(Color.gray)
                             .offset(x: -30)
                     }
@@ -130,7 +130,7 @@ struct ContentView: View {
                             .offset(x: 15)
                         
                         Text("Privacy First")
-                            .font(Font.system(size: 20))
+                            .font(.callout)
                             .foregroundStyle(Color.gray)
                             .offset(x: 20)
                     }

@@ -6,11 +6,15 @@
 //
 import SwiftUI
 
+
 struct EncryptedView: View {
     var body: some View {
-        Text("Encrypted View")
-            .font(.largeTitle)
-            .foregroundStyle(Color.black)
-            .bold(true)
+        Text("Encrypted")
+            .font(Font.largeTitle.bold())
+            .foregroundColor(.red)
     }
+}
+
+#Preview {
+   EncryptedView()
 }

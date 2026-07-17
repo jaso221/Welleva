@@ -104,16 +104,18 @@ struct ContentView: View {
             
             VStack{
                 NavigationLink(destination: IntroView()){
-                    Text("Get Started")
-                        .font(.system(size: 20))
-                        .foregroundStyle(Color.white)
-                        .bold()
-                        .frame(width: UIScreen.main.bounds.width * 2/3)
-                        .padding()
-                        .background(Color.red)
-                        .cornerRadius(20)
+                        Text("Get Started")
+                            .font(.system(size: 20))
+                            .foregroundStyle(Color.white)
+                            .bold()
+                            .frame(width: UIScreen.main.bounds.width * 2/3)
+                            .padding()
+                            .background(Color.red)
+                            .cornerRadius(20)
                 }
+                
                 HStack{
+                    
                     NavigationLink(destination: EncryptedView()){
                         Image("WelcomeGlobal")
                             .offset(x: -35)
@@ -154,7 +156,6 @@ struct ContentView: View {
         }
     }
 }
-
 
 #Preview {
     ContentView()

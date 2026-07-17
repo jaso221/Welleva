@@ -12,3 +12,7 @@ struct PrivacyFirst: View {
         Text("PrivacyFirst")
     }
 }
+
+#Preview {
+   PrivacyFirst()
+}

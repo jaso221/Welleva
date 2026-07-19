@@ -11,6 +11,11 @@ struct IntroView: View {
     @Binding var currentPage: Int
     @State private var animateContent = false
     
+    @State private var animateShield = false
+    @State private var animateCircles = false
+    @State private var animateIcons = false
+    @State private var animateButton = false
+    
     var body: some View {
         
         VStack{
@@ -34,57 +39,79 @@ struct IntroView: View {
             Spacer()
             
             ZStack{
-                Circle()
-                    .fill(Color(red: 252/255, green: 245/255, blue: 246/255))
-                    .frame(width: 300, height: 300)
+                ZStack{
+                    
+                    Circle()
+                        .fill(Color(red: 252/255, green: 245/255, blue: 246/255))
+                        .frame(width: 300, height: 300)
+                        .scaleEffect(animateCircles ? 1.0 : 0.5)
+                        .opacity(animateCircles ? 1.0 : 0.0)
+                        .animation(.easeInOut(duration: 1.0), value: animateCircles)
+                    
+                    Circle()
+                        .fill(Color(red: 247/255, green: 229/255, blue: 230/255))
+                        .frame(width: 250, height: 250)
+                        .scaleEffect(animateCircles ? 1.0 : 0.5)
+                        .opacity(animateCircles ? 1.0 : 0.0)
+                        .animation(.easeInOut(duration: 1.0), value: animateCircles)
+                    
+                    Rectangle()
+                        .fill(Color(red: 255/255 ,green: 228/255, blue: 230/255))
+                        .frame(width: 180, height: 180)
+                        .cornerRadius(20)
+                        .scaleEffect(animateCircles ? 1.0 : 0.5)
+                        .opacity(animateCircles ? 1.0 : 0.0)
+                        .animation(.easeInOut(duration: 1.0), value: animateCircles)
+                    
+                    Rectangle()
+                        .fill(Color(red: 251/255, green: 113/255, blue: 133/255))
+                        .frame(width: 150, height: 150)
+                        .cornerRadius(20)
+                        .scaleEffect(animateCircles ? 1.0 : 0.5)
+                        .opacity(animateCircles ? 1.0 : 0.0)
+                        .animation(.easeInOut(duration: 1.0), value: animateCircles)
+                    
+                    Image("Shield")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                        .scaleEffect(animateShield ? 1.0 : 0.5)
+                        .opacity(animateShield ? 1.0 : 0.0)
+                        .animation(.easeInOut(duration: 1.0), value: animateShield)
+                }
                 
-                Circle()
-                    .fill(Color(red: 247/255, green: 229/255, blue: 230/255))
-                    .frame(width: 250, height: 250)
-                
-                Circle()
-                    .fill(Color(red: 255/255, green: 228/255, blue: 230/255))
-                    .frame(width: 200, height: 200)
-                
-                Circle()
-                    .fill(Color(red: 251/255, green: 113/255, blue: 133/255))
-                    .frame(width: 180, height: 180)
-                
-                Image("Shield")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                
-                Image("WelcomeText")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50)
-                    .padding(8)
-                    .background(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .offset(x: -80, y: 60)
-                
-                Image("WelcomeQuestion")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50)
-                    .padding(8)
-                    .background(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .offset(x: 80, y: -60)
-                
-                Image("IntroHat")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50)
-                    .padding(8)
-                    .background(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .offset(x: 80, y: 60)
+                ZStack{
+                    Image("WelcomeText")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .padding(10)
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .offset(x: 100, y: -100)
+                    
+                    Image("WelcomeQuestion")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .padding(10)
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .offset(y: 100)
+                    
+                    Image("IntroHat")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .padding(10)
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .offset(x: -100, y: -80)
+                }
+                .scaleEffect(animateIcons ? 1.0 : 0.5)
+                .opacity(animateIcons ? 1.0 : 0.0)
+                .animation(.easeInOut(duration: 1.0), value: animateIcons)
             }
-            .scaleEffect(animateContent ? 1 : 0.6)
-            .opacity(animateContent ? 1 : 0)
-            .animation(.easeInOut(duration: 0.8), value: animateContent)
             
             Spacer()
             
@@ -105,18 +132,14 @@ struct IntroView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
             }
-            .opacity(animateContent ? 1 : 0)
-            .offset(y: animateContent ? 0 : 20)
-            .animation(.easeInOut(duration: 0.8).delay(0.2), value: animateContent)
             
             Spacer()
             
             HStack(spacing: 8){
-                Circle().frame(width: 24,height: 8).foregroundStyle(Color.red)
+                Circle().frame(width: 8,height: 8).foregroundStyle(Color.red)
                 Circle().frame(width: 8,height: 8).foregroundStyle(Color.gray)
                 Circle().frame(width: 8,height: 8).foregroundStyle(Color.gray)
             }
-            .padding(.top, 10)
             
             VStack{
                 Button(action: {
@@ -131,11 +154,40 @@ struct IntroView: View {
                         .background(Color.red)
                         .cornerRadius(20)
                 }
+                
+                HStack{
+                    Image("WelcomeGlobal")
+                    
+                    Button("Encrypted"){
+                        currentPage = 4
+                    }
+                    .font(.callout)
+                    .foregroundStyle(Color.gray)
+                    
+                    Image("WelcomePrivacy")
+                    
+                    Button("Privacy First"){
+                        currentPage = 5
+                    }
+                    .font(.callout)
+                    .foregroundStyle(Color.gray)
+                }
             }
             .padding(.bottom, 30)
+            
         }
         .onAppear {
-            animateContent = true
+            animateShield = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                animateCircles = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                animateIcons = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                animateButton = true
+            }
         }
     }
 }

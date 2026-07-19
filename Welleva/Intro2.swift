@@ -112,16 +112,16 @@ struct Intro2: View {
             
             VStack{
                 HStack{
-                    Text("Your Saftey,")
+                    Text("Recognise")
                         .font(.title)
                         .bold()
-                    Text("Your Way")
+                    Text("Scams")
                         .font(.title)
                         .foregroundStyle(.red)
                         .bold()
                 }
                 
-                Text("This app sits quietly in your pocket, ready to help only when you want it to. You stay completely in charge, while giving your loved ones peace of mind.")
+                Text("In-app learning modules help build your confidence using the internet, learn how to recognise scams, and become more confident and independent online.")
                     .font(.callout)
                     .foregroundStyle(.gray)
                     .multilineTextAlignment(.center)

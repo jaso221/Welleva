@@ -23,5 +23,5 @@ struct EncryptedView: View {
 }
 
 #Preview {
-    EncryptedView(currentPage: .constant(0))
+    EncryptedView(currentPage: .constant(4))
 }

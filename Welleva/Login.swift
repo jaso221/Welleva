@@ -15,5 +15,5 @@ struct Login: View {
 }
 
 #Preview {
-    Login(currentPage: .constant(0))
+    Login(currentPage: .constant(6))
 }

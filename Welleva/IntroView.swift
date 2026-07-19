@@ -9,8 +9,6 @@ import SwiftUI
 
 struct IntroView: View {
     @Binding var currentPage: Int
-    @State private var animateContent = false
-    
     @State private var animateShield = false
     @State private var animateCircles = false
     @State private var animateIcons = false
@@ -88,7 +86,7 @@ struct IntroView: View {
                         .padding(10)
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .offset(x: 100, y: -100)
+                        .offset(x: -100, y: -100)
                     
                     Image("WelcomeQuestion")
                         .resizable()
@@ -106,7 +104,7 @@ struct IntroView: View {
                         .padding(10)
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .offset(x: -100, y: -80)
+                        .offset(x: 100, y: -100)
                 }
                 .scaleEffect(animateIcons ? 1.0 : 0.5)
                 .opacity(animateIcons ? 1.0 : 0.0)

@@ -8,13 +8,20 @@ import SwiftUI
 
 
 struct EncryptedView: View {
+    @Binding var currentPage: Int
+    
     var body: some View {
-        Text("Encrypted")
-            .font(Font.largeTitle.bold())
-            .foregroundColor(.red)
+        VStack{
+            
+            Button("Back"){
+                currentPage = 0
+            }
+            
+            Text("Encrypted Page")
+        }
     }
 }
 
 #Preview {
-   EncryptedView()
+    EncryptedView(currentPage: .constant(0))
 }

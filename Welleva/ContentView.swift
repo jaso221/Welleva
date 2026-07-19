@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentPage = 0
+    
     @State private var animateShield = false
     @State private var animateCircles = false
     @State private var animateIcons = false
@@ -15,7 +17,23 @@ struct ContentView: View {
     
     var body: some View {
         
+        if currentPage == 0 {
+            welcomPage
+        }else if currentPage == 1 {
+            IntroView(currentPage: $currentPage)
+        }else if currentPage == 4 {
+            EncryptedView(currentPage: $currentPage)
+        }else if currentPage == 5 {
+            PrivacyFirst(currentPage: $currentPage)
+        }
+    }
+}
+        
+extension ContentView {
+    var welcomPage: some View {
+        
         VStack{
+            Spacer()
             
             VStack{
                 
@@ -33,9 +51,7 @@ struct ContentView: View {
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .padding()
-                
             }
-            
             Spacer()
             
             ZStack{
@@ -74,7 +90,7 @@ struct ContentView: View {
                     .scaleEffect(animateShield ? 1.0 : 0.5)
                     .opacity(animateShield ? 1.0 : 0.0)
                     .animation(.easeInOut(duration: 1.0), value: animateShield)
-              
+                
                 ZStack{
                     Image("WelcomeText")
                         .resizable()
@@ -84,7 +100,7 @@ struct ContentView: View {
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .offset(x: -100, y: 80)
-                        
+                    
                     
                     Image("WelcomeQuestion")
                         .resizable()
@@ -103,47 +119,43 @@ struct ContentView: View {
             Spacer()
             
             VStack{
-                NavigationLink(destination: IntroView()){
-                        Text("Get Started")
-                        .font(.title)
-                            .foregroundStyle(Color.white)
-                            .bold()
-                            .frame(width: UIScreen.main.bounds.width * 2/3)
-                            .padding()
-                            .background(Color.red)
-                            .cornerRadius(20)
+                Button("Get Started"){
+                    currentPage = 1
                 }
+                .font(.title)
+                .foregroundStyle(Color.white)
+                .bold()
+                .frame(width: UIScreen.main.bounds.width * 2/3)
+                .padding()
+                .background(Color.red)
+                .cornerRadius(20)
                 
                 HStack{
+                    Image("WelcomeGlobal")
                     
-                    NavigationLink(destination: EncryptedView()){
-                        Image("WelcomeGlobal")
-                            .offset(x: -35)
-                        
-                        Text("Encrypted")
-                            .font(.callout)
-                            .foregroundStyle(Color.gray)
-                            .offset(x: -30)
+                    Button("Encrypted"){
+                        currentPage = 4
                     }
-                    NavigationLink(destination: PrivacyFirst()){
-                        Image("WelcomePrivacy")
-                            .offset(x: 15)
-                        
-                        Text("Privacy First")
-                            .font(.callout)
-                            .foregroundStyle(Color.gray)
-                            .offset(x: 20)
+                    .font(.callout)
+                    .foregroundStyle(Color.gray)
+                    
+                    Image("WelcomePrivacy")
+                    
+                    Button("Privacy First"){
+                        currentPage = 5
                     }
+                    .font(.callout)
+                    .foregroundStyle(Color.gray)
                 }
             }
             .padding(.bottom, 40)
             .scaleEffect(animateButton ? 1.0 : 0.5)
             .opacity(animateButton ? 1.0 : 0.0)
             .animation(.easeInOut(duration: 1.0), value: animateButton)
-
         }
         .onAppear {
             animateShield = true
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 animateCircles = true
             }

@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct PrivacyFirst: View {
+    @Binding var currentPage: Int
+    
     var body: some View {
-        Text("PrivacyFirst")
+        VStack{
+            Button("Back"){
+                currentPage = 0
+            }
+            Text("Privacy First")
+        }
     }
 }
 
 #Preview {
-   PrivacyFirst()
+    PrivacyFirst(currentPage: .constant(5))
 }

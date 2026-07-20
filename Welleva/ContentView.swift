@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Binding private var currentPage : Int
+    @State private var currentPage: Int = 0
     
     var body: some View {
         ZStack{
@@ -22,6 +22,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    WelcomePage(currentPage: .constant(0))
+    ContentView()
 }
 

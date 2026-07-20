@@ -15,6 +15,11 @@
 		1BFB76AD300D9BB200E24BB7 /* Intro2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76A9300D9BB200E24BB7 /* Intro2.swift */; };
 		1BFB76AE300D9BB200E24BB7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76AA300D9BB200E24BB7 /* Login.swift */; };
 		1BFB76AF300D9BB200E24BB7 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76AB300D9BB200E24BB7 /* WelcomePage.swift */; };
+		1BFB76B4300DA7DD00E24BB7 /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = 1BFB76B3300DA7DD00E24BB7 /* FirebaseAI */; };
+		1BFB76B6300DA7DD00E24BB7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1BFB76B5300DA7DD00E24BB7 /* FirebaseAuth */; };
+		1BFB76B8300DA7DD00E24BB7 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1BFB76B7300DA7DD00E24BB7 /* FirebaseCore */; };
+		1BFB76BA300DA7DD00E24BB7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1BFB76B9300DA7DD00E24BB7 /* FirebaseFirestore */; };
+		1BFB76BC300DA7DD00E24BB7 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 1BFB76BB300DA7DD00E24BB7 /* FirebaseFunctions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BFB76B4300DA7DD00E24BB7 /* FirebaseAI in Frameworks */,
+				1BFB76BA300DA7DD00E24BB7 /* FirebaseFirestore in Frameworks */,
+				1BFB76BC300DA7DD00E24BB7 /* FirebaseFunctions in Frameworks */,
+				1BFB76B8300DA7DD00E24BB7 /* FirebaseCore in Frameworks */,
+				1BFB76B6300DA7DD00E24BB7 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +110,11 @@
 			);
 			name = Welleva;
 			packageProductDependencies = (
+				1BFB76B3300DA7DD00E24BB7 /* FirebaseAI */,
+				1BFB76B5300DA7DD00E24BB7 /* FirebaseAuth */,
+				1BFB76B7300DA7DD00E24BB7 /* FirebaseCore */,
+				1BFB76B9300DA7DD00E24BB7 /* FirebaseFirestore */,
+				1BFB76BB300DA7DD00E24BB7 /* FirebaseFunctions */,
 			);
 			productName = Welleva;
 			productReference = 1BFB767C30086A1B00E24BB7 /* Welleva.app */;
@@ -129,6 +144,9 @@
 			);
 			mainGroup = 1BFB767330086A1B00E24BB7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1BFB76B2300DA7DD00E24BB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1BFB767D30086A1B00E24BB7 /* Products */;
 			projectDirPath = "";
@@ -375,6 +393,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1BFB76B2300DA7DD00E24BB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.16.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1BFB76B3300DA7DD00E24BB7 /* FirebaseAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BFB76B2300DA7DD00E24BB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAI;
+		};
+		1BFB76B5300DA7DD00E24BB7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BFB76B2300DA7DD00E24BB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1BFB76B7300DA7DD00E24BB7 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BFB76B2300DA7DD00E24BB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		1BFB76B9300DA7DD00E24BB7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BFB76B2300DA7DD00E24BB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1BFB76BB300DA7DD00E24BB7 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BFB76B2300DA7DD00E24BB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1BFB767430086A1B00E24BB7 /* Project object */;
 }

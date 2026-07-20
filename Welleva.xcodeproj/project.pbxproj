@@ -26,6 +26,7 @@
 		1BFB76C8300DAE6000E24BB7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76C1300DAC5F00E24BB7 /* AuthService.swift */; };
 		1BFB76C9300DAE6500E24BB7 /* ScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76BF300DABBC00E24BB7 /* ScanResult.swift */; };
 		1BFB76CA300DAE6B00E24BB7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76C0300DAC0100E24BB7 /* UserProfile.swift */; };
+		8A0EDF46300DB6BE009FF75C /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EDF45300DB6AD009FF75C /* SignUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		1BFB76C2300DAC8D00E24BB7 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		1BFB76C3300DAD7E00E24BB7 /* GeminiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiService.swift; sourceTree = "<group>"; };
 		1BFB76C4300DADB000E24BB7 /* CheckInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInputView.swift; sourceTree = "<group>"; };
+		8A0EDF45300DB6AD009FF75C /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -99,6 +101,7 @@
 				1BFB76A33009CDCE00E24BB7 /* IntroView.swift */,
 				1BFB76AA300D9BB200E24BB7 /* Login.swift */,
 				1BFB76A43009CDCE00E24BB7 /* PrivacyFirst.swift */,
+				8A0EDF45300DB6AD009FF75C /* SignUp.swift */,
 				1BFB76A23009CDCE00E24BB7 /* EncryptedView.swift */,
 				1BFB767E30086A1B00E24BB7 /* Welleva */,
 			);
@@ -220,6 +223,7 @@
 				1BFB76A63009CDCE00E24BB7 /* IntroView.swift in Sources */,
 				1BFB76A73009CDCE00E24BB7 /* PrivacyFirst.swift in Sources */,
 				1BFB76C8300DAE6000E24BB7 /* AuthService.swift in Sources */,
+				8A0EDF46300DB6BE009FF75C /* SignUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

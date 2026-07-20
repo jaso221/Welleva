@@ -7,6 +7,7 @@
 
 import FirebaseAuth
 import Foundation
+import Combine
 
 class AuthService: ObservableObject {
     @Published var isSignedIn: Bool = false

@@ -22,6 +22,7 @@ struct ContentView: View {
             case 4: EncryptedView(currentPage: $currentPage)
             case 5: PrivacyFirst(currentPage: $currentPage)
             case 6: Login(currentPage: $currentPage)
+            case 7: SignUp(currentPage: $currentPage)
                 
             default : WelcomePage(currentPage: $currentPage)
             }

@@ -32,6 +32,10 @@
 		1BFB76A9300D9BB200E24BB7 /* Intro2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro2.swift; sourceTree = "<group>"; };
 		1BFB76AA300D9BB200E24BB7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		1BFB76AB300D9BB200E24BB7 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
+		1BFB76BF300DABBC00E24BB7 /* ScanResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResult.swift; sourceTree = "<group>"; };
+		1BFB76C0300DAC0100E24BB7 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		1BFB76C1300DAC5F00E24BB7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		1BFB76C2300DAC8D00E24BB7 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -61,6 +65,8 @@
 		1BFB767330086A1B00E24BB7 = {
 			isa = PBXGroup;
 			children = (
+				1BFB76BE300DABAE00E24BB7 /* Services */,
+				1BFB76BD300DABA100E24BB7 /* Models */,
 				1BFB769330088AC300E24BB7 /* Views */,
 				1BFB767D30086A1B00E24BB7 /* Products */,
 			);
@@ -88,6 +94,24 @@
 				1BFB767E30086A1B00E24BB7 /* Welleva */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1BFB76BD300DABA100E24BB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1BFB76C0300DAC0100E24BB7 /* UserProfile.swift */,
+				1BFB76BF300DABBC00E24BB7 /* ScanResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1BFB76BE300DABAE00E24BB7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1BFB76C2300DAC8D00E24BB7 /* FirestoreService.swift */,
+				1BFB76C1300DAC5F00E24BB7 /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

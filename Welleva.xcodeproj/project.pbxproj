@@ -91,7 +91,6 @@
 		1BFB769330088AC300E24BB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1BFB76C4300DADB000E24BB7 /* CheckInputView.swift */,
 				1BFB76AB300D9BB200E24BB7 /* WelcomePage.swift */,
 				1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */,
 				1BFB76A8300D9BB200E24BB7 /* Intro1.swift */,
@@ -100,6 +99,7 @@
 				1BFB76AA300D9BB200E24BB7 /* Login.swift */,
 				1BFB76A43009CDCE00E24BB7 /* PrivacyFirst.swift */,
 				1BFB76A23009CDCE00E24BB7 /* EncryptedView.swift */,
+				1BFB76C4300DADB000E24BB7 /* CheckInputView.swift */,
 				1BFB767E30086A1B00E24BB7 /* Welleva */,
 			);
 			path = Views;

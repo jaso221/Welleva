@@ -34,7 +34,7 @@ struct Login: View {
             Text("SafeGuard")
                 .font(.title)
                 .bold()
-                .foregroundStyle(Color.redPink)
+                .foregroundStyle(Color.pink)
             
             Text("Securely log in to your account and keep your digital world protected.")
                 .foregroundStyle(Color.gray)
@@ -93,7 +93,7 @@ struct Login: View {
                     
                     VStack{
                         Image("WelcomeGlobal")
-                            .foregroundStyle(Color.redPink)
+                            .foregroundStyle(Color.pink)
                         Text("SSL SECURED")
                             .font(.caption)
                             .foregroundStyle(Color.gray)
@@ -101,7 +101,7 @@ struct Login: View {
                     
                     VStack{
                         Image("WelcomePrivacy")
-                            .foregroundStyle(Color.redPink)
+                            .foregroundStyle(Color.pink)
                         
                         Text("NO LOGS POLICY")
                             .font(.caption)
@@ -122,7 +122,7 @@ struct Login: View {
                     .foregroundStyle(Color.white)
                     .frame(width: UIScreen.main.bounds.width * 2/3)
                     .padding()
-                    .background(Color.redPink)
+                    .background(Color.pink)
                     .cornerRadius(20)
             }
             .frame(maxWidth: .infinity)
@@ -134,7 +134,7 @@ struct Login: View {
                 Button("Sign up"){
                     currentPage = 7
                 }
-                .foregroundStyle(Color.redPink)
+                .foregroundStyle(Color.pink)
             }
             .frame(maxWidth: .infinity)
             .padding(.top)

@@ -8,11 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */; };
+		1BFB76A53009CDCE00E24BB7 /* EncryptedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76A23009CDCE00E24BB7 /* EncryptedView.swift */; };
+		1BFB76A63009CDCE00E24BB7 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76A33009CDCE00E24BB7 /* IntroView.swift */; };
+		1BFB76A73009CDCE00E24BB7 /* PrivacyFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76A43009CDCE00E24BB7 /* PrivacyFirst.swift */; };
+		1BFB76AC300D9BB200E24BB7 /* Intro1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76A8300D9BB200E24BB7 /* Intro1.swift */; };
+		1BFB76AD300D9BB200E24BB7 /* Intro2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76A9300D9BB200E24BB7 /* Intro2.swift */; };
+		1BFB76AE300D9BB200E24BB7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76AA300D9BB200E24BB7 /* Login.swift */; };
+		1BFB76AF300D9BB200E24BB7 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76AB300D9BB200E24BB7 /* WelcomePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1BFB767C30086A1B00E24BB7 /* Welleva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Welleva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding Welcome.swift"; sourceTree = "<group>"; };
+		1BFB76A23009CDCE00E24BB7 /* EncryptedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedView.swift; sourceTree = "<group>"; };
+		1BFB76A33009CDCE00E24BB7 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		1BFB76A43009CDCE00E24BB7 /* PrivacyFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyFirst.swift; sourceTree = "<group>"; };
+		1BFB76A8300D9BB200E24BB7 /* Intro1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro1.swift; sourceTree = "<group>"; };
+		1BFB76A9300D9BB200E24BB7 /* Intro2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro2.swift; sourceTree = "<group>"; };
+		1BFB76AA300D9BB200E24BB7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		1BFB76AB300D9BB200E24BB7 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -38,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				1BFB769330088AC300E24BB7 /* Views */,
-				1BFB767E30086A1B00E24BB7 /* Welleva */,
 				1BFB767D30086A1B00E24BB7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,7 +67,15 @@
 		1BFB769330088AC300E24BB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1BFB76AB300D9BB200E24BB7 /* WelcomePage.swift */,
 				1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */,
+				1BFB76A8300D9BB200E24BB7 /* Intro1.swift */,
+				1BFB76A9300D9BB200E24BB7 /* Intro2.swift */,
+				1BFB76A33009CDCE00E24BB7 /* IntroView.swift */,
+				1BFB76AA300D9BB200E24BB7 /* Login.swift */,
+				1BFB76A43009CDCE00E24BB7 /* PrivacyFirst.swift */,
+				1BFB76A23009CDCE00E24BB7 /* EncryptedView.swift */,
+				1BFB767E30086A1B00E24BB7 /* Welleva */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,7 +154,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BFB76AC300D9BB200E24BB7 /* Intro1.swift in Sources */,
+				1BFB76AD300D9BB200E24BB7 /* Intro2.swift in Sources */,
+				1BFB76AE300D9BB200E24BB7 /* Login.swift in Sources */,
+				1BFB76AF300D9BB200E24BB7 /* WelcomePage.swift in Sources */,
 				1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */,
+				1BFB76A53009CDCE00E24BB7 /* EncryptedView.swift in Sources */,
+				1BFB76A63009CDCE00E24BB7 /* IntroView.swift in Sources */,
+				1BFB76A73009CDCE00E24BB7 /* PrivacyFirst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

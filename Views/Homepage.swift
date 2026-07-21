@@ -75,7 +75,7 @@ struct Homepage: View {
                             .clipShape(Circle())
                             .padding()
                         
-                        VStack{
+                        VStack(alignment: .leading){
                             Text("Good morning")
                                 .font(.title)
                                 .bold()
@@ -87,7 +87,35 @@ struct Homepage: View {
                             
                         }
                     }
+                    
+                    HStack{
+                        Image("WelcomeQuestion")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .padding()
+                            .clipShape(Circle())
+                           
+                        
+                        VStack(alignment: .leading){
+                            Text("Your Device is Protected")
+                                .font(.title2)
+                                .bold()
+                                .foregroundStyle(Color.black)
+                            
+                            Text("Everything looks safe today")
+                                .font(.callout)
+                                .foregroundStyle(Color.redPink)
+                        }
+                        
+                        Spacer()
+                        
+                    }
                     .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.pinn, lineWidth: 1.5)
+                        
+                    )
                 }
             }
         }

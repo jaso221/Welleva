@@ -8,6 +8,9 @@ import SwiftUI
 
 struct Homepage: View {
     @Binding var currentPage: Int
+    @Binding var userName: String
+    
+    @State private var fullName: String = ""
     
     var body: some View{
         
@@ -77,10 +80,10 @@ struct Homepage: View {
                                 .font(.title)
                                 .bold()
                             
-                            Text("John Doe")
+                            Text(userName.isEmpty ? "User" : userName)
                                 .font(.title)
-                                .foregroundStyle(Color.redPink)
                                 .bold()
+                                .foregroundStyle(Color.redPink)
                             
                         }
                     }
@@ -92,5 +95,8 @@ struct Homepage: View {
 }
 
 #Preview {
-    Homepage(currentPage: .constant(9))
+    Homepage(
+        currentPage: .constant(9),
+        userName: .constant("")
+    )
 }

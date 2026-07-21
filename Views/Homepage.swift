@@ -22,3 +22,7 @@ struct Homepage: View {
             }
         }
     }
+
+#Preview {
+    Homepage(currentPage: .constant(9))
+}

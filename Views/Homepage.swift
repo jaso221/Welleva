@@ -113,15 +113,117 @@ struct Homepage: View {
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.redPink, lineWidth: 1.5)
+                            .stroke(Color.gray, lineWidth: 1.5)
                         
                     )
                     
                     Button{
-                        //
+                        // currentPage =
                     }label: {
-                        Image("ScanAMessage")
+                        VStack{
+                            Image("ScanAMessage")
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                                .padding()
+                            
+                            Text("Scan a message")
+                                .font(.title2)
+                                .bold()
+                                .foregroundStyle(Color.white)
+                            
+                            Text("Check for scams of fraud")
+                                .font(.title3)
+                                .foregroundStyle(Color.white)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(.redPink)
+                        .cornerRadius(20)
                     }
+                    
+                    HStack(spacing: 20){
+                        Button{
+                            // currentPage =
+                        }label: {
+                            VStack{
+                                Image("ChechkNews")
+                                    .padding()
+                                    .background(Color.pinn.opacity(0.2))
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                                
+                                Text("Check News")
+                                    .font(.title3)
+                                    .bold()
+                                    .foregroundStyle(Color.black)
+                                    .padding()
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(.white)
+                            .cornerRadius(20)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.gray, lineWidth: 1.5)
+                            )
+                        }
+                        
+                        Button{
+                            // currentPage =
+                        }label: {
+                            VStack{
+                                Image("ReportScam")
+                                    .padding()
+                                    .background(Color.pinn.opacity(0.2))
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                                
+                                Text("Report Scam")
+                                    .font(.title3)
+                                    .bold()
+                                    .foregroundStyle(Color.black)
+                                    .padding()
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(.white)
+                            .cornerRadius(20)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.gray, lineWidth: 1.5)
+                                )
+                        }
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 10){
+                        HStack{
+                            Image("Light")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .padding()
+                                .clipShape(Circle())
+                            
+                            VStack(alignment: .leading){
+                                Text("Tip of the day")
+                                    .font(.title3)
+                                    .bold()
+                                    .foregroundStyle(Color.black)
+                            }
+                        }
+                        .padding()
+                        
+                        VStack(alignment: .leading){
+                            Text("Never share your bank passwords or verification codes with anyone over the phone, even if they claim to be from the bank.")
+                                .font(.callout)
+                                .foregroundStyle(Color.black)
+                                .multilineTextAlignment(.center)
+                        }
+            
+                    }
+                    .background(Color.gray.opacity(0.1))
+                    .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.gray, lineWidth: 1.5)
+                    )
                 }
             }
         }

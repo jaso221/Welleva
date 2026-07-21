@@ -13,15 +13,83 @@ struct Homepage: View {
         
         VStack{
             
-            Button("Learning"){
-                currentPage = 9
+            HStack{
+                Button{
+                    //    currentPage =
+                }label: {
+                    Image("Setting")
+                        .frame(width: 30, height: 30)
+                        .clipShape(Circle())
+                }
+                .padding()
+                
+                Text("Home")
+                    .font(.title)
+                    .foregroundStyle(Color.white)
+                    .bold()
+                    .padding()
+                
+                HStack{
+                    Button{
+                        // currentPage =
+                    }label: {
+                        Image("Translate")
+                            .frame(width: 30, height: 30)
+                            .clipShape(Circle())
+                    }
+                    
+                    Button{
+                        // currentPage =
+                    }label: {
+                        Image("Size")
+                            .frame(width: 30, height: 30)
+                            .clipShape(Circle())
+                    }
+                    
+                    Button{
+                        // currentPage =
+                    }label: {
+                        Image("Colour")
+                            .frame(width: 30, height: 30)
+                            .clipShape(Circle())
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
             }
-             Text("Homepage")
+            .background(.black)
+            .frame(maxWidth: .infinity)
+            .padding()
             
-            
+            ScrollView{
+                
+                VStack(alignment: .leading, spacing: 20){
+                    
+                    HStack{
+                        Image("User")
+                            .resizable()
+                            .frame(width: 60,height: 60)
+                            .clipShape(Circle())
+                            .padding()
+                        
+                        VStack{
+                            Text("Good morning")
+                                .font(.title)
+                                .bold()
+                            
+                            Text("John Doe")
+                                .font(.title)
+                                .foregroundStyle(Color.redPink)
+                                .bold()
+                            
+                        }
+                    }
+                    .padding()
+                }
             }
         }
     }
+}
 
 #Preview {
     Homepage(currentPage: .constant(9))

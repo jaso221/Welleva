@@ -8,6 +8,7 @@ import SwiftUI
 
 struct Login: View {
     @Binding var currentPage: Int
+    @Binding var userName: String
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -114,6 +115,7 @@ struct Login: View {
             Spacer()
             
             Button{
+                userName = email
                  currentPage = 8
             } label: {
                 Text("LOG IN")
@@ -132,7 +134,7 @@ struct Login: View {
                     .foregroundStyle(Color.gray)
                 
                 Button("Sign up"){
-                    currentPage = 7
+                    currentPage = 6
                 }
                 .foregroundStyle(Color.pink)
             }
@@ -144,6 +146,6 @@ struct Login: View {
 }
 
 #Preview {
-    Login(currentPage: .constant(6))
+    Login(currentPage: .constant(7), userName: .constant(""))
 }
 

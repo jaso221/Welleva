@@ -113,9 +113,15 @@ struct Homepage: View {
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.pinn, lineWidth: 1.5)
+                            .stroke(Color.redPink, lineWidth: 1.5)
                         
                     )
+                    
+                    Button{
+                        //
+                    }label: {
+                        Image("ScanAMessage")
+                    }
                 }
             }
         }

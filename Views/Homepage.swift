@@ -4,6 +4,7 @@
 //
 //  Created by Sichen Wang on 21/7/2026.
 //
+
 import SwiftUI
 
 struct Homepage: View {
@@ -14,13 +15,15 @@ struct Homepage: View {
     
     var body: some View{
         
-        VStack{
+        VStack(spacing: 0){
             
             HStack{
                 Button{
                     //    currentPage =
                 }label: {
                     Image("Setting")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30)
                         .clipShape(Circle())
                 }
@@ -37,6 +40,8 @@ struct Homepage: View {
                         // currentPage =
                     }label: {
                         Image("Translate")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
                             .clipShape(Circle())
                     }
@@ -45,6 +50,8 @@ struct Homepage: View {
                         // currentPage =
                     }label: {
                         Image("Size")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
                             .clipShape(Circle())
                     }
@@ -53,6 +60,8 @@ struct Homepage: View {
                         // currentPage =
                     }label: {
                         Image("Colour")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
                             .clipShape(Circle())
                     }
@@ -60,8 +69,10 @@ struct Homepage: View {
                 .frame(maxWidth: .infinity)
                 .padding()
             }
+            .padding(.top, 8)
             .background(.black)
             .frame(maxWidth: .infinity)
+            .ignoresSafeArea(edges: .top)
          
             ScrollView{
                 
@@ -70,6 +81,7 @@ struct Homepage: View {
                     HStack{
                         Image("User")
                             .resizable()
+                            .aspectRatio(contentMode: .fill)
                             .frame(width: 60,height: 60)
                             .clipShape(Circle())
                             .padding()
@@ -90,6 +102,7 @@ struct Homepage: View {
                     HStack{
                         Image("WelcomeQuestion")
                             .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 50, height: 50)
                             .padding()
                             .clipShape(Circle())
@@ -117,11 +130,12 @@ struct Homepage: View {
                     )
                     
                     Button{
-                         currentPage = 10
+                         currentPage = 12
                     }label: {
                         VStack{
                             Image("ScanAMessage")
                                 .resizable()
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 100, height: 100)
                                 .padding()
                             
@@ -146,6 +160,9 @@ struct Homepage: View {
                         }label: {
                             VStack{
                                 Image("CheckNews")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 40, height: 40)
                                     .padding()
                                     .background(Color.pinn.opacity(0.2))
                                     .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -171,6 +188,9 @@ struct Homepage: View {
                         }label: {
                             VStack{
                                 Image("ReportScam")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 40, height: 40)
                                     .padding()
                                     .background(Color.pinn.opacity(0.2))
                                     .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -196,6 +216,7 @@ struct Homepage: View {
                         HStack{
                             Image("Light")
                                 .resizable()
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 30, height: 30)
                                 .padding()
                                 .clipShape(Circle())
@@ -224,15 +245,17 @@ struct Homepage: View {
                             .stroke(Color.gray, lineWidth: 1.5)
                     )
                 }
+                .padding(.bottom, 12)
             }
             
             HStack(spacing: 10){
                 VStack{
                     Button{
-                        //currentPage =
+                        currentPage = 8
                     }label: {
                         Image("Home")
                             .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
                             .padding()
                     }
@@ -249,6 +272,7 @@ struct Homepage: View {
                     }label: {
                         Image("Device")
                             .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
                             .padding()
                     }
@@ -265,6 +289,7 @@ struct Homepage: View {
                     }label: {
                         Image("Learning")
                             .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
                             .padding()
                     }
@@ -281,6 +306,7 @@ struct Homepage: View {
                     }label: {
                         Image("Discover")
                             .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
                             .padding()
                     }
@@ -293,6 +319,8 @@ struct Homepage: View {
             }
             .background(.black)
             .frame(maxWidth: .infinity)
+            .padding(.bottom, 8)
+            .ignoresSafeArea(edges: .bottom)
         }
     }
 }

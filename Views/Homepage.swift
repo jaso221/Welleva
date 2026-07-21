@@ -62,8 +62,7 @@ struct Homepage: View {
             }
             .background(.black)
             .frame(maxWidth: .infinity)
-            .padding()
-            
+         
             ScrollView{
                 
                 VStack(alignment: .leading, spacing: 20){
@@ -146,7 +145,7 @@ struct Homepage: View {
                             // currentPage =
                         }label: {
                             VStack{
-                                Image("ChechkNews")
+                                Image("CheckNews")
                                     .padding()
                                     .background(Color.pinn.opacity(0.2))
                                     .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -292,6 +291,8 @@ struct Homepage: View {
                 }
                 .padding()
             }
+            .background(.black)
+            .frame(maxWidth: .infinity)
         }
     }
 }

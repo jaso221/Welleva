@@ -118,7 +118,7 @@ struct Homepage: View {
                     )
                     
                     Button{
-                        // currentPage =
+                         currentPage = 10
                     }label: {
                         VStack{
                             Image("ScanAMessage")
@@ -225,6 +225,72 @@ struct Homepage: View {
                             .stroke(Color.gray, lineWidth: 1.5)
                     )
                 }
+            }
+            
+            HStack(spacing: 10){
+                VStack{
+                    Button{
+                        //currentPage =
+                    }label: {
+                        Image("Home")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .padding()
+                    }
+                    
+                    Text("Home")
+                        .font(.callout)
+                        .foregroundStyle(Color.white)
+                }
+                .padding()
+                
+                VStack{
+                    Button{
+                        //currentPage =
+                    }label: {
+                        Image("Device")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .padding()
+                    }
+                    
+                    Text("Device Status")
+                        .font(.callout)
+                        .foregroundStyle(Color.white)
+                }
+                .padding()
+                
+                VStack{
+                    Button{
+                        currentPage = 11
+                    }label: {
+                        Image("Learning")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .padding()
+                    }
+                    
+                    Text("Learning")
+                        .font(.callout)
+                        .foregroundStyle(Color.white)
+                }
+                .padding()
+                
+                VStack{
+                    Button{
+                        //currentPage =
+                    }label: {
+                        Image("Discover")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .padding()
+                    }
+                    
+                    Text("Discover")
+                        .font(.callout)
+                        .foregroundStyle(Color.white)
+                }
+                .padding()
             }
         }
     }

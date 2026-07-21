@@ -18,6 +18,7 @@ struct ContentView: View {
             case 9: Homepage(currentPage: $currentPage)
             case 10: CheckInputView(currentPage: $currentPage)
             case 11: LearningView(currentPage: $currentPage)
+            
                 
             default: WelcomePage(currentPage: $currentPage)
             }

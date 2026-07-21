@@ -167,5 +167,5 @@ struct Lesson: Identifiable {
 }
 
 #Preview {
-    LearningView(currentPage: .constant(9))
+    LearningView(currentPage: .constant(11))
 }

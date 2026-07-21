@@ -38,6 +38,8 @@
 		1BFB77A5300F030F00E24BB7 /* ScamNumberStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB77A4300F030000E24BB7 /* ScamNumberStore.swift */; };
 		1BFB77BB300F17B700E24BB7 /* WellevaCallDirectory.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1BFB77B4300F17B700E24BB7 /* WellevaCallDirectory.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8A0EDF58300EED72009FF75C /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EDF57300EED6B009FF75C /* Homepage.swift */; };
+		8A8153F3300FA755004356BA /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8153F2300FA74E004356BA /* SmallCard.swift */; };
+		8A8153F5300FA75E004356BA /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8153F4300FA759004356BA /* TabItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		1BFB77A4300F030000E24BB7 /* ScamNumberStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamNumberStore.swift; sourceTree = "<group>"; };
 		1BFB77B4300F17B700E24BB7 /* WellevaCallDirectory.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WellevaCallDirectory.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0EDF57300EED6B009FF75C /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+		8A8153F2300FA74E004356BA /* SmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
+		8A8153F4300FA759004356BA /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -176,6 +180,8 @@
 				1BFB771B300DCB9200E24BB7 /* IntroView.swift */,
 				1BFB771C300DCB9200E24BB7 /* Login.swift */,
 				8A0EDF57300EED6B009FF75C /* Homepage.swift */,
+				8A8153F2300FA74E004356BA /* SmallCard.swift */,
+				8A8153F4300FA759004356BA /* TabItem.swift */,
 				1BFB771D300DCB9200E24BB7 /* PrivacyFirst.swift */,
 				1BFB771E300DCB9200E24BB7 /* SignUp.swift */,
 				1BFB771F300DCB9200E24BB7 /* EncryptedView.swift */,
@@ -345,7 +351,9 @@
 				1BFB7726300DCB9200E24BB7 /* PrivacyFirst.swift in Sources */,
 				1BFB7727300DCB9200E24BB7 /* Login.swift in Sources */,
 				1BFB7728300DCB9200E24BB7 /* IntroView.swift in Sources */,
+				8A8153F5300FA75E004356BA /* TabItem.swift in Sources */,
 				1BFB770B300DCACB00E24BB7 /* AuthService.swift in Sources */,
+				8A8153F3300FA755004356BA /* SmallCard.swift in Sources */,
 				1BFB77A5300F030F00E24BB7 /* ScamNumberStore.swift in Sources */,
 				1BFB770C300DCACB00E24BB7 /* GeminiService.swift in Sources */,
 				1BFB76F8300DC90C00E24BB7 /* QuizView.swift in Sources */,

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B6703F6300F386700C7A613 /* ScreenshotOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6703F5300F385F00C7A613 /* ScreenshotOCR.swift */; };
+		1B6703F8300F388700C7A613 /* ScamResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6703F7300F387B00C7A613 /* ScamResultView.swift */; };
+		1B6703FA300F38AB00C7A613 /* ScamCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6703F9300F389300C7A613 /* ScamCheckView.swift */; };
 		1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */; };
 		1BFB76F3300DC90C00E24BB7 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76EB300DC90C00E24BB7 /* AboutView.swift */; };
 		1BFB76F5300DC90C00E24BB7 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76EE300DC90C00E24BB7 /* LearningView.swift */; };
@@ -62,6 +65,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B6703F5300F385F00C7A613 /* ScreenshotOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotOCR.swift; sourceTree = "<group>"; };
+		1B6703F7300F387B00C7A613 /* ScamResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamResultView.swift; sourceTree = "<group>"; };
+		1B6703F9300F389300C7A613 /* ScamCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamCheckView.swift; sourceTree = "<group>"; };
 		1BFB767C30086A1B00E24BB7 /* Welleva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Welleva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding Welcome.swift"; sourceTree = "<group>"; };
 		1BFB76EB300DC90C00E24BB7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -161,6 +167,8 @@
 		1BFB769330088AC300E24BB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1B6703F9300F389300C7A613 /* ScamCheckView.swift */,
+				1B6703F7300F387B00C7A613 /* ScamResultView.swift */,
 				1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */,
 				1BFB7717300DCB4B00E24BB7 /* WelcomePage.swift */,
 				1BFB7719300DCB9200E24BB7 /* Intro1.swift */,
@@ -184,6 +192,7 @@
 		1BFB7709300DCACB00E24BB7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1B6703F5300F385F00C7A613 /* ScreenshotOCR.swift */,
 				1BFB77A4300F030000E24BB7 /* ScamNumberStore.swift */,
 				1BFB7706300DCACB00E24BB7 /* GeminiService.swift */,
 				1BFB7707300DCACB00E24BB7 /* FirestoreService.swift */,
@@ -319,14 +328,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */,
+				1B6703F8300F388700C7A613 /* ScamResultView.swift in Sources */,
 				1BFB76F3300DC90C00E24BB7 /* AboutView.swift in Sources */,
 				1BFB76F5300DC90C00E24BB7 /* LearningView.swift in Sources */,
 				8A0EDF58300EED72009FF75C /* Homepage.swift in Sources */,
 				1BFB76F6300DC90C00E24BB7 /* LessonCompleteView.swift in Sources */,
+				1B6703FA300F38AB00C7A613 /* ScamCheckView.swift in Sources */,
 				1BFB76F7300DC90C00E24BB7 /* LessonDetailView.swift in Sources */,
 				1BFB770A300DCACB00E24BB7 /* FirestoreService.swift in Sources */,
 				1BFB7721300DCB9200E24BB7 /* Intro1.swift in Sources */,
 				1BFB7722300DCB9200E24BB7 /* Intro2.swift in Sources */,
+				1B6703F6300F386700C7A613 /* ScreenshotOCR.swift in Sources */,
 				1BFB7723300DCB9200E24BB7 /* EncryptedView.swift in Sources */,
 				1BFB7724300DCB9200E24BB7 /* CheckInputView.swift in Sources */,
 				1BFB7725300DCB9200E24BB7 /* SignUp.swift in Sources */,

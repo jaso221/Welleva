@@ -114,7 +114,7 @@ struct Login: View {
             Spacer()
             
             Button{
-                // currentPage =
+                 currentPage = 8
             } label: {
                 Text("LOG IN")
                     .font(.title2)

@@ -14,6 +14,8 @@ struct ContentView: View {
             case 5: PrivacyFirst(currentPage: $currentPage)
             case 6: Login(currentPage: $currentPage)
             case 7: SignUp(currentPage: $currentPage)
+            case 8: Homepage(currentPage: $currentPage)
+            case 9: LearningView(currentPage: $currentPage)
                 
             default: WelcomePage(currentPage: $currentPage)
             }

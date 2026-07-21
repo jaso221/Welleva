@@ -40,7 +40,7 @@ struct LessonCompleteView: View {
             Spacer()
 
             NavigationLink {
-                LearningView()
+                LearningView(currentPage: .constant(9))
             } label: {
                 Text("Back to Learning Centre")
                     .font(.headline)

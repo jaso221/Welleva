@@ -32,6 +32,7 @@
 		1BFB7726300DCB9200E24BB7 /* PrivacyFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB771D300DCB9200E24BB7 /* PrivacyFirst.swift */; };
 		1BFB7727300DCB9200E24BB7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB771C300DCB9200E24BB7 /* Login.swift */; };
 		1BFB7728300DCB9200E24BB7 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB771B300DCB9200E24BB7 /* IntroView.swift */; };
+		8A0EDF58300EED72009FF75C /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EDF57300EED6B009FF75C /* Homepage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		1BFB771E300DCB9200E24BB7 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		1BFB771F300DCB9200E24BB7 /* EncryptedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedView.swift; sourceTree = "<group>"; };
 		1BFB7720300DCB9200E24BB7 /* CheckInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInputView.swift; sourceTree = "<group>"; };
+		8A0EDF57300EED6B009FF75C /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -110,6 +112,7 @@
 				1BFB771A300DCB9200E24BB7 /* Intro2.swift */,
 				1BFB771B300DCB9200E24BB7 /* IntroView.swift */,
 				1BFB771C300DCB9200E24BB7 /* Login.swift */,
+				8A0EDF57300EED6B009FF75C /* Homepage.swift */,
 				1BFB771D300DCB9200E24BB7 /* PrivacyFirst.swift */,
 				1BFB771E300DCB9200E24BB7 /* SignUp.swift */,
 				1BFB771F300DCB9200E24BB7 /* EncryptedView.swift */,
@@ -227,6 +230,7 @@
 				1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */,
 				1BFB76F3300DC90C00E24BB7 /* AboutView.swift in Sources */,
 				1BFB76F5300DC90C00E24BB7 /* LearningView.swift in Sources */,
+				8A0EDF58300EED72009FF75C /* Homepage.swift in Sources */,
 				1BFB76F6300DC90C00E24BB7 /* LessonCompleteView.swift in Sources */,
 				1BFB76F7300DC90C00E24BB7 /* LessonDetailView.swift in Sources */,
 				1BFB770A300DCACB00E24BB7 /* FirestoreService.swift in Sources */,

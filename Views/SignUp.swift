@@ -93,7 +93,7 @@ struct SignUp: View {
             Spacer()
             
             Button{
-               // currentPage =
+                currentPage = 8
             } label: {
                 Text("CREATE ACCOUNT")
                     .font(.title2)

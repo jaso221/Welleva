@@ -47,6 +47,8 @@
 		8A81541F30105AB7004356BA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541E30105AB4004356BA /* TabBar.swift */; };
 		8A81542230106D41004356BA /* SizeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542130106D35004356BA /* SizeSetting.swift */; };
 		8A81542430106E44004356BA /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542330106E3D004356BA /* TextRow.swift */; };
+		8A81542630107E8F004356BA /* TranslateSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542530107E83004356BA /* TranslateSetting.swift */; };
+		8A81542830107EF2004356BA /* LanguageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542730107EE3004356BA /* LanguageRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		8A81541E30105AB4004356BA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		8A81542130106D35004356BA /* SizeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeSetting.swift; sourceTree = "<group>"; };
 		8A81542330106E3D004356BA /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
+		8A81542530107E83004356BA /* TranslateSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateSetting.swift; sourceTree = "<group>"; };
+		8A81542730107EE3004356BA /* LanguageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -193,7 +197,9 @@
 				1BFB771A300DCB9200E24BB7 /* Intro2.swift */,
 				1BFB771B300DCB9200E24BB7 /* IntroView.swift */,
 				1BFB771C300DCB9200E24BB7 /* Login.swift */,
+				8A81542530107E83004356BA /* TranslateSetting.swift */,
 				8A0EDF57300EED6B009FF75C /* Homepage.swift */,
+				8A81542730107EE3004356BA /* LanguageRow.swift */,
 				8A8153F2300FA74E004356BA /* SmallCard.swift */,
 				8A8153F4300FA759004356BA /* TabItem.swift */,
 				1BFB771D300DCB9200E24BB7 /* PrivacyFirst.swift */,
@@ -376,6 +382,7 @@
 				1BFB7725300DCB9200E24BB7 /* SignUp.swift in Sources */,
 				1BFB7726300DCB9200E24BB7 /* PrivacyFirst.swift in Sources */,
 				1BFB7727300DCB9200E24BB7 /* Login.swift in Sources */,
+				8A81542830107EF2004356BA /* LanguageRow.swift in Sources */,
 				1BFB7728300DCB9200E24BB7 /* IntroView.swift in Sources */,
 				8A8153F5300FA75E004356BA /* TabItem.swift in Sources */,
 				1BFB770B300DCACB00E24BB7 /* AuthService.swift in Sources */,
@@ -384,6 +391,7 @@
 				8A81542430106E44004356BA /* TextRow.swift in Sources */,
 				8A81542230106D41004356BA /* SizeSetting.swift in Sources */,
 				1BFB770C300DCACB00E24BB7 /* GeminiService.swift in Sources */,
+				8A81542630107E8F004356BA /* TranslateSetting.swift in Sources */,
 				1BFB76F8300DC90C00E24BB7 /* QuizView.swift in Sources */,
 				1BFB7718300DCB4B00E24BB7 /* WelcomePage.swift in Sources */,
 				1BFB7710300DCADA00E24BB7 /* UserProfile.swift in Sources */,

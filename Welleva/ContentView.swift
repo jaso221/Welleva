@@ -27,7 +27,7 @@ struct ContentView: View {
             case 10: CheckInputView(currentPage: $currentPage)
             case 11: LearningView(currentPage: $currentPage)
                 
-                //            case 12: Translate()
+            case 12: TranslateSetting(currentPage: $currentPage)
             case 13: SizeSetting(currentPage: $currentPage)
             case 14: ColourSetting(currentPage: $currentPage, userName: $userName)
                 //            case 15: News()

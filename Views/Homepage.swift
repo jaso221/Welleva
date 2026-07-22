@@ -75,10 +75,11 @@ struct HomePage: View {
                         
                         VStack(alignment: .leading) {
                             Text("Good morning,")
+                                .font(.system(size: theme.fontSize))
                                 .foregroundColor(.black)
                             
                             Text(userName.isEmpty ? "User" : userName)
-                                .font(.title2)
+                                .font(.system(size: theme.fontSize))
                                 .bold()
                                 .foregroundColor(theme.primary)
                         }

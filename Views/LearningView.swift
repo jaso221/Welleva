@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct LearningView: View {
+    @Binding var currentPage: Int
+    
     private let lessons = [
         Lesson(
             title: "Fake Text Messages",
@@ -165,5 +167,5 @@ struct Lesson: Identifiable {
 }
 
 #Preview {
-    LearningView()
+    LearningView(currentPage: .constant(11))
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CheckInputView: View {
+    @Binding var currentPage: Int
+    
     @State private var inputText: String = ""
     @State private var isChecking = false
     @State private var result: (verdict: String, explanation: String)?
@@ -80,5 +82,5 @@ struct CheckInputView: View {
 }
 
 #Preview {
-    CheckInputView()
+    CheckInputView(currentPage: .constant(10))
 }

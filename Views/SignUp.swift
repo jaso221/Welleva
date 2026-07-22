@@ -8,7 +8,7 @@
 
 struct SignUp: View {
     @Binding var currentPage: Int
-    @Binding var username: String
+    @Binding var userName: String
     
     @State private var fullName: String = ""
     @State private var email: String = ""
@@ -95,7 +95,7 @@ struct SignUp: View {
             Spacer()
             
             Button{
-                username = fullName
+                userName = fullName
                 currentPage = 8
             } label: {
                 Text("CREATE ACCOUNT")
@@ -155,6 +155,6 @@ struct SignUp: View {
 #Preview {
     SignUp(
         currentPage: .constant(6),
-        username: .constant("")
+        userName: .constant("")
         )
 }

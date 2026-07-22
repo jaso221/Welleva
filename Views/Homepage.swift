@@ -7,68 +7,97 @@
 
 import SwiftUI
 
-struct Homepage: View {
+struct HomePage: View {
     @Binding var currentPage: Int
-    @Binding var userName: String
+    var userName: String
     
+<<<<<<< HEAD
     @State private var fullName: String = ""
     
     var body: some View{
         
         VStack(spacing: 0){
+=======
+    var body: some View {
+        VStack(spacing: 0) {
+>>>>>>> firebase
             
-            HStack{
-                Button{
-                    //    currentPage =
-                }label: {
+            HStack {
+                
+                Button {
+                    currentPage = 9
+                } label: {
                     Image("Setting")
                         .resizable()
+<<<<<<< HEAD
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30)
+=======
+                        .frame(width: 20, height: 20)
+                        .padding(10)
+                        .background(Color.white.opacity(0.1))
+>>>>>>> firebase
                         .clipShape(Circle())
                 }
-                .padding()
                 
                 Text("Home")
-                    .font(.title)
-                    .foregroundStyle(Color.white)
-                    .bold()
-                    .padding()
+                    .foregroundColor(.white)
+                    .font(.headline)
                 
-                HStack{
-                    Button{
-                        // currentPage =
-                    }label: {
+                Spacer()
+                
+                HStack(spacing: 12) {
+                    
+                    Button {
+                        currentPage = 12
+                    } label: {
                         Image("Translate")
                             .resizable()
+<<<<<<< HEAD
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
+=======
+                            .frame(width: 20, height: 20)
+                            .padding(10)
+                            .background(Color.white.opacity(0.1))
+>>>>>>> firebase
                             .clipShape(Circle())
                     }
                     
-                    Button{
-                        // currentPage =
-                    }label: {
+                    Button {
+                        currentPage = 13
+                    } label: {
                         Image("Size")
                             .resizable()
+<<<<<<< HEAD
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
+=======
+                            .frame(width: 20, height: 20)
+                            .padding(10)
+                            .background(Color.white.opacity(0.1))
+>>>>>>> firebase
                             .clipShape(Circle())
                     }
                     
-                    Button{
-                        // currentPage =
-                    }label: {
+                    Button {
+                        currentPage = 14
+                    } label: {
                         Image("Colour")
                             .resizable()
+<<<<<<< HEAD
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
+=======
+                            .frame(width: 20, height: 20)
+                            .padding(10)
+                            .background(Color.white.opacity(0.1))
+>>>>>>> firebase
                             .clipShape(Circle())
                     }
                 }
-                .frame(maxWidth: .infinity)
-                .padding()
             }
+<<<<<<< HEAD
             .padding(.top, 8)
             .background(.black)
             .frame(maxWidth: .infinity)
@@ -77,58 +106,67 @@ struct Homepage: View {
             ScrollView{
                 
                 VStack(alignment: .leading, spacing: 20){
+=======
+            .padding()
+            .background(Color.black)
+            
+            ScrollView {
+                VStack(spacing: 20) {
+>>>>>>> firebase
                     
-                    HStack{
+                    HStack {
                         Image("User")
                             .resizable()
+<<<<<<< HEAD
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 60,height: 60)
-                            .clipShape(Circle())
-                            .padding()
-                        
-                        VStack(alignment: .leading){
-                            Text("Good morning")
-                                .font(.title)
-                                .bold()
-                            
-                            Text(userName.isEmpty ? "User" : userName)
-                                .font(.title)
-                                .bold()
-                                .foregroundStyle(Color.redPink)
-                            
-                        }
-                    }
-                    
-                    HStack{
-                        Image("WelcomeQuestion")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+=======
                             .frame(width: 50, height: 50)
-                            .padding()
+>>>>>>> firebase
                             .clipShape(Circle())
-                           
                         
-                        VStack(alignment: .leading){
-                            Text("Your Device is Protected")
+                        VStack(alignment: .leading) {
+                            Text("Good morning,")
+                                .font(.title3)
+                            
+                            Text(userName)
                                 .font(.title2)
                                 .bold()
-                                .foregroundStyle(Color.black)
-                            
-                            Text("Everything looks safe today")
-                                .font(.callout)
-                                .foregroundStyle(Color.redPink)
+                                .foregroundColor(.redPink)
                         }
                         
                         Spacer()
+                    }
+                    
+                    HStack {
+                        Image("WelcomeQuestion")
+                            .resizable()
+<<<<<<< HEAD
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+=======
+                            .frame(width: 40, height: 40)
+>>>>>>> firebase
+                            .padding()
                         
+                        VStack(alignment: .leading) {
+                            Text("Your Device is Protected")
+                                .bold()
+                            
+                            Text("Everything looks safe today")
+                                .foregroundColor(.redPink)
+                                .font(.subheadline)
+                        }
+                        
+                        Spacer()
                     }
                     .padding()
                     .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.gray, lineWidth: 1.5)
-                        
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(Color.pinn, lineWidth: 1)
                     )
                     
+<<<<<<< HEAD
                     Button{
                          currentPage = 12
                     }label: {
@@ -138,22 +176,32 @@ struct Homepage: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 100, height: 100)
                                 .padding()
+=======
+                    Button {
+                        currentPage = 10
+                    } label: {
+                        VStack(spacing: 12) {
+                            Image("ScanAMessage")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+>>>>>>> firebase
                             
-                            Text("Scan a message")
+                            Text("Scan a Message")
                                 .font(.title2)
                                 .bold()
-                                .foregroundStyle(Color.white)
+                                .foregroundColor(.white)
                             
-                            Text("Check for scams of fraud")
-                                .font(.title3)
-                                .foregroundStyle(Color.white)
+                            Text("Check for scams or fraud")
+                                .foregroundColor(.white.opacity(0.9))
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(.redPink)
                         .cornerRadius(20)
+                        .shadow(radius: 5)
                     }
                     
+<<<<<<< HEAD
                     HStack(spacing: 20){
                         Button{
                             // currentPage =
@@ -229,22 +277,41 @@ struct Homepage: View {
                             }
                         }
                         .padding()
+=======
+                    HStack(spacing: 15) {
                         
-                        VStack(alignment: .leading){
-                            Text("Never share your bank passwords or verification codes with anyone over the phone, even if they claim to be from the bank.")
-                                .font(.callout)
+                        Button {
+                            currentPage = 15
+                        } label: {
+                            SmallCard(title: "Check News", icon: "CheckNews")
                                 .foregroundStyle(Color.black)
-                                .multilineTextAlignment(.center)
+                                .bold()
                         }
-            
+                        
+                        Button {
+                            currentPage = 16
+                        } label: {
+                            SmallCard(title: "Report Scam", icon: "ReportScam")
+                                .foregroundColor(.black)
+                                .bold()
+                        }
                     }
-                    .background(Color.gray.opacity(0.1))
+                    
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("💡 Tip of the day")
+                            .bold()
+>>>>>>> firebase
+                        
+                        Text("Never share your bank passwords or verification codes with anyone over the phone, even if they claim to be from the bank.")
+                            .foregroundColor(.black)
+                    }
                     .padding()
                     .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.gray, lineWidth: 1.5)
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(Color.gray, lineWidth: 1)
                     )
                 }
+<<<<<<< HEAD
                 .padding(.bottom, 12)
             }
             
@@ -321,13 +388,24 @@ struct Homepage: View {
             .frame(maxWidth: .infinity)
             .padding(.bottom, 8)
             .ignoresSafeArea(edges: .bottom)
+=======
+                .padding()
+            }
+            
+            HStack {
+                
+                TabItem(title: "Home", page: 8, icon:"Home", currentPage: $currentPage)
+                TabItem(title: "Device Status", page: 17, icon:"Device", currentPage: $currentPage)
+                TabItem(title: "Learning", page: 11, icon:"Learning", currentPage: $currentPage)
+                TabItem(title: "Discover", page: 18, icon:"Discover", currentPage: $currentPage)
+            }
+            .padding()
+            .background(Color.black)
+>>>>>>> firebase
         }
     }
 }
 
 #Preview {
-    Homepage(
-        currentPage: .constant(9),
-        userName: .constant("")
-    )
+    HomePage(currentPage: .constant(0), userName: "Wei")
 }

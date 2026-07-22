@@ -15,19 +15,38 @@ struct ScamCheckView: View {
     @State private var selectedImage: UIImage?
     @State private var extractedText: String = ""
     @State private var isProcessing: Bool = false
-    @State private var showCameraPicker: Bool = false
-    
+
     @State private var verdict: String = ""
     @State private var explanation: String = ""
-    @State private var showResult: Bool = false
+
+    // A view can only reliably present one `.sheet(isPresented:)`. Driving both the
+    // camera and the result from a single enum-based sheet avoids them conflicting.
+    private enum ActiveSheet: Identifiable {
+        case camera
+        case result
+        var id: Int { hashValue }
+    }
+    @State private var activeSheet: ActiveSheet?
     
     var body: some View {
         VStack(spacing: 20) {
-            
+
+            HStack {
+                Button {
+                    currentPage = 8
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.title2)
+                        .foregroundStyle(.primary)
+                }
+                Spacer()
+            }
+            .padding(.horizontal)
+            .padding(.top)
+
             Text("Check a Screenshot")
                 .font(.title)
                 .bold()
-                .padding(.top)
             
             if let selectedImage {
                 Image(uiImage: selectedImage)
@@ -58,7 +77,7 @@ struct ScamCheckView: View {
                 }
                 
                 Button {
-                    showCameraPicker = true
+                    activeSheet = .camera
                 } label: {
                     Label("Take Photo", systemImage: "camera")
                         .padding()
@@ -119,24 +138,26 @@ struct ScamCheckView: View {
                 }
             }
         }
-        .sheet(isPresented: $showCameraPicker) {
-            CameraPicker(image: $selectedImage) { uiImage in
-                isProcessing = true
-                ScreenshotOCR.extractText(from: uiImage) { text in
-                    DispatchQueue.main.async {
-                        extractedText = text
-                        isProcessing = false
+        .sheet(item: $activeSheet) { sheet in
+            switch sheet {
+            case .camera:
+                CameraPicker(image: $selectedImage) { uiImage in
+                    isProcessing = true
+                    ScreenshotOCR.extractText(from: uiImage) { text in
+                        DispatchQueue.main.async {
+                            extractedText = text
+                            isProcessing = false
+                        }
                     }
                 }
+            case .result:
+                ScamResultView(
+                    currentPage: $currentPage,
+                    verdict: verdict,
+                    explanation: explanation,
+                    originalText: extractedText
+                )
             }
-        }
-        .sheet(isPresented: $showResult) {
-            ScamResultView(
-                currentPage: $currentPage,
-                verdict: verdict,
-                explanation: explanation,
-                originalText: extractedText
-            )
         }
     }
     
@@ -149,7 +170,7 @@ struct ScamCheckView: View {
                 verdict = result.verdict
                 explanation = result.explanation
                 isProcessing = false
-                showResult = true
+                activeSheet = .result
             }
         }
     }

@@ -11,38 +11,59 @@ import Combine
 
 class AuthService: ObservableObject {
     @Published var isSignedIn: Bool = false
-    @Published var errorMessage: String?
+    @Published var currentUser: User? = nil
+
+    private var authStateHandle: AuthStateDidChangeListenerHandle?
 
     init() {
-        isSignedIn = Auth.auth().currentUser != nil
-    }
+        // Synchronous: know immediately on launch if a session exists.
+        let existing = Auth.auth().currentUser
+        isSignedIn = existing != nil
+        currentUser = existing
 
-    func signUp(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+        // Listener: keep state in sync for sign-in / sign-out events.
+        authStateHandle = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             DispatchQueue.main.async {
-                if let error = error {
-                    self?.errorMessage = error.localizedDescription
-                } else {
-                    self?.isSignedIn = true
-                }
+                self?.isSignedIn = user != nil
+                self?.currentUser = user
             }
         }
     }
 
-    func signIn(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
-            DispatchQueue.main.async {
-                if let error = error {
-                    self?.errorMessage = error.localizedDescription
-                } else {
-                    self?.isSignedIn = true
-                }
-            }
+    deinit {
+        if let handle = authStateHandle {
+            Auth.auth().removeStateDidChangeListener(handle)
+        }
+    }
+
+    func signUp(email: String, password: String) async -> String? {
+        do {
+            try await Auth.auth().createUser(withEmail: email, password: password)
+            return nil
+        } catch {
+            return friendlyError(error)
+        }
+    }
+
+    func signIn(email: String, password: String) async -> String? {
+        do {
+            try await Auth.auth().signIn(withEmail: email, password: password)
+            return nil
+        } catch {
+            return friendlyError(error)
         }
     }
 
     func signOut() {
         try? Auth.auth().signOut()
-        isSignedIn = false
+    }
+
+    private func friendlyError(_ error: Error) -> String {
+        let nsError = error as NSError
+        print("Auth error \(nsError.code): \(nsError.localizedDescription)")
+        if nsError.code == AuthErrorCode.internalError.rawValue {
+            return "Sign-in setup issue: make sure Email/Password is enabled in the Firebase Console."
+        }
+        return nsError.localizedDescription
     }
 }

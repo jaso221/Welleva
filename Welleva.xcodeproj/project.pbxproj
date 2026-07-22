@@ -45,6 +45,8 @@
 		8A81541B30105A81004356BA /* ColourSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541A30105A7A004356BA /* ColourSetting.swift */; };
 		8A81541D30105A97004356BA /* ColourRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541C30105A91004356BA /* ColourRow.swift */; };
 		8A81541F30105AB7004356BA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541E30105AB4004356BA /* TabBar.swift */; };
+		8A81542230106D41004356BA /* SizeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542130106D35004356BA /* SizeSetting.swift */; };
+		8A81542430106E44004356BA /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542330106E3D004356BA /* TextRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		8A81541A30105A7A004356BA /* ColourSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSetting.swift; sourceTree = "<group>"; };
 		8A81541C30105A91004356BA /* ColourRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourRow.swift; sourceTree = "<group>"; };
 		8A81541E30105AB4004356BA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		8A81542130106D35004356BA /* SizeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeSetting.swift; sourceTree = "<group>"; };
+		8A81542330106E3D004356BA /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -193,12 +197,14 @@
 				8A8153F2300FA74E004356BA /* SmallCard.swift */,
 				8A8153F4300FA759004356BA /* TabItem.swift */,
 				1BFB771D300DCB9200E24BB7 /* PrivacyFirst.swift */,
+				8A81542130106D35004356BA /* SizeSetting.swift */,
 				8A81541A30105A7A004356BA /* ColourSetting.swift */,
 				1BFB771E300DCB9200E24BB7 /* SignUp.swift */,
 				1BFB771F300DCB9200E24BB7 /* EncryptedView.swift */,
 				8A81541630105A2B004356BA /* TopBar.swift */,
 				8A81541E30105AB4004356BA /* TabBar.swift */,
 				1BFB7720300DCB9200E24BB7 /* CheckInputView.swift */,
+				8A81542330106E3D004356BA /* TextRow.swift */,
 				8A81541830105A43004356BA /* AppTheme.swift */,
 				1BFB76EB300DC90C00E24BB7 /* AboutView.swift */,
 				8A81541C30105A91004356BA /* ColourRow.swift */,
@@ -375,6 +381,8 @@
 				1BFB770B300DCACB00E24BB7 /* AuthService.swift in Sources */,
 				8A8153F3300FA755004356BA /* SmallCard.swift in Sources */,
 				1BFB77A5300F030F00E24BB7 /* ScamNumberStore.swift in Sources */,
+				8A81542430106E44004356BA /* TextRow.swift in Sources */,
+				8A81542230106D41004356BA /* SizeSetting.swift in Sources */,
 				1BFB770C300DCACB00E24BB7 /* GeminiService.swift in Sources */,
 				1BFB76F8300DC90C00E24BB7 /* QuizView.swift in Sources */,
 				1BFB7718300DCB4B00E24BB7 /* WelcomePage.swift in Sources */,

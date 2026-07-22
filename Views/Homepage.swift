@@ -1,80 +1,73 @@
 //
+//
 //  Homepage.swift
 //  Welleva
 //
 //  Created by Sichen Wang on 21/7/2026.
 //
 import SwiftUI
+import Combine
 
 struct HomePage: View {
+    
     @Binding var currentPage: Int
-    var userName: String
+    @Binding var userName: String
+    
+    @EnvironmentObject var theme: AppTheme
     
     var body: some View {
+        
         VStack(spacing: 0) {
             
+            //top
             HStack {
                 
                 Button {
                     currentPage = 9
                 } label: {
                     Image("Setting")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding(10)
-                        .background(Color.white.opacity(0.1))
-                        .clipShape(Circle())
                 }
-                
-                Text("Home")
-                    .foregroundColor(.white)
-                    .font(.headline)
                 
                 Spacer()
                 
-                HStack(spacing: 12) {
+                Text("Home")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                
+                Spacer()
+                
+                HStack(spacing: 16) {
                     
                     Button {
                         currentPage = 12
                     } label: {
                         Image("Translate")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .padding(10)
-                            .background(Color.white.opacity(0.1))
-                            .clipShape(Circle())
                     }
                     
                     Button {
                         currentPage = 13
                     } label: {
                         Image("Size")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .padding(10)
-                            .background(Color.white.opacity(0.1))
-                            .clipShape(Circle())
                     }
                     
                     Button {
                         currentPage = 14
                     } label: {
                         Image("Colour")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .padding(10)
-                            .background(Color.white.opacity(0.1))
-                            .clipShape(Circle())
                     }
                 }
             }
             .padding()
-            .background(Color.black)
+            .background(theme.barBackground)
             
+            
+            // middle
             ScrollView {
-                VStack(spacing: 20) {
+                
+                VStack(alignment: .leading, spacing: 20) {
                     
                     HStack {
+                        
                         Image("User")
                             .resizable()
                             .frame(width: 50, height: 50)
@@ -82,47 +75,40 @@ struct HomePage: View {
                         
                         VStack(alignment: .leading) {
                             Text("Good morning,")
-                                .font(.title3)
+                                .foregroundColor(.black)
                             
-                            Text(userName)
+                            Text(userName.isEmpty ? "User" : userName)
                                 .font(.title2)
                                 .bold()
-                                .foregroundColor(.redPink)
+                                .foregroundColor(theme.primary)
                         }
-                        
-                        Spacer()
                     }
-                    
+      
                     HStack {
                         Image("WelcomeQuestion")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .padding()
+                            .frame(width: 30,height: 30)
+                            .clipShape(Circle())
                         
                         VStack(alignment: .leading) {
                             Text("Your Device is Protected")
                                 .bold()
                             
                             Text("Everything looks safe today")
-                                .foregroundColor(.redPink)
-                                .font(.subheadline)
+                                .foregroundColor(theme.primary)
                         }
                         
                         Spacer()
                     }
                     .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(Color.pinn, lineWidth: 1)
-                    )
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(20)
                     
                     Button {
-                        currentPage = 19
+                        currentPage = 10
                     } label: {
+                        
                         VStack(spacing: 12) {
                             Image("ScanAMessage")
-                                .resizable()
-                                .frame(width: 40, height: 40)
                             
                             Text("Scan a Message")
                                 .font(.title2)
@@ -134,59 +120,54 @@ struct HomePage: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(.redPink)
-                        .cornerRadius(20)
-                        .shadow(radius: 5)
+                        .background(theme.primary)
+                        .cornerRadius(24)
                     }
-                    
-                    HStack(spacing: 15) {
+                 
+                    HStack(spacing: 16) {
                         
                         Button {
                             currentPage = 15
                         } label: {
-                            SmallCard(title: "Check News", icon: "CheckNews")
-                                .foregroundStyle(Color.black)
-                                .bold()
+                            SmallCard(
+                                title: "Check News",
+                                image: "CheckNews"
+                            )
                         }
                         
                         Button {
                             currentPage = 16
                         } label: {
-                            SmallCard(title: "Report Scam", icon: "ReportScam")
-                                .foregroundColor(.black)
-                                .bold()
+                            SmallCard(
+                                title: "Report Scam",
+                                image: "ReportScam"
+                            )
                         }
                     }
-                    
+                
+                    // Tip
                     VStack(alignment: .leading, spacing: 10) {
-                        Text("💡 Tip of the day")
-                            .bold()
+                        
+                        HStack {
+                            Image("Light")
+                            Text("Tip of the day")
+                                .bold()
+                        }
                         
                         Text("Never share your bank passwords or verification codes with anyone over the phone, even if they claim to be from the bank.")
-                            .foregroundColor(.black)
+                            .foregroundColor(.gray)
                     }
                     .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(20)
+                    
                 }
                 .padding()
             }
             
-            HStack {
-                
-                TabItem(title: "Home", page: 8, icon:"Home", currentPage: $currentPage)
-                TabItem(title: "Device Status", page: 17, icon:"Device", currentPage: $currentPage)
-                TabItem(title: "Learning", page: 11, icon:"Learning", currentPage: $currentPage)
-                TabItem(title: "Discover", page: 18, icon:"Discover", currentPage: $currentPage)
-            }
-            .padding()
-            .background(Color.black)
+            // button
+            TabBar(currentPage: $currentPage)
+            
         }
     }
-}
-
-#Preview {
-    HomePage(currentPage: .constant(0), userName: "Wei")
 }

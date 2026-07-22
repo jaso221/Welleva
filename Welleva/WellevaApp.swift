@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct WellevaApp: App {
+    @StateObject var theme = AppTheme()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(theme)
         }
     }
 }

@@ -40,6 +40,11 @@
 		8A0EDF58300EED72009FF75C /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EDF57300EED6B009FF75C /* Homepage.swift */; };
 		8A8153F3300FA755004356BA /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8153F2300FA74E004356BA /* SmallCard.swift */; };
 		8A8153F5300FA75E004356BA /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8153F4300FA759004356BA /* TabItem.swift */; };
+		8A81541730105A31004356BA /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541630105A2B004356BA /* TopBar.swift */; };
+		8A81541930105A48004356BA /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541830105A43004356BA /* AppTheme.swift */; };
+		8A81541B30105A81004356BA /* ColourSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541A30105A7A004356BA /* ColourSetting.swift */; };
+		8A81541D30105A97004356BA /* ColourRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541C30105A91004356BA /* ColourRow.swift */; };
+		8A81541F30105AB7004356BA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541E30105AB4004356BA /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +101,11 @@
 		8A0EDF57300EED6B009FF75C /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		8A8153F2300FA74E004356BA /* SmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
 		8A8153F4300FA759004356BA /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		8A81541630105A2B004356BA /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		8A81541830105A43004356BA /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		8A81541A30105A7A004356BA /* ColourSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSetting.swift; sourceTree = "<group>"; };
+		8A81541C30105A91004356BA /* ColourRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourRow.swift; sourceTree = "<group>"; };
+		8A81541E30105AB4004356BA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -183,10 +193,15 @@
 				8A8153F2300FA74E004356BA /* SmallCard.swift */,
 				8A8153F4300FA759004356BA /* TabItem.swift */,
 				1BFB771D300DCB9200E24BB7 /* PrivacyFirst.swift */,
+				8A81541A30105A7A004356BA /* ColourSetting.swift */,
 				1BFB771E300DCB9200E24BB7 /* SignUp.swift */,
 				1BFB771F300DCB9200E24BB7 /* EncryptedView.swift */,
+				8A81541630105A2B004356BA /* TopBar.swift */,
+				8A81541E30105AB4004356BA /* TabBar.swift */,
 				1BFB7720300DCB9200E24BB7 /* CheckInputView.swift */,
+				8A81541830105A43004356BA /* AppTheme.swift */,
 				1BFB76EB300DC90C00E24BB7 /* AboutView.swift */,
+				8A81541C30105A91004356BA /* ColourRow.swift */,
 				1BFB76EE300DC90C00E24BB7 /* LearningView.swift */,
 				1BFB76EF300DC90C00E24BB7 /* LessonCompleteView.swift */,
 				1BFB76F0300DC90C00E24BB7 /* LessonDetailView.swift */,
@@ -333,13 +348,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A81541B30105A81004356BA /* ColourSetting.swift in Sources */,
 				1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */,
 				1B6703F8300F388700C7A613 /* ScamResultView.swift in Sources */,
 				1BFB76F3300DC90C00E24BB7 /* AboutView.swift in Sources */,
 				1BFB76F5300DC90C00E24BB7 /* LearningView.swift in Sources */,
+				8A81541930105A48004356BA /* AppTheme.swift in Sources */,
 				8A0EDF58300EED72009FF75C /* Homepage.swift in Sources */,
+				8A81541F30105AB7004356BA /* TabBar.swift in Sources */,
 				1BFB76F6300DC90C00E24BB7 /* LessonCompleteView.swift in Sources */,
+				8A81541D30105A97004356BA /* ColourRow.swift in Sources */,
 				1B6703FA300F38AB00C7A613 /* ScamCheckView.swift in Sources */,
+				8A81541730105A31004356BA /* TopBar.swift in Sources */,
 				1BFB76F7300DC90C00E24BB7 /* LessonDetailView.swift in Sources */,
 				1BFB770A300DCACB00E24BB7 /* FirestoreService.swift in Sources */,
 				1BFB7721300DCB9200E24BB7 /* Intro1.swift in Sources */,

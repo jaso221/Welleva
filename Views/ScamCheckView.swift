@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import UIKit
 
 struct ScamCheckView: View {
     @Binding var currentPage: Int
@@ -68,10 +69,20 @@ struct ScamCheckView: View {
             // Paste text / link input
             if showPasteInput {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Paste your message or link")
-                        .font(.subheadline)
-                        .foregroundStyle(.gray)
-                        .padding(.horizontal)
+                    HStack {
+                        Text("Paste your message or link")
+                            .font(.subheadline)
+                            .foregroundStyle(.gray)
+                        Spacer()
+                        Button {
+                            pastedInput = UIPasteboard.general.string ?? pastedInput
+                        } label: {
+                            Label("Paste", systemImage: "doc.on.clipboard")
+                                .font(.subheadline.bold())
+                                .foregroundStyle(Color.redPink)
+                        }
+                    }
+                    .padding(.horizontal)
 
                     TextEditor(text: $pastedInput)
                         .frame(height: 140)

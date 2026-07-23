@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import UIKit
 
 struct CheckInputView: View {
     @Binding var currentPage: Int
@@ -82,6 +83,19 @@ struct CheckInputView: View {
                             .frame(maxHeight: 180)
                             .cornerRadius(16)
                             .padding(.horizontal)
+                    }
+
+                    // Paste from clipboard button
+                    HStack {
+                        Spacer()
+                        Button {
+                            pastedInput = UIPasteboard.general.string ?? pastedInput
+                        } label: {
+                            Label("Paste from Clipboard", systemImage: "doc.on.clipboard")
+                                .font(.subheadline.bold())
+                                .foregroundStyle(theme.primary)
+                        }
+                        Spacer()
                     }
 
                     // Text input

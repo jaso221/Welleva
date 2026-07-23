@@ -28,7 +28,7 @@ enum AppTranslations {
         "Scan a Message": "Escanear Mensaje",
 
         // Homepage
-        "Good morning,": "Buenos días,",
+        "Hello,": "Hola,",
         "Your Device is Protected": "Tu Dispositivo está Protegido",
         "Everything looks safe today": "Todo parece seguro hoy",
         "Check for scams or fraud": "Verificar estafas o fraudes",
@@ -80,7 +80,7 @@ enum AppTranslations {
         "Scan a Message": "Scanner un Message",
 
         // Homepage
-        "Good morning,": "Bonjour,",
+        "Hello,": "Bonjour,",
         "Your Device is Protected": "Votre Appareil est Protégé",
         "Everything looks safe today": "Tout semble sûr aujourd'hui",
         "Check for scams or fraud": "Vérifier les arnaques ou fraudes",

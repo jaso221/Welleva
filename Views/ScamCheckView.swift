@@ -195,6 +195,14 @@ struct ScamCheckView: View {
         Task {
             let service = GeminiService()
             let result = await service.checkContent(extractedText)
+            // Persist to Firestore so DeviceView scan history shows it
+            let scan = ScanResult(
+                content: String(extractedText.prefix(200)),
+                verdict: result.verdict,
+                explanation: result.explanation,
+                type: "message"
+            )
+            FirestoreService().saveScanResult(scan)
             await MainActor.run {
                 verdict = result.verdict
                 explanation = result.explanation

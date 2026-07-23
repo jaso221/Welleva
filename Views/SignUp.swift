@@ -5,6 +5,7 @@
 //  Created by Sichen Wang on 20/7/2026.
 //
 import SwiftUI
+import FirebaseAuth
 
 struct SignUp: View {
     @Binding var currentPage: Int
@@ -112,6 +113,14 @@ struct SignUp: View {
                 userName = fullName
                 Task {
                     let error = await authService.signUp(email: email, password: password)
+                    if error == nil {
+                        // Save name to Firebase profile so it persists across app restarts
+                        if let request = Auth.auth().currentUser?.createProfileChangeRequest() {
+                            request.displayName = fullName
+                            try? await request.commitChanges()
+                        }
+                        UserDefaults.standard.set(fullName, forKey: "userName")
+                    }
                     await MainActor.run {
                         isLoading = false
                         if let error {

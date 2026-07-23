@@ -108,9 +108,6 @@ struct LearningView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 6) {
                         Text(completedCount == allLessons.count ? "All Lessons Complete!" : "Continue Learning")
-                            .font(.headline)
-                            .foregroundStyle(.white.opacity(0.9))
-                        Text(nextLesson.title)
                             .font(.title3.bold())
                             .foregroundStyle(.white)
                     }

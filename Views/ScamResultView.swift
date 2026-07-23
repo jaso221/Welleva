@@ -10,10 +10,21 @@ import SwiftUI
 struct ScamResultView: View {
     @Binding var currentPage: Int
     @Environment(\.dismiss) var dismiss
-    
+    @EnvironmentObject var theme: AppTheme
+
     let verdict: String
     let explanation: String
     let originalText: String
+
+    // Maps explanation keywords to the best matching lesson index in allLessons
+    private var suggestedLessonIndex: Int {
+        let lower = (verdict + " " + explanation).lowercased()
+        if lower.contains("bank") || lower.contains("transfer") || lower.contains("account") { return 4 }  // Banking Scams
+        if lower.contains("website") || lower.contains("link") || lower.contains("url") { return 3 }       // Fake Websites
+        if lower.contains("call") || lower.contains("phone") || lower.contains("voice") { return 2 }       // Phone Call Scams
+        if lower.contains("email") { return 1 }                                                             // Phishing Emails
+        return 0                                                                                            // Fake Text Messages (default)
+    }
     
     var verdictColor: Color {
         switch verdict {
@@ -65,17 +76,27 @@ struct ScamResultView: View {
             Spacer()
             
             if verdict == "Likely Scam" {
-                Button {
-                    dismiss()
-                    currentPage = 11
-                } label: {
-                    Text("Explore Similar Scams")
+                VStack(spacing: 10) {
+                    Button {
+                        theme.pendingLessonIndex = suggestedLessonIndex
+                        dismiss()
+                        currentPage = 11
+                    } label: {
+                        HStack {
+                            Image(systemName: "book.fill")
+                            Text("Learn to Spot This Scam")
+                        }
                         .bold()
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(Color.redPink)
                         .foregroundStyle(.white)
                         .cornerRadius(12)
+                    }
+
+                    Text("Opens the relevant quiz in the Learning Centre")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
                 .padding(.horizontal)
             }
@@ -103,4 +124,5 @@ struct ScamResultView: View {
         explanation: "This message pretends to be your bank asking for a code, real banks never ask for that over text.",
         originalText: "Sample scam text"
     )
+    .environmentObject(AppTheme())
 }

@@ -3,6 +3,7 @@
 //  Welleva
 //
 import SwiftUI
+import FirebaseAuth
 
 enum LearningDestination: Hashable {
     case detail(Lesson)
@@ -14,6 +15,26 @@ struct LearningView: View {
     @Binding var currentPage: Int
     @EnvironmentObject var theme: AppTheme
     @State private var path = NavigationPath()
+    @State private var completedLessons: String = ""
+
+    private static var storageKey: String {
+        "completedLessons_\(Auth.auth().currentUser?.uid ?? "anon")"
+    }
+
+    private var completedIndices: [Int] {
+        completedLessons.isEmpty ? [] : completedLessons.components(separatedBy: ",").compactMap { Int($0) }
+    }
+
+    private var completedCount: Int { completedIndices.count }
+    private var progressValue: Double { Double(completedCount) / Double(allLessons.count) }
+    private var progressPercent: Int { Int(progressValue * 100) }
+
+    private var nextLesson: Lesson {
+        for (i, lesson) in allLessons.enumerated() {
+            if !completedIndices.contains(i) { return lesson }
+        }
+        return allLessons[0]
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -54,6 +75,15 @@ struct LearningView: View {
                 }
                 .background(Color(.systemGroupedBackground))
                 .toolbar(.hidden, for: .navigationBar)
+                .onAppear {
+                    completedLessons = UserDefaults.standard.string(forKey: Self.storageKey) ?? ""
+                    // Deep-link from ScamResultView "Learn More" button
+                    let idx = theme.pendingLessonIndex
+                    if idx >= 0, idx < allLessons.count {
+                        theme.pendingLessonIndex = -1
+                        path.append(LearningDestination.quiz(allLessons[idx]))
+                    }
+                }
                 .navigationDestination(for: LearningDestination.self) { destination in
                     switch destination {
                     case .detail(let lesson):
@@ -72,20 +102,20 @@ struct LearningView: View {
 
     private var continueLearningCard: some View {
         Button {
-            path.append(LearningDestination.detail(allLessons[0]))
+            path.append(LearningDestination.detail(nextLesson))
         } label: {
             VStack(alignment: .leading, spacing: 16) {
                 HStack {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Continue Learning")
+                        Text(completedCount == allLessons.count ? "All Lessons Complete!" : "Continue Learning")
                             .font(.headline)
                             .foregroundStyle(.white.opacity(0.9))
-                        Text("Spotting Fake Text Messages")
+                        Text(nextLesson.title)
                             .font(.title3.bold())
                             .foregroundStyle(.white)
                     }
                     Spacer()
-                    Image(systemName: "arrow.right.circle.fill")
+                    Image(systemName: completedCount == allLessons.count ? "checkmark.circle.fill" : "arrow.right.circle.fill")
                         .font(.system(size: 34))
                         .foregroundStyle(.white)
                 }
@@ -94,12 +124,12 @@ struct LearningView: View {
                     HStack {
                         Text("Progress")
                         Spacer()
-                        Text("40%")
+                        Text("\(completedCount) of \(allLessons.count) lessons — \(progressPercent)%")
                     }
                     .font(.subheadline)
                     .foregroundStyle(.white)
 
-                    ProgressView(value: 0.4)
+                    ProgressView(value: progressValue)
                         .tint(.white)
                 }
             }

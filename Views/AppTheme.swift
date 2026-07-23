@@ -18,6 +18,8 @@ class AppTheme: ObservableObject {
     var barBackground: Color { selectedColor }
 
     @Published var fontSize: CGFloat = 16
+    // Set to a lesson index (0–4) before navigating to page 11 to deep-link into that lesson's quiz
+    @Published var pendingLessonIndex: Int = -1
 
     func setFont(size: FontSize) {
         switch size {

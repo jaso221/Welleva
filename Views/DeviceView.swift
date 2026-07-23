@@ -3,6 +3,7 @@
 //  Welleva
 //
 import SwiftUI
+import FirebaseAuth
 
 struct DeviceView: View {
     @Binding var currentPage: Int
@@ -10,6 +11,11 @@ struct DeviceView: View {
 
     @State private var scanHistory: [ScanResult] = []
     @State private var isLoadingHistory = true
+    @State private var completedLessons: String = ""
+
+    private static var storageKey: String {
+        "completedLessons_\(Auth.auth().currentUser?.uid ?? "anon")"
+    }
 
     private let firestoreService = FirestoreService()
 
@@ -17,6 +23,11 @@ struct DeviceView: View {
         let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date()) ?? Date()
         return scanHistory.filter { $0.timestamp >= oneWeekAgo }
     }
+
+    private var completedCount: Int {
+        completedLessons.isEmpty ? 0 : completedLessons.components(separatedBy: ",").count
+    }
+    private var confidenceScore: Int { min(completedCount * 20, 100) }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -40,6 +51,39 @@ struct DeviceView: View {
                     .padding(24)
                     .background(Color.green.opacity(0.08))
                     .cornerRadius(20)
+
+                    // Knowledge confidence score
+                    VStack(alignment: .leading, spacing: 12) {
+                        HStack {
+                            Image(systemName: "brain.head.profile")
+                                .foregroundColor(theme.primary)
+                            Text("Knowledge Confidence")
+                                .font(.subheadline.bold())
+                            Spacer()
+                            Text("\(confidenceScore)%")
+                                .font(.title3.bold())
+                                .foregroundColor(confidenceScore >= 60 ? .green : confidenceScore >= 40 ? .orange : theme.primary)
+                        }
+                        ProgressView(value: Double(confidenceScore) / 100.0)
+                            .tint(confidenceScore >= 60 ? .green : confidenceScore >= 40 ? .orange : theme.primary)
+                        Text(confidenceScore == 0
+                             ? "Complete lessons in the Learning tab to build your score."
+                             : "\(completedCount) of 5 lessons completed — keep going!")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        if confidenceScore < 100 {
+                            Button {
+                                currentPage = 11
+                            } label: {
+                                Text("Go to Learning Centre →")
+                                    .font(.caption.bold())
+                                    .foregroundColor(theme.primary)
+                            }
+                        }
+                    }
+                    .padding()
+                    .background(theme.primary.opacity(0.06))
+                    .cornerRadius(16)
 
                     // User's personal scan history
                     HStack {
@@ -150,7 +194,10 @@ struct DeviceView: View {
 
             TabBar(currentPage: $currentPage)
         }
-        .onAppear { loadHistory() }
+        .onAppear {
+            completedLessons = UserDefaults.standard.string(forKey: Self.storageKey) ?? ""
+            loadHistory()
+        }
     }
 
     private func loadHistory() {

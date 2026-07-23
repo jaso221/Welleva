@@ -49,6 +49,11 @@
 		8A81542430106E44004356BA /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542330106E3D004356BA /* TextRow.swift */; };
 		8A81542630107E8F004356BA /* TranslateSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542530107E83004356BA /* TranslateSetting.swift */; };
 		8A81542830107EF2004356BA /* LanguageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542730107EE3004356BA /* LanguageRow.swift */; };
+		8A81545E30118762004356BA /* SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81545D30118756004356BA /* SettingPage.swift */; };
+		8A8154623011879C004356BA /* SettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81546130118798004356BA /* SettingRow.swift */; };
+		8A815464301187C1004356BA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A815463301187B9004356BA /* SectionHeader.swift */; };
+		8A815466301187D3004356BA /* ToggleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A815465301187CD004356BA /* ToggleRow.swift */; };
+		8A81546830118C12004356BA /* UpdateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81546730118C09004356BA /* UpdateAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +119,11 @@
 		8A81542330106E3D004356BA /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
 		8A81542530107E83004356BA /* TranslateSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateSetting.swift; sourceTree = "<group>"; };
 		8A81542730107EE3004356BA /* LanguageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRow.swift; sourceTree = "<group>"; };
+		8A81545D30118756004356BA /* SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPage.swift; sourceTree = "<group>"; };
+		8A81546130118798004356BA /* SettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRow.swift; sourceTree = "<group>"; };
+		8A815463301187B9004356BA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		8A815465301187CD004356BA /* ToggleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRow.swift; sourceTree = "<group>"; };
+		8A81546730118C09004356BA /* UpdateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -200,8 +210,13 @@
 				8A81542530107E83004356BA /* TranslateSetting.swift */,
 				8A0EDF57300EED6B009FF75C /* Homepage.swift */,
 				8A81542730107EE3004356BA /* LanguageRow.swift */,
+				8A81545D30118756004356BA /* SettingPage.swift */,
+				8A81546730118C09004356BA /* UpdateAccount.swift */,
 				8A8153F2300FA74E004356BA /* SmallCard.swift */,
+				8A81546130118798004356BA /* SettingRow.swift */,
+				8A815463301187B9004356BA /* SectionHeader.swift */,
 				8A8153F4300FA759004356BA /* TabItem.swift */,
+				8A815465301187CD004356BA /* ToggleRow.swift */,
 				1BFB771D300DCB9200E24BB7 /* PrivacyFirst.swift */,
 				8A81542130106D35004356BA /* SizeSetting.swift */,
 				8A81541A30105A7A004356BA /* ColourSetting.swift */,
@@ -361,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A81541B30105A81004356BA /* ColourSetting.swift in Sources */,
+				8A8154623011879C004356BA /* SettingRow.swift in Sources */,
 				1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */,
 				1B6703F8300F388700C7A613 /* ScamResultView.swift in Sources */,
 				1BFB76F3300DC90C00E24BB7 /* AboutView.swift in Sources */,
@@ -377,13 +393,16 @@
 				1BFB7721300DCB9200E24BB7 /* Intro1.swift in Sources */,
 				1BFB7722300DCB9200E24BB7 /* Intro2.swift in Sources */,
 				1B6703F6300F386700C7A613 /* ScreenshotOCR.swift in Sources */,
+				8A81546830118C12004356BA /* UpdateAccount.swift in Sources */,
 				1BFB7723300DCB9200E24BB7 /* EncryptedView.swift in Sources */,
+				8A815464301187C1004356BA /* SectionHeader.swift in Sources */,
 				1BFB7724300DCB9200E24BB7 /* CheckInputView.swift in Sources */,
 				1BFB7725300DCB9200E24BB7 /* SignUp.swift in Sources */,
 				1BFB7726300DCB9200E24BB7 /* PrivacyFirst.swift in Sources */,
 				1BFB7727300DCB9200E24BB7 /* Login.swift in Sources */,
 				8A81542830107EF2004356BA /* LanguageRow.swift in Sources */,
 				1BFB7728300DCB9200E24BB7 /* IntroView.swift in Sources */,
+				8A815466301187D3004356BA /* ToggleRow.swift in Sources */,
 				8A8153F5300FA75E004356BA /* TabItem.swift in Sources */,
 				1BFB770B300DCACB00E24BB7 /* AuthService.swift in Sources */,
 				8A8153F3300FA755004356BA /* SmallCard.swift in Sources */,
@@ -393,6 +412,7 @@
 				1BFB770C300DCACB00E24BB7 /* GeminiService.swift in Sources */,
 				8A81542630107E8F004356BA /* TranslateSetting.swift in Sources */,
 				1BFB76F8300DC90C00E24BB7 /* QuizView.swift in Sources */,
+				8A81545E30118762004356BA /* SettingPage.swift in Sources */,
 				1BFB7718300DCB4B00E24BB7 /* WelcomePage.swift in Sources */,
 				1BFB7710300DCADA00E24BB7 /* UserProfile.swift in Sources */,
 				1BFB7711300DCADA00E24BB7 /* ScanResult.swift in Sources */,

@@ -16,30 +16,8 @@ struct SizeSetting: View {
         
         VStack(spacing: 0) {
             
-            HStack {
-                
-                Button {
-                    currentPage = 8
-                } label: {
-                    Image("IntroBack")
-                }
-                
-                Spacer()
-                
-                Text("Adjust Text Size")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                
-                Spacer()
-                
-                HStack(spacing: 16) {
-                    Image("Translate")
-                    Image("Size")
-                    Image("Colour")
-                }
-            }
-            .padding()
-            .background(theme.barBackground)
+            TopBar(currentPage: $currentPage, title: "Adjust Size")
+                .background(theme.barBackground)
             
             VStack(spacing: 20) {
                 

@@ -10,7 +10,7 @@ import Combine
 
 class AppTheme: ObservableObject {
     
-    @Published var selectedColor: Color = .redPink
+    @Published var selectedColor: Color = .black
     
     var primary: Color {
         selectedColor

@@ -36,7 +36,7 @@
 		1BFB7727300DCB9200E24BB7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB771C300DCB9200E24BB7 /* Login.swift */; };
 		1BFB7728300DCB9200E24BB7 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB771B300DCB9200E24BB7 /* IntroView.swift */; };
 		1BFB77A5300F030F00E24BB7 /* ScamNumberStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB77A4300F030000E24BB7 /* ScamNumberStore.swift */; };
-		1BFB77BB300F17B700E24BB7 /* WellevaCallDirectory.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1BFB77B4300F17B700E24BB7 /* WellevaCallDirectory.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1BFB77BB300F17B700E24BB7 /* VeritasCallDirectory.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1BFB77B4300F17B700E24BB7 /* VeritasCallDirectory.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8A0EDF58300EED72009FF75C /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EDF57300EED6B009FF75C /* Homepage.swift */; };
 		8A8153F3300FA755004356BA /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8153F2300FA74E004356BA /* SmallCard.swift */; };
 		8A8153F5300FA75E004356BA /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8153F4300FA759004356BA /* TabItem.swift */; };
@@ -73,7 +73,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				1BFB77BB300F17B700E24BB7 /* WellevaCallDirectory.appex in Embed Foundation Extensions */,
+				1BFB77BB300F17B700E24BB7 /* VeritasCallDirectory.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,7 +84,7 @@
 		1B6703F5300F385F00C7A613 /* ScreenshotOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotOCR.swift; sourceTree = "<group>"; };
 		1B6703F7300F387B00C7A613 /* ScamResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamResultView.swift; sourceTree = "<group>"; };
 		1B6703F9300F389300C7A613 /* ScamCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamCheckView.swift; sourceTree = "<group>"; };
-		1BFB767C30086A1B00E24BB7 /* Welleva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Welleva.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BFB767C30086A1B00E24BB7 /* Veritas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Veritas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding Welcome.swift"; sourceTree = "<group>"; };
 		1BFB76EB300DC90C00E24BB7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		1BFB76EE300DC90C00E24BB7 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		1BFB771F300DCB9200E24BB7 /* EncryptedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedView.swift; sourceTree = "<group>"; };
 		1BFB7720300DCB9200E24BB7 /* CheckInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInputView.swift; sourceTree = "<group>"; };
 		1BFB77A4300F030000E24BB7 /* ScamNumberStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamNumberStore.swift; sourceTree = "<group>"; };
-		1BFB77B4300F17B700E24BB7 /* WellevaCallDirectory.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WellevaCallDirectory.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BFB77B4300F17B700E24BB7 /* VeritasCallDirectory.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VeritasCallDirectory.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0EDF57300EED6B009FF75C /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		8A8153F2300FA74E004356BA /* SmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
 		8A8153F4300FA759004356BA /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
@@ -127,12 +127,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1BFB77C0300F1EDD00E24BB7 /* Exceptions for "WellevaCallDirectory" folder in "WellevaCallDirectory" target */ = {
+		1BFB77C0300F1EDD00E24BB7 /* Exceptions for "WellevaCallDirectory" folder in "VeritasCallDirectory" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 1BFB77B3300F17B700E24BB7 /* WellevaCallDirectory */;
+			target = 1BFB77B3300F17B700E24BB7 /* VeritasCallDirectory */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -145,7 +145,7 @@
 		1BFB77B5300F17B700E24BB7 /* WellevaCallDirectory */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				1BFB77C0300F1EDD00E24BB7 /* Exceptions for "WellevaCallDirectory" folder in "WellevaCallDirectory" target */,
+				1BFB77C0300F1EDD00E24BB7 /* Exceptions for "WellevaCallDirectory" folder in "VeritasCallDirectory" target */,
 			);
 			path = WellevaCallDirectory;
 			sourceTree = "<group>";
@@ -190,8 +190,8 @@
 		1BFB767D30086A1B00E24BB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1BFB767C30086A1B00E24BB7 /* Welleva.app */,
-				1BFB77B4300F17B700E24BB7 /* WellevaCallDirectory.appex */,
+				1BFB767C30086A1B00E24BB7 /* Veritas.app */,
+				1BFB77B4300F17B700E24BB7 /* VeritasCallDirectory.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -261,9 +261,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1BFB767B30086A1B00E24BB7 /* Welleva */ = {
+		1BFB767B30086A1B00E24BB7 /* Veritas */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1BFB768730086A1C00E24BB7 /* Build configuration list for PBXNativeTarget "Welleva" */;
+			buildConfigurationList = 1BFB768730086A1C00E24BB7 /* Build configuration list for PBXNativeTarget "Veritas" */;
 			buildPhases = (
 				1BFB767830086A1B00E24BB7 /* Sources */,
 				1BFB767930086A1B00E24BB7 /* Frameworks */,
@@ -278,7 +278,7 @@
 			fileSystemSynchronizedGroups = (
 				1BFB767E30086A1B00E24BB7 /* Welleva */,
 			);
-			name = Welleva;
+			name = Veritas;
 			packageProductDependencies = (
 				1BFB76FC300DCAAF00E24BB7 /* FirebaseAI */,
 				1BFB76FE300DCAAF00E24BB7 /* FirebaseAuth */,
@@ -287,12 +287,12 @@
 				1BFB7704300DCAAF00E24BB7 /* FirebaseFunctions */,
 			);
 			productName = Welleva;
-			productReference = 1BFB767C30086A1B00E24BB7 /* Welleva.app */;
+			productReference = 1BFB767C30086A1B00E24BB7 /* Veritas.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1BFB77B3300F17B700E24BB7 /* WellevaCallDirectory */ = {
+		1BFB77B3300F17B700E24BB7 /* VeritasCallDirectory */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1BFB77C1300F1EDD00E24BB7 /* Build configuration list for PBXNativeTarget "WellevaCallDirectory" */;
+			buildConfigurationList = 1BFB77C1300F1EDD00E24BB7 /* Build configuration list for PBXNativeTarget "VeritasCallDirectory" */;
 			buildPhases = (
 				1BFB77B0300F17B700E24BB7 /* Sources */,
 				1BFB77B1300F17B700E24BB7 /* Frameworks */,
@@ -305,11 +305,11 @@
 			fileSystemSynchronizedGroups = (
 				1BFB77B5300F17B700E24BB7 /* WellevaCallDirectory */,
 			);
-			name = WellevaCallDirectory;
+			name = VeritasCallDirectory;
 			packageProductDependencies = (
 			);
 			productName = WellevaCallDirectory;
-			productReference = 1BFB77B4300F17B700E24BB7 /* WellevaCallDirectory.appex */;
+			productReference = 1BFB77B4300F17B700E24BB7 /* VeritasCallDirectory.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -330,7 +330,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1BFB767730086A1B00E24BB7 /* Build configuration list for PBXProject "Welleva" */;
+			buildConfigurationList = 1BFB767730086A1B00E24BB7 /* Build configuration list for PBXProject "Veritas" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -347,8 +347,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1BFB767B30086A1B00E24BB7 /* Welleva */,
-				1BFB77B3300F17B700E24BB7 /* WellevaCallDirectory */,
+				1BFB767B30086A1B00E24BB7 /* Veritas */,
+				1BFB77B3300F17B700E24BB7 /* VeritasCallDirectory */,
 			);
 		};
 /* End PBXProject section */
@@ -431,7 +431,7 @@
 /* Begin PBXTargetDependency section */
 		1BFB77BA300F17B700E24BB7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1BFB77B3300F17B700E24BB7 /* WellevaCallDirectory */;
+			target = 1BFB77B3300F17B700E24BB7 /* VeritasCallDirectory */;
 			targetProxy = 1BFB77B9300F17B700E24BB7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -693,7 +693,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1BFB767730086A1B00E24BB7 /* Build configuration list for PBXProject "Welleva" */ = {
+		1BFB767730086A1B00E24BB7 /* Build configuration list for PBXProject "Veritas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BFB768530086A1C00E24BB7 /* Debug */,
@@ -702,7 +702,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1BFB768730086A1C00E24BB7 /* Build configuration list for PBXNativeTarget "Welleva" */ = {
+		1BFB768730086A1C00E24BB7 /* Build configuration list for PBXNativeTarget "Veritas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BFB768830086A1C00E24BB7 /* Debug */,
@@ -711,7 +711,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1BFB77C1300F1EDD00E24BB7 /* Build configuration list for PBXNativeTarget "WellevaCallDirectory" */ = {
+		1BFB77C1300F1EDD00E24BB7 /* Build configuration list for PBXNativeTarget "VeritasCallDirectory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BFB77BC300F17B800E24BB7 /* Debug */,

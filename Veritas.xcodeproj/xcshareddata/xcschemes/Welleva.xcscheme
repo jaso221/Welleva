@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1BFB767B30086A1B00E24BB7"
-               BuildableName = "Welleva.app"
-               BlueprintName = "Welleva"
-               ReferencedContainer = "container:Welleva.xcodeproj">
+               BuildableName = "Veritas.app"
+               BlueprintName = "Veritas"
+               ReferencedContainer = "container:Veritas.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1BFB767B30086A1B00E24BB7"
-            BuildableName = "Welleva.app"
-            BlueprintName = "Welleva"
-            ReferencedContainer = "container:Welleva.xcodeproj">
+            BuildableName = "Veritas.app"
+            BlueprintName = "Veritas"
+            ReferencedContainer = "container:Veritas.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,9 +63,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1BFB767B30086A1B00E24BB7"
-            BuildableName = "Welleva.app"
-            BlueprintName = "Welleva"
-            ReferencedContainer = "container:Welleva.xcodeproj">
+            BuildableName = "Veritas.app"
+            BlueprintName = "Veritas"
+            ReferencedContainer = "container:Veritas.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

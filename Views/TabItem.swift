@@ -19,12 +19,14 @@ struct TabItem: View {
     var body: some View {
         VStack(spacing: 4) {
             Image(icon)
-                .renderingMode(.template)
-                .foregroundColor(isActive ? theme.primary : .gray)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24)
+                .foregroundColor(.white)
             
             Text(title)
                 .font(.caption)
-                .foregroundColor(isActive ? theme.primary : .gray)
+                .foregroundColor(.white)
         }
     }
 }

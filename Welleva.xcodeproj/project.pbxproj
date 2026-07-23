@@ -53,6 +53,7 @@
 		8A8154623011879C004356BA /* SettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81546130118798004356BA /* SettingRow.swift */; };
 		8A815464301187C1004356BA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A815463301187B9004356BA /* SectionHeader.swift */; };
 		8A815466301187D3004356BA /* ToggleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A815465301187CD004356BA /* ToggleRow.swift */; };
+		8A81546830118C12004356BA /* UpdateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81546730118C09004356BA /* UpdateAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		8A81546130118798004356BA /* SettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRow.swift; sourceTree = "<group>"; };
 		8A815463301187B9004356BA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		8A815465301187CD004356BA /* ToggleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRow.swift; sourceTree = "<group>"; };
+		8A81546730118C09004356BA /* UpdateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -209,6 +211,7 @@
 				8A0EDF57300EED6B009FF75C /* Homepage.swift */,
 				8A81542730107EE3004356BA /* LanguageRow.swift */,
 				8A81545D30118756004356BA /* SettingPage.swift */,
+				8A81546730118C09004356BA /* UpdateAccount.swift */,
 				8A8153F2300FA74E004356BA /* SmallCard.swift */,
 				8A81546130118798004356BA /* SettingRow.swift */,
 				8A815463301187B9004356BA /* SectionHeader.swift */,
@@ -390,6 +393,7 @@
 				1BFB7721300DCB9200E24BB7 /* Intro1.swift in Sources */,
 				1BFB7722300DCB9200E24BB7 /* Intro2.swift in Sources */,
 				1B6703F6300F386700C7A613 /* ScreenshotOCR.swift in Sources */,
+				8A81546830118C12004356BA /* UpdateAccount.swift in Sources */,
 				1BFB7723300DCB9200E24BB7 /* EncryptedView.swift in Sources */,
 				8A815464301187C1004356BA /* SectionHeader.swift in Sources */,
 				1BFB7724300DCB9200E24BB7 /* CheckInputView.swift in Sources */,

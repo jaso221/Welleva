@@ -29,8 +29,19 @@ struct SettingsPage: View {
                     // MARK: - ACCOUNT
                     SectionHeader(title: "MANAGE YOUR ACCOUNT")
                     
-                    SettingRow(title: "Update Account Details")
-                    SettingRow(title: "Set Up Biometrics", hasInfo: true)
+                    Button{
+                        currentPage = 19
+                    }label: {
+                        SettingRow(title: "Update Account Details")
+                            .foregroundStyle(.black)
+                    }
+                    
+                    Button{
+                        currentPage = 20
+                    }label: {
+                        SettingRow(title: "Set Up Biometrics", hasInfo: true)
+                    }
+                   
                     SettingRow(title: "Manage emergency contacts")
                     
                     

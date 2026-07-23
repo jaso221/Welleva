@@ -34,6 +34,7 @@ struct ContentView: View {
                 //            case 16: Report()
                 //            case 17: Device()
                 //            case 18: Discover()
+                // case 19: UpdateAccount()
                 
             default: WelcomePage(currentPage: $currentPage)
             }

@@ -7,8 +7,9 @@
 import SwiftUI
 
 struct SettingsPage: View {
-    
+
     @Binding var currentPage: Int
+    @EnvironmentObject var authService: AuthService
 
     @State private var biometricsEnabled = true
     @State private var floatingWidgetEnabled = true
@@ -28,7 +29,18 @@ struct SettingsPage: View {
                     
                     // MARK: - ACCOUNT
                     SectionHeader(title: "MANAGE YOUR ACCOUNT")
-                    
+
+                    Button {
+                        authService.signOut()
+                    } label: {
+                        Text("Sign Out")
+                            .foregroundStyle(Color.red)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.red.opacity(0.1))
+                            .cornerRadius(12)
+                    }
+
                     Button{
                         currentPage = 19
                     }label: {

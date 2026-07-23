@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct QuizView: View {
+    @Binding var path: NavigationPath
+    
     @State private var selectedAnswer: String?
     @State private var showFeedback = false
 
@@ -32,9 +34,7 @@ struct QuizView: View {
             Spacer()
 
             if showFeedback && selectedAnswer == correctAnswer {
-                NavigationLink {
-                    LessonCompleteView()
-                } label: {
+                NavigationLink(value: LearningRoute.lessonComplete){
                     Text("Continue")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
@@ -128,6 +128,6 @@ struct QuizView: View {
 
 #Preview {
     NavigationStack {
-        QuizView()
+        QuizView(path: .constant(NavigationPath()))
     }
 }

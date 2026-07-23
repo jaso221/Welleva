@@ -36,7 +36,7 @@ struct Login: View {
                 .bold()
                 .foregroundColor(.black)
 
-            Text("SafeGuard")
+            Text("Veritas")
                 .font(.title)
                 .bold()
                 .foregroundStyle(Color.pink)

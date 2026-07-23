@@ -6,10 +6,8 @@
 //
 import SwiftUI
 
-// ── Replace these with your real Wix URLs ──────────────────────────────────
-private let aboutURL       = URL(string: "https://www.welleva.com.au/about")!
-private let privacyURL     = URL(string: "https://www.welleva.com.au/privacy")!
-// ───────────────────────────────────────────────────────────────────────────
+private let aboutURL   = URL(string: "https://site-4v9ywumfm.godaddysites.com/about-welleva")!
+private let privacyURL = URL(string: "https://site-4v9ywumfm.godaddysites.com/privacy-policy")!
 
 struct SettingsPage: View {
 

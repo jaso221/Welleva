@@ -25,7 +25,7 @@ struct WelcomePage: View {
                     .font(.largeTitle)
                     .bold()
                 
-                Text("SafeGuard")
+                Text("Veritas")
                     .font(.title)
                     .foregroundColor(.red)
                     .bold()

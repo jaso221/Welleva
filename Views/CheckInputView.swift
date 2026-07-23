@@ -6,81 +6,186 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct CheckInputView: View {
     @Binding var currentPage: Int
-    
-    @State private var inputText: String = ""
-    @State private var isChecking = false
-    @State private var result: (verdict: String, explanation: String)?
+
+    @State private var pastedInput: String = ""
+    @State private var selectedItem: PhotosPickerItem?
+    @State private var selectedImage: UIImage?
+    @State private var extractedText: String = ""
+    @State private var isProcessing: Bool = false
+
+    @State private var verdict: String = ""
+    @State private var explanation: String = ""
+    @State private var showResult: Bool = false
 
     private let geminiService = GeminiService()
-    private let firestoreService = FirestoreService()
+
+    var verdictColor: Color {
+        switch verdict {
+        case "True": return .green
+        case "False": return .red
+        case "Misleading": return .orange
+        default: return .gray
+        }
+    }
+
+    var verdictIcon: String {
+        switch verdict {
+        case "True": return "checkmark.circle.fill"
+        case "False": return "xmark.circle.fill"
+        case "Misleading": return "exclamationmark.triangle.fill"
+        default: return "questionmark.circle.fill"
+        }
+    }
 
     var body: some View {
-        VStack(spacing: 24) {
-            Text("Paste or type what you want to check")
-                .font(.system(size: 18, weight: .medium))
-                .padding(.top, 40)
+        VStack(spacing: 0) {
 
-            TextEditor(text: $inputText)
-                .frame(height: 150)
-                .padding(12)
-                .background(Color(.systemGray6))
-                .clipShape(RoundedRectangle(cornerRadius: 16))
-                .padding(.horizontal, 24)
-
-            Button(action: runCheck) {
-                Text(isChecking ? "Checking..." : "Check Now")
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 18)
-                    .background(Color(red: 0.85, green: 0.29, blue: 0.35))
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-            }
-            .disabled(inputText.isEmpty || isChecking)
-            .padding(.horizontal, 24)
-
-            if let result = result {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(result.verdict)
-                        .font(.system(size: 22, weight: .bold))
-                    Text(result.explanation)
-                        .font(.system(size: 16))
-                        .foregroundColor(.secondary)
+            // Top bar
+            HStack {
+                Button {
+                    currentPage = 8
+                } label: {
+                    Image("IntroBack")
                 }
-                .padding(20)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Color(.systemGray6))
-                .clipShape(RoundedRectangle(cornerRadius: 16))
-                .padding(.horizontal, 24)
+                Spacer()
+                Text("Check Fake Info")
+                    .font(.headline)
+                    .bold()
+                Spacer()
+                Color.clear.frame(width: 44)
             }
+            .padding()
 
-            Spacer()
+            ScrollView {
+                VStack(spacing: 20) {
+
+                    Text("Paste a message, headline, or claim to check if it's true or false.")
+                        .font(.subheadline)
+                        .foregroundStyle(.gray)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+
+                    // Screenshot preview
+                    if let selectedImage {
+                        Image(uiImage: selectedImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxHeight: 180)
+                            .cornerRadius(16)
+                            .padding(.horizontal)
+                    }
+
+                    // Text input
+                    TextEditor(text: $pastedInput)
+                        .frame(height: 130)
+                        .padding(10)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(14)
+                        .padding(.horizontal)
+
+                    // Action buttons
+                    HStack(spacing: 12) {
+                        PhotosPicker(selection: $selectedItem, matching: .images) {
+                            Label("Screenshot", systemImage: "photo.on.rectangle")
+                                .font(.subheadline)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color(.systemGray5))
+                                .foregroundStyle(.primary)
+                                .cornerRadius(12)
+                        }
+
+                        Button {
+                            runCheck()
+                        } label: {
+                            if isProcessing {
+                                ProgressView().tint(.white)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.blue)
+                                    .cornerRadius(12)
+                            } else {
+                                Text("Check Now")
+                                    .font(.subheadline)
+                                    .bold()
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(pastedInput.isEmpty && extractedText.isEmpty ? Color.gray : Color.blue)
+                                    .foregroundStyle(.white)
+                                    .cornerRadius(12)
+                            }
+                        }
+                        .disabled(isProcessing || (pastedInput.isEmpty && extractedText.isEmpty))
+                    }
+                    .padding(.horizontal)
+
+                    // Result card
+                    if showResult {
+                        VStack(spacing: 16) {
+                            Image(systemName: verdictIcon)
+                                .font(.system(size: 50))
+                                .foregroundStyle(verdictColor)
+
+                            Text(verdict)
+                                .font(.title2)
+                                .bold()
+                                .foregroundStyle(verdictColor)
+
+                            Text(explanation)
+                                .font(.body)
+                                .multilineTextAlignment(.center)
+                                .foregroundStyle(.primary)
+                                .padding(.horizontal)
+                        }
+                        .padding(24)
+                        .frame(maxWidth: .infinity)
+                        .background(verdictColor.opacity(0.08))
+                        .cornerRadius(20)
+                        .padding(.horizontal)
+                    }
+
+                    Spacer(minLength: 40)
+                }
+            }
+        }
+        .onChange(of: selectedItem) { _, newItem in
+            Task {
+                if let data = try? await newItem?.loadTransferable(type: Data.self),
+                   let uiImage = UIImage(data: data) {
+                    selectedImage = uiImage
+                    isProcessing = true
+                    ScreenshotOCR.extractText(from: uiImage) { text in
+                        DispatchQueue.main.async {
+                            extractedText = text
+                            pastedInput = text
+                            isProcessing = false
+                        }
+                    }
+                }
+            }
         }
     }
 
     private func runCheck() {
-        isChecking = true
+        isProcessing = true
+        showResult = false
+        let textToCheck = pastedInput.isEmpty ? extractedText : pastedInput
         Task {
-            let checkResult = await geminiService.checkContent(inputText)
+            let result = await geminiService.checkFakeInfo(textToCheck)
             await MainActor.run {
-                self.result = checkResult
-                self.isChecking = false
+                verdict = result.verdict
+                explanation = result.explanation
+                isProcessing = false
+                showResult = true
             }
-
-            let scan = ScanResult(
-                content: inputText,
-                verdict: checkResult.verdict,
-                explanation: checkResult.explanation,
-                type: "message"
-            )
-            firestoreService.saveScanResult(scan)
         }
     }
 }
 
 #Preview {
-    CheckInputView(currentPage: .constant(10))
+    CheckInputView(currentPage: .constant(15))
 }

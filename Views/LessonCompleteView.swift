@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct LessonCompleteView: View {
+    @Binding var path: NavigationPath
+    
     var body: some View {
         VStack(spacing: 28) {
             Spacer()
@@ -39,8 +41,8 @@ struct LessonCompleteView: View {
 
             Spacer()
 
-            NavigationLink {
-                LearningView(currentPage: .constant(9))
+            Button {
+               path = NavigationPath()
             } label: {
                 Text("Back to Learning Centre")
                     .font(.headline)
@@ -58,6 +60,6 @@ struct LessonCompleteView: View {
 
 #Preview {
     NavigationStack {
-        LessonCompleteView()
+        LessonCompleteView(path: .constant(NavigationPath()))
     }
 }

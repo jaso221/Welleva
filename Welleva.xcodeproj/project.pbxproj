@@ -36,21 +36,24 @@
 		1BFB7727300DCB9200E24BB7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB771C300DCB9200E24BB7 /* Login.swift */; };
 		1BFB7728300DCB9200E24BB7 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB771B300DCB9200E24BB7 /* IntroView.swift */; };
 		1BFB77A5300F030F00E24BB7 /* ScamNumberStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB77A4300F030000E24BB7 /* ScamNumberStore.swift */; };
-		1BFB77BB300F17B700E24BB7 /* WellevaCallDirectory.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1BFB77B4300F17B700E24BB7 /* WellevaCallDirectory.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8A0EDF58300EED72009FF75C /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0EDF57300EED6B009FF75C /* Homepage.swift */; };
 		8A8153F3300FA755004356BA /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8153F2300FA74E004356BA /* SmallCard.swift */; };
 		8A8153F5300FA75E004356BA /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8153F4300FA759004356BA /* TabItem.swift */; };
+		8A81541730105A31004356BA /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541630105A2B004356BA /* TopBar.swift */; };
+		8A81541930105A48004356BA /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541830105A43004356BA /* AppTheme.swift */; };
+		8A81541B30105A81004356BA /* ColourSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541A30105A7A004356BA /* ColourSetting.swift */; };
+		8A81541D30105A97004356BA /* ColourRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541C30105A91004356BA /* ColourRow.swift */; };
+		8A81541F30105AB7004356BA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81541E30105AB4004356BA /* TabBar.swift */; };
+		8A81542230106D41004356BA /* SizeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542130106D35004356BA /* SizeSetting.swift */; };
+		8A81542430106E44004356BA /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542330106E3D004356BA /* TextRow.swift */; };
+		8A81542630107E8F004356BA /* TranslateSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542530107E83004356BA /* TranslateSetting.swift */; };
+		8A81542830107EF2004356BA /* LanguageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542730107EE3004356BA /* LanguageRow.swift */; };
+		8A81545E30118762004356BA /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81545D30118756004356BA /* SettingsPage.swift */; };
+		8A8154623011879C004356BA /* SettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81546130118798004356BA /* SettingRow.swift */; };
+		8A815464301187C1004356BA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A815463301187B9004356BA /* SectionHeader.swift */; };
+		8A815466301187D3004356BA /* ToggleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A815465301187CD004356BA /* ToggleRow.swift */; };
+		8A81546830118C12004356BA /* UpdateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81546730118C09004356BA /* UpdateAccount.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1BFB77B9300F17B700E24BB7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1BFB767430086A1B00E24BB7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1BFB77B3300F17B700E24BB7;
-			remoteInfo = WellevaCallDirectory;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1BFB77A1300EFE1000E24BB7 /* Embed Foundation Extensions */ = {
@@ -59,7 +62,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				1BFB77BB300F17B700E24BB7 /* WellevaCallDirectory.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +72,7 @@
 		1B6703F5300F385F00C7A613 /* ScreenshotOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotOCR.swift; sourceTree = "<group>"; };
 		1B6703F7300F387B00C7A613 /* ScamResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamResultView.swift; sourceTree = "<group>"; };
 		1B6703F9300F389300C7A613 /* ScamCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamCheckView.swift; sourceTree = "<group>"; };
-		1BFB767C30086A1B00E24BB7 /* Welleva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Welleva.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BFB767C30086A1B00E24BB7 /* Veritas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Veritas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding Welcome.swift"; sourceTree = "<group>"; };
 		1BFB76EB300DC90C00E24BB7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		1BFB76EE300DC90C00E24BB7 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
@@ -92,21 +94,24 @@
 		1BFB771F300DCB9200E24BB7 /* EncryptedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedView.swift; sourceTree = "<group>"; };
 		1BFB7720300DCB9200E24BB7 /* CheckInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInputView.swift; sourceTree = "<group>"; };
 		1BFB77A4300F030000E24BB7 /* ScamNumberStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamNumberStore.swift; sourceTree = "<group>"; };
-		1BFB77B4300F17B700E24BB7 /* WellevaCallDirectory.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WellevaCallDirectory.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A0EDF57300EED6B009FF75C /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		8A8153F2300FA74E004356BA /* SmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
 		8A8153F4300FA759004356BA /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		8A81541630105A2B004356BA /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		8A81541830105A43004356BA /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		8A81541A30105A7A004356BA /* ColourSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourSetting.swift; sourceTree = "<group>"; };
+		8A81541C30105A91004356BA /* ColourRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourRow.swift; sourceTree = "<group>"; };
+		8A81541E30105AB4004356BA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		8A81542130106D35004356BA /* SizeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeSetting.swift; sourceTree = "<group>"; };
+		8A81542330106E3D004356BA /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
+		8A81542530107E83004356BA /* TranslateSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateSetting.swift; sourceTree = "<group>"; };
+		8A81542730107EE3004356BA /* LanguageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRow.swift; sourceTree = "<group>"; };
+		8A81545D30118756004356BA /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
+		8A81546130118798004356BA /* SettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRow.swift; sourceTree = "<group>"; };
+		8A815463301187B9004356BA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		8A815465301187CD004356BA /* ToggleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRow.swift; sourceTree = "<group>"; };
+		8A81546730118C09004356BA /* UpdateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1BFB77C0300F1EDD00E24BB7 /* Exceptions for "WellevaCallDirectory" folder in "WellevaCallDirectory" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 1BFB77B3300F17B700E24BB7 /* WellevaCallDirectory */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1BFB767E30086A1B00E24BB7 /* Welleva */ = {
@@ -116,9 +121,6 @@
 		};
 		1BFB77B5300F17B700E24BB7 /* WellevaCallDirectory */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				1BFB77C0300F1EDD00E24BB7 /* Exceptions for "WellevaCallDirectory" folder in "WellevaCallDirectory" target */,
-			);
 			path = WellevaCallDirectory;
 			sourceTree = "<group>";
 		};
@@ -134,13 +136,6 @@
 				1BFB7705300DCAAF00E24BB7 /* FirebaseFunctions in Frameworks */,
 				1BFB7701300DCAAF00E24BB7 /* FirebaseCore in Frameworks */,
 				1BFB76FF300DCAAF00E24BB7 /* FirebaseAuth in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1BFB77B1300F17B700E24BB7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +157,7 @@
 		1BFB767D30086A1B00E24BB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1BFB767C30086A1B00E24BB7 /* Welleva.app */,
-				1BFB77B4300F17B700E24BB7 /* WellevaCallDirectory.appex */,
+				1BFB767C30086A1B00E24BB7 /* Veritas.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,14 +173,28 @@
 				1BFB771A300DCB9200E24BB7 /* Intro2.swift */,
 				1BFB771B300DCB9200E24BB7 /* IntroView.swift */,
 				1BFB771C300DCB9200E24BB7 /* Login.swift */,
+				8A81542530107E83004356BA /* TranslateSetting.swift */,
 				8A0EDF57300EED6B009FF75C /* Homepage.swift */,
+				8A81542730107EE3004356BA /* LanguageRow.swift */,
+				8A81545D30118756004356BA /* SettingsPage.swift */,
+				8A81546730118C09004356BA /* UpdateAccount.swift */,
 				8A8153F2300FA74E004356BA /* SmallCard.swift */,
+				8A81546130118798004356BA /* SettingRow.swift */,
+				8A815463301187B9004356BA /* SectionHeader.swift */,
 				8A8153F4300FA759004356BA /* TabItem.swift */,
+				8A815465301187CD004356BA /* ToggleRow.swift */,
 				1BFB771D300DCB9200E24BB7 /* PrivacyFirst.swift */,
+				8A81542130106D35004356BA /* SizeSetting.swift */,
+				8A81541A30105A7A004356BA /* ColourSetting.swift */,
 				1BFB771E300DCB9200E24BB7 /* SignUp.swift */,
 				1BFB771F300DCB9200E24BB7 /* EncryptedView.swift */,
+				8A81541630105A2B004356BA /* TopBar.swift */,
+				8A81541E30105AB4004356BA /* TabBar.swift */,
 				1BFB7720300DCB9200E24BB7 /* CheckInputView.swift */,
+				8A81542330106E3D004356BA /* TextRow.swift */,
+				8A81541830105A43004356BA /* AppTheme.swift */,
 				1BFB76EB300DC90C00E24BB7 /* AboutView.swift */,
+				8A81541C30105A91004356BA /* ColourRow.swift */,
 				1BFB76EE300DC90C00E24BB7 /* LearningView.swift */,
 				1BFB76EF300DC90C00E24BB7 /* LessonCompleteView.swift */,
 				1BFB76F0300DC90C00E24BB7 /* LessonDetailView.swift */,
@@ -219,9 +227,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1BFB767B30086A1B00E24BB7 /* Welleva */ = {
+		1BFB767B30086A1B00E24BB7 /* Veritas */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1BFB768730086A1C00E24BB7 /* Build configuration list for PBXNativeTarget "Welleva" */;
+			buildConfigurationList = 1BFB768730086A1C00E24BB7 /* Build configuration list for PBXNativeTarget "Veritas" */;
 			buildPhases = (
 				1BFB767830086A1B00E24BB7 /* Sources */,
 				1BFB767930086A1B00E24BB7 /* Frameworks */,
@@ -231,12 +239,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				1BFB77BA300F17B700E24BB7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				1BFB767E30086A1B00E24BB7 /* Welleva */,
 			);
-			name = Welleva;
+			name = Veritas;
 			packageProductDependencies = (
 				1BFB76FC300DCAAF00E24BB7 /* FirebaseAI */,
 				1BFB76FE300DCAAF00E24BB7 /* FirebaseAuth */,
@@ -245,30 +252,8 @@
 				1BFB7704300DCAAF00E24BB7 /* FirebaseFunctions */,
 			);
 			productName = Welleva;
-			productReference = 1BFB767C30086A1B00E24BB7 /* Welleva.app */;
+			productReference = 1BFB767C30086A1B00E24BB7 /* Veritas.app */;
 			productType = "com.apple.product-type.application";
-		};
-		1BFB77B3300F17B700E24BB7 /* WellevaCallDirectory */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1BFB77C1300F1EDD00E24BB7 /* Build configuration list for PBXNativeTarget "WellevaCallDirectory" */;
-			buildPhases = (
-				1BFB77B0300F17B700E24BB7 /* Sources */,
-				1BFB77B1300F17B700E24BB7 /* Frameworks */,
-				1BFB77B2300F17B700E24BB7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				1BFB77B5300F17B700E24BB7 /* WellevaCallDirectory */,
-			);
-			name = WellevaCallDirectory;
-			packageProductDependencies = (
-			);
-			productName = WellevaCallDirectory;
-			productReference = 1BFB77B4300F17B700E24BB7 /* WellevaCallDirectory.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -281,9 +266,6 @@
 				LastUpgradeCheck = 2660;
 				TargetAttributes = {
 					1BFB767B30086A1B00E24BB7 = {
-						CreatedOnToolsVersion = 26.6;
-					};
-					1BFB77B3300F17B700E24BB7 = {
 						CreatedOnToolsVersion = 26.6;
 					};
 				};
@@ -305,21 +287,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1BFB767B30086A1B00E24BB7 /* Welleva */,
-				1BFB77B3300F17B700E24BB7 /* WellevaCallDirectory */,
+				1BFB767B30086A1B00E24BB7 /* Veritas */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1BFB767A30086A1B00E24BB7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1BFB77B2300F17B700E24BB7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -333,52 +307,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A81541B30105A81004356BA /* ColourSetting.swift in Sources */,
+				8A8154623011879C004356BA /* SettingRow.swift in Sources */,
 				1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */,
 				1B6703F8300F388700C7A613 /* ScamResultView.swift in Sources */,
 				1BFB76F3300DC90C00E24BB7 /* AboutView.swift in Sources */,
 				1BFB76F5300DC90C00E24BB7 /* LearningView.swift in Sources */,
+				8A81541930105A48004356BA /* AppTheme.swift in Sources */,
 				8A0EDF58300EED72009FF75C /* Homepage.swift in Sources */,
+				8A81541F30105AB7004356BA /* TabBar.swift in Sources */,
 				1BFB76F6300DC90C00E24BB7 /* LessonCompleteView.swift in Sources */,
+				8A81541D30105A97004356BA /* ColourRow.swift in Sources */,
 				1B6703FA300F38AB00C7A613 /* ScamCheckView.swift in Sources */,
+				8A81541730105A31004356BA /* TopBar.swift in Sources */,
 				1BFB76F7300DC90C00E24BB7 /* LessonDetailView.swift in Sources */,
 				1BFB770A300DCACB00E24BB7 /* FirestoreService.swift in Sources */,
 				1BFB7721300DCB9200E24BB7 /* Intro1.swift in Sources */,
 				1BFB7722300DCB9200E24BB7 /* Intro2.swift in Sources */,
 				1B6703F6300F386700C7A613 /* ScreenshotOCR.swift in Sources */,
+				8A81546830118C12004356BA /* UpdateAccount.swift in Sources */,
 				1BFB7723300DCB9200E24BB7 /* EncryptedView.swift in Sources */,
+				8A815464301187C1004356BA /* SectionHeader.swift in Sources */,
 				1BFB7724300DCB9200E24BB7 /* CheckInputView.swift in Sources */,
 				1BFB7725300DCB9200E24BB7 /* SignUp.swift in Sources */,
 				1BFB7726300DCB9200E24BB7 /* PrivacyFirst.swift in Sources */,
 				1BFB7727300DCB9200E24BB7 /* Login.swift in Sources */,
+				8A81542830107EF2004356BA /* LanguageRow.swift in Sources */,
 				1BFB7728300DCB9200E24BB7 /* IntroView.swift in Sources */,
+				8A815466301187D3004356BA /* ToggleRow.swift in Sources */,
 				8A8153F5300FA75E004356BA /* TabItem.swift in Sources */,
 				1BFB770B300DCACB00E24BB7 /* AuthService.swift in Sources */,
 				8A8153F3300FA755004356BA /* SmallCard.swift in Sources */,
 				1BFB77A5300F030F00E24BB7 /* ScamNumberStore.swift in Sources */,
+				8A81542430106E44004356BA /* TextRow.swift in Sources */,
+				8A81542230106D41004356BA /* SizeSetting.swift in Sources */,
 				1BFB770C300DCACB00E24BB7 /* GeminiService.swift in Sources */,
+				8A81542630107E8F004356BA /* TranslateSetting.swift in Sources */,
 				1BFB76F8300DC90C00E24BB7 /* QuizView.swift in Sources */,
+				8A81545E30118762004356BA /* SettingsPage.swift in Sources */,
 				1BFB7718300DCB4B00E24BB7 /* WelcomePage.swift in Sources */,
 				1BFB7710300DCADA00E24BB7 /* UserProfile.swift in Sources */,
 				1BFB7711300DCADA00E24BB7 /* ScanResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1BFB77B0300F17B700E24BB7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1BFB77BA300F17B700E24BB7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1BFB77B3300F17B700E24BB7 /* WellevaCallDirectory */;
-			targetProxy = 1BFB77B9300F17B700E24BB7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1BFB768530086A1C00E24BB7 /* Debug */ = {
@@ -512,6 +485,7 @@
 				DEVELOPMENT_TEAM = 6H3336F8SK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Veritas;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -548,6 +522,7 @@
 				DEVELOPMENT_TEAM = 6H3336F8SK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Veritas;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -572,68 +547,6 @@
 			};
 			name = Release;
 		};
-		1BFB77BC300F17B800E24BB7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_ENTITLEMENTS = WellevaCallDirectory/WellevaCallDirectory.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H3336F8SK;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WellevaCallDirectory/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WellevaCallDirectory;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.OJASSAT.Welleva.WellevaCallDirectory;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1BFB77BD300F17B800E24BB7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_ENTITLEMENTS = WellevaCallDirectory/WellevaCallDirectory.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H3336F8SK;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WellevaCallDirectory/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WellevaCallDirectory;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.OJASSAT.Welleva.WellevaCallDirectory;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -646,20 +559,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1BFB768730086A1C00E24BB7 /* Build configuration list for PBXNativeTarget "Welleva" */ = {
+		1BFB768730086A1C00E24BB7 /* Build configuration list for PBXNativeTarget "Veritas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BFB768830086A1C00E24BB7 /* Debug */,
 				1BFB768930086A1C00E24BB7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1BFB77C1300F1EDD00E24BB7 /* Build configuration list for PBXNativeTarget "WellevaCallDirectory" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1BFB77BC300F17B800E24BB7 /* Debug */,
-				1BFB77BD300F17B800E24BB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

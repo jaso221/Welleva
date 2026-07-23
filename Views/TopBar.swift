@@ -26,7 +26,7 @@ struct TopBar: View {
             
             Spacer()
             
-            Text(title)
+            Text(theme.t(title))
                 .foregroundColor(.white)
                 .font(.headline)
             

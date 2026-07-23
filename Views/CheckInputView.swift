@@ -56,7 +56,7 @@ struct CheckInputView: View {
                         .frame(width: 44, height: 44)
                 }
                 Spacer()
-                Text("Check Fake Info")
+                Text(theme.t("Check Fake Info"))
                     .font(.headline)
                     .foregroundColor(.white)
                 Spacer()

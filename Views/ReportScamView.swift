@@ -22,7 +22,7 @@ struct ReportScamView: View {
                         .frame(width: 44, height: 44)
                 }
                 Spacer()
-                Text("Report a Scam")
+                Text(theme.t("Report a Scam"))
                     .font(.headline)
                     .foregroundColor(.white)
                 Spacer()

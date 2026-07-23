@@ -15,6 +15,7 @@
 		1B67D8CE3011F44200BC0003 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B67D8CD3011F44200BC0003 /* DeviceView.swift */; };
 		1B67D8D03011F97B00BC0003 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B67D8CF3011F97B00BC0003 /* Lesson.swift */; };
 		1B67D8D23011F99F00BC0003 /* LessonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B67D8D13011F99F00BC0003 /* LessonData.swift */; };
+		1B67D8D43012010800BC0003 /* AppTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B67D8D33012010800BC0003 /* AppTranslations.swift */; };
 		1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */; };
 		1BFB76F3300DC90C00E24BB7 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76EB300DC90C00E24BB7 /* AboutView.swift */; };
 		1BFB76F5300DC90C00E24BB7 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76EE300DC90C00E24BB7 /* LearningView.swift */; };
@@ -82,6 +83,7 @@
 		1B67D8CD3011F44200BC0003 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		1B67D8CF3011F97B00BC0003 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		1B67D8D13011F99F00BC0003 /* LessonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonData.swift; sourceTree = "<group>"; };
+		1B67D8D33012010800BC0003 /* AppTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTranslations.swift; sourceTree = "<group>"; };
 		1BFB767C30086A1B00E24BB7 /* Veritas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Veritas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding Welcome.swift"; sourceTree = "<group>"; };
 		1BFB76EB300DC90C00E24BB7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				1B67D8C93011F41B00BC0003 /* ReportScamView.swift */,
 				1B67D8CB3011F42F00BC0003 /* DiscoverView.swift */,
 				1B67D8CD3011F44200BC0003 /* DeviceView.swift */,
+				1B67D8D33012010800BC0003 /* AppTranslations.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				8A81542630107E8F004356BA /* TranslateSetting.swift in Sources */,
 				1BFB76F8300DC90C00E24BB7 /* QuizView.swift in Sources */,
 				8A81545E30118762004356BA /* SettingsPage.swift in Sources */,
+				1B67D8D43012010800BC0003 /* AppTranslations.swift in Sources */,
 				1BFB7718300DCB4B00E24BB7 /* WelcomePage.swift in Sources */,
 				1BFB7710300DCADA00E24BB7 /* UserProfile.swift in Sources */,
 				1BFB7711300DCADA00E24BB7 /* ScanResult.swift in Sources */,

@@ -17,16 +17,18 @@ struct ReportScamView: View {
                     currentPage = 8
                 } label: {
                     Image(systemName: "chevron.left")
+                        .font(.body)
                         .foregroundColor(.white)
+                        .frame(width: 44, height: 44)
                 }
                 Spacer()
                 Text("Report a Scam")
                     .font(.headline)
                     .foregroundColor(.white)
                 Spacer()
-                Color.clear.frame(width: 44)
+                Color.clear.frame(width: 44, height: 44)
             }
-            .padding()
+            .padding(.horizontal)
             .background(theme.barBackground)
 
             ScrollView {

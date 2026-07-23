@@ -11,7 +11,6 @@ struct ContentView: View {
     @EnvironmentObject var authService: AuthService
 
     var body: some View {
-<<<<<<< HEAD
 
         ZStack {
             switch currentPage {
@@ -28,33 +27,14 @@ struct ContentView: View {
 
             // MARK: - Main app
             case 8:  HomePage(currentPage: $currentPage, userName: $userName)
-            case 9:  PlaceholderPage(title: "Settings", currentPage: $currentPage)
+            case 9:  SettingsPage(currentPage: $currentPage)
             case 10: ScamCheckView(currentPage: $currentPage)
-=======
-        
-        ZStack{
-            
-            switch currentPage{
-            case 0: WelcomePage(currentPage: $currentPage)
-            case 1: IntroView(currentPage: $currentPage)
-            case 2: Intro1(currentPage: $currentPage)
-            case 3: Intro2(currentPage: $currentPage)
-            case 4: EncryptedView(currentPage: $currentPage)
-            case 5: PrivacyFirst(currentPage: $currentPage)
-            case 6: SignUp(currentPage: $currentPage, userName: $userName)
-            case 7: Login(currentPage: $currentPage, userName: $userName)
-            case 8: HomePage(currentPage: $currentPage, userName: $userName)
-            case 9: SettingsPage(currentPage: $currentPage)
-                
-            case 10: CheckInputView(currentPage: $currentPage)
->>>>>>> f869d26cc66705b29adb18233fe72e434cff8e16
             case 11: LearningView(currentPage: $currentPage)
 
             // MARK: - Settings
             case 12: TranslateSetting(currentPage: $currentPage)
             case 13: SizeSetting(currentPage: $currentPage)
             case 14: ColourSetting(currentPage: $currentPage, userName: $userName)
-<<<<<<< HEAD
 
             // MARK: - Secondary features
             case 15: CheckInputView(currentPage: $currentPage)
@@ -62,14 +42,6 @@ struct ContentView: View {
             case 17: PlaceholderPage(title: "Device", currentPage: $currentPage)
             case 18: PlaceholderPage(title: "Discover", currentPage: $currentPage)
 
-=======
-                //            case 15: News()
-                //            case 16: Report()
-                //            case 17: Device()
-                //            case 18: Discover()
-                // case 19: UpdateAccount()
-                
->>>>>>> f869d26cc66705b29adb18233fe72e434cff8e16
             default: WelcomePage(currentPage: $currentPage)
             }
         }

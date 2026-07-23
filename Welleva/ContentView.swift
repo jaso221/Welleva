@@ -45,7 +45,7 @@ struct ContentView: View {
             case 17: DeviceView(currentPage: $currentPage)
             case 18: DiscoverView(currentPage: $currentPage)
             case 19: UpdateView(currentPage: $currentPage, username: $userName, email: $email, password: $email)
-            case 20: PlaceholderPage(title: "Biometrics", currentPage: $currentPage)
+            case 20: Biometrics(currentPage: $currentPage)
 
             default: WelcomePage(currentPage: $currentPage)
             }

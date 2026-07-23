@@ -57,7 +57,9 @@ struct SettingsPage: View {
                             .foregroundStyle(.black)
                     }
 
-                    Button {} label: {
+                    Button {
+                        //
+                    } label: {
                         SettingRow(title: "Manage emergency contacts")
                             .foregroundStyle(.black)
                     }
@@ -108,17 +110,23 @@ struct SettingsPage: View {
                     // MARK: - ABOUT
                     SectionHeader(title: "ABOUT")
 
-                    Button { showFAQs = true } label: {
+                    Button {
+                        showFAQs = true
+                    } label: {
                         SettingRow(title: "FAQs")
                             .foregroundStyle(.black)
                     }
 
-                    Button { showFeedback = true } label: {
+                    Button {
+                        showFeedback = true
+                    } label: {
                         SettingRow(title: "Leave Feedback")
                             .foregroundStyle(.black)
                     }
 
-                    Button { showTerms = true } label: {
+                    Button {
+                        showTerms = true
+                    } label: {
                         SettingRow(title: "Terms of Use")
                             .foregroundStyle(.black)
                     }

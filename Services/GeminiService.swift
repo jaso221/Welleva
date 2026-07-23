@@ -55,7 +55,7 @@ class GeminiService {
         """
         let result = await callGemini(prompt: prompt)
         if let result { return result }
-        return ("Unverifiable", "Our AI checker is temporarily unavailable — please treat unconfirmed claims with caution.")
+        return keywordFakeInfoCheck(text)
     }
 
     // MARK: - Gemini API (returns nil on any failure)
@@ -126,7 +126,42 @@ class GeminiService {
         return (verdict, explanation)
     }
 
-    // MARK: - Local keyword fallback (runs when API is unavailable)
+    // MARK: - Local keyword fallbacks (run when API is unavailable)
+
+    private func keywordFakeInfoCheck(_ text: String) -> (verdict: String, explanation: String) {
+        let lower = text.lowercased()
+
+        let knownFalse: [(String, String, String)] = [
+            ("5g", "covid",     "This is a well-known false claim — 5G technology has no connection to COVID-19, which is caused by a virus."),
+            ("vaccine", "microchip", "This is false — vaccines do not contain microchips of any kind."),
+            ("vaccine", "tracking",  "This is false — there is no tracking technology in any approved vaccine."),
+            ("earth", "flat",        "This is false — the Earth is scientifically proven to be a sphere."),
+            ("bleach", "cure",       "This is false and dangerous — drinking bleach or any disinfectant does not cure illness."),
+            ("lemon", "cancer",      "This is misleading — while a healthy diet supports wellbeing, no single food cures cancer."),
+            ("covid", "hoax",        "This is false — COVID-19 is a real disease confirmed by health authorities worldwide."),
+            ("bill gates", "vaccine","This is a false conspiracy theory — Bill Gates does not control vaccines or global health policy."),
+            ("autism", "vaccine",    "This is false — extensive research has found no link between vaccines and autism."),
+        ]
+
+        for (kw1, kw2, explanation) in knownFalse {
+            if lower.contains(kw1) && lower.contains(kw2) {
+                return ("False", explanation)
+            }
+        }
+
+        let misleadingPhrases = [
+            "they don't want you to know", "mainstream media won't tell you",
+            "doctors are hiding", "suppressed cure", "government is covering up",
+            "secret study", "scientists admit", "what they're not telling you"
+        ]
+        if misleadingPhrases.contains(where: { lower.contains($0) }) {
+            return ("Misleading", "This claim uses language designed to make you distrust official sources — always check reputable references before believing or sharing it.")
+        }
+
+        return ("Unverifiable", "We couldn't automatically verify this claim — please check a trusted source such as ABC News, Reuters, or health.gov.au before sharing.")
+    }
+
+
 
     private func keywordScamCheck(_ text: String) -> (verdict: String, explanation: String) {
         let lower = text.lowercased()

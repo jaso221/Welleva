@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAuth
 
 struct ContentView: View {
 
@@ -49,6 +50,10 @@ struct ContentView: View {
         }
         .onAppear {
             if authService.isSignedIn {
+                // Load persisted name: Firebase profile first, UserDefaults as fallback
+                userName = Auth.auth().currentUser?.displayName
+                    ?? UserDefaults.standard.string(forKey: "userName")
+                    ?? ""
                 currentPage = 8
             }
         }

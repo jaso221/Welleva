@@ -74,7 +74,7 @@ struct HomePage: View {
                             .clipShape(Circle())
                         
                         VStack(alignment: .leading) {
-                            Text(theme.t("Good morning,"))
+                            Text(theme.t("Hello,"))
                                 .font(.system(size: theme.fontSize))
                                 .foregroundColor(.black)
                             

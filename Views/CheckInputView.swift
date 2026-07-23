@@ -47,24 +47,8 @@ struct CheckInputView: View {
         VStack(spacing: 0) {
 
             // Themed top bar — matches homepage/other screens
-            HStack {
-                Button {
-                    currentPage = 8
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.body)
-                        .foregroundColor(.white)
-                        .frame(width: 44, height: 44)
-                }
-                Spacer()
-                Text(theme.t("Check Fake Info"))
-                    .font(.headline)
-                    .foregroundColor(.white)
-                Spacer()
-                Color.clear.frame(width: 44, height: 44)
-            }
-            .padding(.horizontal)
-            .background(theme.barBackground)
+            TopBar(currentPage: $currentPage, title: "Check Fake Info")
+                .background(theme.barBackground)
 
             ScrollView {
                 VStack(spacing: 20) {

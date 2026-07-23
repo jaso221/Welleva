@@ -12,24 +12,8 @@ struct ReportScamView: View {
         VStack(spacing: 0) {
 
             // Themed header with back button
-            HStack {
-                Button {
-                    currentPage = 8
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.body)
-                        .foregroundColor(.white)
-                        .frame(width: 44, height: 44)
-                }
-                Spacer()
-                Text(theme.t("Report a Scam"))
-                    .font(.headline)
-                    .foregroundColor(.white)
-                Spacer()
-                Color.clear.frame(width: 44, height: 44)
-            }
-            .padding(.horizontal)
-            .background(theme.barBackground)
+            TopBar(currentPage: $currentPage, title: "Report Scam")
+                .background(theme.barBackground)
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {

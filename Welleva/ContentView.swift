@@ -5,6 +5,8 @@ struct ContentView: View {
 
     @State private var currentPage: Int = 0
     @State private var userName: String = ""
+    @State private var email: String = ""
+    @State private var password: String = ""
 
     // Use the single AppTheme provided by WellevaApp instead of creating a duplicate.
     // This ensures TabBar / TabItem receive the same theme instance via the environment.
@@ -42,8 +44,8 @@ struct ContentView: View {
             case 16: ReportScamView(currentPage: $currentPage)
             case 17: DeviceView(currentPage: $currentPage)
             case 18: DiscoverView(currentPage: $currentPage)
-            case 19: PlaceholderPage(title: "Update Account", currentPage: $currentPage)
-            case 20: PlaceholderPage(title: "Biometrics", currentPage: $currentPage)
+            case 19: UpdateView(currentPage: $currentPage, username: $userName, email: $email, password: $email)
+            case 20: Biometrics(currentPage: $currentPage)
 
             default: WelcomePage(currentPage: $currentPage)
             }

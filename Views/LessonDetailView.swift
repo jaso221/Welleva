@@ -1,102 +1,101 @@
+//
+//  LessonDetailView.swift
+//  Welleva
+//
 import SwiftUI
 
 struct LessonDetailView: View {
+    let lesson: Lesson
     @Binding var path: NavigationPath
-    
+
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: 28) {
 
-                Text("Spotting Fake Text Messages")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                // Icon + title header
+                VStack(spacing: 16) {
+                    Image(systemName: lesson.icon)
+                        .font(.system(size: 48))
+                        .foregroundStyle(lesson.iconColor)
+                        .frame(width: 100, height: 100)
+                        .background(lesson.iconBackground)
+                        .clipShape(Circle())
 
-                Text("Read the example below and look for warning signs.")
+                    Text(lesson.title)
+                        .font(.largeTitle.bold())
+                        .multilineTextAlignment(.center)
+
+                    Text(lesson.subtitle)
+                        .font(.title3)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .frame(maxWidth: .infinity)
+
+                // Introduction
+                Text(lesson.introduction)
+                    .font(.body)
                     .foregroundStyle(.secondary)
 
-                VStack(alignment: .leading, spacing: 14) {
-                    Text("Australia Post")
-                        .font(.headline)
+                // Warning Signs
+                lessonSection(
+                    title: "Warning Signs",
+                    icon: "exclamationmark.triangle.fill",
+                    items: lesson.warningSigns
+                )
 
-                    Text("Your parcel could not be delivered. Please pay $2.95 using this link:")
-                    
-                    Text("auspost-delivery247.com")
-                        .foregroundStyle(.blue)
-                        .underline()
+                // Safety Tips
+                lessonSection(
+                    title: "How to Stay Safe",
+                    icon: "checkmark.shield.fill",
+                    items: lesson.safetyTips
+                )
 
-                    Text("Tap the link now to avoid your parcel being returned.")
-                }
-                .padding()
-                .background(Color(.secondarySystemGroupedBackground))
-                .clipShape(RoundedRectangle(cornerRadius: 18))
-
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("Warning Signs")
-                        .font(.title2)
-                        .fontWeight(.bold)
-
-                    warningRow(
-                        icon: "link.badge.plus",
-                        title: "Suspicious website",
-                        text: "The website address does not match the official Australia Post website."
-                    )
-
-                    warningRow(
-                        icon: "clock.fill",
-                        title: "Urgent language",
-                        text: "The message pressures you to act immediately."
-                    )
-
-                    warningRow(
-                        icon: "dollarsign.circle.fill",
-                        title: "Unexpected payment",
-                        text: "It asks for a small payment you were not expecting."
-                    )
-                }
-
-                NavigationLink (value: LearningRoute.quiz){
+                // Quiz button
+                Button {
+                    path.append(LearningDestination.quiz(lesson))
+                } label: {
                     Text("Start Quick Quiz")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
                         .foregroundStyle(.white)
-                        .background(.purple)
+                        .background(lesson.iconColor)
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                 }
             }
-            .padding()
+            .padding(22)
         }
-        .navigationTitle("Lesson")
+        .background(Color(.systemGroupedBackground))
+        .navigationTitle(lesson.title)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .navigationBar)
     }
 
-    private func warningRow(
-        icon: String,
-        title: String,
-        text: String
-    ) -> some View {
-        HStack(alignment: .top, spacing: 14) {
-            Image(systemName: icon)
-                .font(.title2)
-                .foregroundStyle(.red)
-                .frame(width: 32)
+    private func lessonSection(title: String, icon: String, items: [String]) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Label(title, systemImage: icon)
+                .font(.title3.bold())
 
-            VStack(alignment: .leading, spacing: 5) {
-                Text(title)
-                    .font(.headline)
-
-                Text(text)
-                    .foregroundStyle(.secondary)
+            ForEach(items, id: \.self) { item in
+                HStack(alignment: .top, spacing: 12) {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundStyle(lesson.iconColor)
+                        .padding(.top, 2)
+                    Text(item)
+                        .font(.body)
+                }
             }
         }
-        .padding()
-        .background(Color.red.opacity(0.08))
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(.secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 22))
     }
 }
 
 #Preview {
     NavigationStack {
-        LessonDetailView(path: .constant(NavigationPath()))
+        LessonDetailView(lesson: allLessons[0], path: .constant(NavigationPath()))
     }
 }

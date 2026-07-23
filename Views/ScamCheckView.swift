@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import UIKit
 
 struct ScamCheckView: View {
     @Binding var currentPage: Int
@@ -68,10 +69,20 @@ struct ScamCheckView: View {
             // Paste text / link input
             if showPasteInput {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Paste your message or link")
-                        .font(.subheadline)
-                        .foregroundStyle(.gray)
-                        .padding(.horizontal)
+                    HStack {
+                        Text("Paste your message or link")
+                            .font(.subheadline)
+                            .foregroundStyle(.gray)
+                        Spacer()
+                        Button {
+                            pastedInput = UIPasteboard.general.string ?? pastedInput
+                        } label: {
+                            Label("Paste", systemImage: "doc.on.clipboard")
+                                .font(.subheadline.bold())
+                                .foregroundStyle(Color.redPink)
+                        }
+                    }
+                    .padding(.horizontal)
 
                     TextEditor(text: $pastedInput)
                         .frame(height: 140)
@@ -195,6 +206,14 @@ struct ScamCheckView: View {
         Task {
             let service = GeminiService()
             let result = await service.checkContent(extractedText)
+            // Persist to Firestore so DeviceView scan history shows it
+            let scan = ScanResult(
+                content: String(extractedText.prefix(200)),
+                verdict: result.verdict,
+                explanation: result.explanation,
+                type: "message"
+            )
+            FirestoreService().saveScanResult(scan)
             await MainActor.run {
                 verdict = result.verdict
                 explanation = result.explanation

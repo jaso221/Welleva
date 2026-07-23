@@ -30,7 +30,7 @@ struct HomePage: View {
                 
                 Spacer()
                 
-                Text("Home")
+                Text(theme.t("Home"))
                     .font(.headline)
                     .foregroundColor(.white)
                 
@@ -74,7 +74,7 @@ struct HomePage: View {
                             .clipShape(Circle())
                         
                         VStack(alignment: .leading) {
-                            Text("Good morning,")
+                            Text(theme.t("Hello,"))
                                 .font(.system(size: theme.fontSize))
                                 .foregroundColor(.black)
                             
@@ -91,10 +91,10 @@ struct HomePage: View {
                             .clipShape(Circle())
                         
                         VStack(alignment: .leading) {
-                            Text("Your Device is Protected")
+                            Text(theme.t("Your Device is Protected"))
                                 .bold()
-                            
-                            Text("Everything looks safe today")
+
+                            Text(theme.t("Everything looks safe today"))
                                 .foregroundColor(theme.primary)
                         }
                         
@@ -111,12 +111,12 @@ struct HomePage: View {
                         VStack(spacing: 12) {
                             Image("ScanAMessage")
                             
-                            Text("Scan a Message")
+                            Text(theme.t("Scan a Message"))
                                 .font(.title2)
                                 .bold()
                                 .foregroundColor(.white)
-                            
-                            Text("Check for scams or fraud")
+
+                            Text(theme.t("Check for scams or fraud"))
                                 .foregroundColor(.white.opacity(0.9))
                         }
                         .frame(maxWidth: .infinity)
@@ -131,7 +131,7 @@ struct HomePage: View {
                             currentPage = 15
                         } label: {
                             SmallCard(
-                                title: "Check Fake Info",
+                                title: theme.t("Check Fake Info"),
                                 image: "CheckNews"
                             )
                         }
@@ -140,7 +140,7 @@ struct HomePage: View {
                             currentPage = 16
                         } label: {
                             SmallCard(
-                                title: "Report Scam",
+                                title: theme.t("Report Scam"),
                                 image: "ReportScam"
                             )
                         }
@@ -151,11 +151,11 @@ struct HomePage: View {
                         
                         HStack {
                             Image("Light")
-                            Text("Tip of the day")
+                            Text(theme.t("Tip of the day"))
                                 .bold()
                         }
                         
-                        Text("Never share your bank passwords or verification codes with anyone over the phone, even if they claim to be from the bank.")
+                        Text(theme.t("Never share your bank passwords or verification codes with anyone over the phone, even if they claim to be from the bank."))
                             .foregroundColor(.gray)
                     }
                     .padding()

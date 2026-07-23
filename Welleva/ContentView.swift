@@ -1,9 +1,12 @@
 import SwiftUI
+import FirebaseAuth
 
 struct ContentView: View {
 
     @State private var currentPage: Int = 0
     @State private var userName: String = ""
+    @State private var email: String = ""
+    @State private var password: String = ""
 
     // Use the single AppTheme provided by WellevaApp instead of creating a duplicate.
     // This ensures TabBar / TabItem receive the same theme instance via the environment.
@@ -38,17 +41,21 @@ struct ContentView: View {
 
             // MARK: - Secondary features
             case 15: CheckInputView(currentPage: $currentPage)
-            case 16: PlaceholderPage(title: "Report Scam", currentPage: $currentPage)
-            case 17: PlaceholderPage(title: "Device", currentPage: $currentPage)
-            case 18: PlaceholderPage(title: "Discover", currentPage: $currentPage)
-            case 19: PlaceholderPage(title: "Update Account", currentPage: $currentPage)
-            case 20: PlaceholderPage(title: "Biometrics", currentPage: $currentPage)
+            case 16: ReportScamView(currentPage: $currentPage)
+            case 17: DeviceView(currentPage: $currentPage)
+            case 18: DiscoverView(currentPage: $currentPage)
+            case 19: UpdateView(currentPage: $currentPage, username: $userName, email: $email, password: $email)
+            case 20: Biometrics(currentPage: $currentPage)
 
             default: WelcomePage(currentPage: $currentPage)
             }
         }
         .onAppear {
             if authService.isSignedIn {
+                // Load persisted name: Firebase profile first, UserDefaults as fallback
+                userName = Auth.auth().currentUser?.displayName
+                    ?? UserDefaults.standard.string(forKey: "userName")
+                    ?? ""
                 currentPage = 8
             }
         }

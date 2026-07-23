@@ -1,31 +1,33 @@
+//
+//  QuizView.swift
+//  Welleva
+//
 import SwiftUI
 
 struct QuizView: View {
+    let lesson: Lesson
     @Binding var path: NavigationPath
-    
-    @State private var selectedAnswer: String?
+
+    @State private var selectedAnswer: String?  // "A" or "B"
     @State private var showFeedback = false
 
-    private let correctAnswer = "Message A"
+    var isCorrect: Bool { selectedAnswer == lesson.quizCorrectAnswer }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
-            Text("Quick Quiz")
-                .font(.largeTitle)
-                .fontWeight(.bold)
 
-            Text("Which message is most likely to be a scam?")
+            Label(lesson.title, systemImage: lesson.icon)
+                .font(.subheadline)
+                .foregroundStyle(lesson.iconColor)
+
+            Text("Quick Quiz")
+                .font(.largeTitle.bold())
+
+            Text(lesson.quizQuestion)
                 .font(.title3)
 
-            answerCard(
-                title: "Message A",
-                text: "Your bank account has been locked. Click this link immediately to verify your details."
-            )
-
-            answerCard(
-                title: "Message B",
-                text: "Hi Margaret, your doctor appointment is confirmed for 10:00 am tomorrow."
-            )
+            answerCard(label: "A", text: lesson.quizOptionA)
+            answerCard(label: "B", text: lesson.quizOptionB)
 
             if showFeedback {
                 feedbackCard
@@ -33,14 +35,16 @@ struct QuizView: View {
 
             Spacer()
 
-            if showFeedback && selectedAnswer == correctAnswer {
-                NavigationLink(value: LearningRoute.lessonComplete){
+            if showFeedback && isCorrect {
+                Button {
+                    path.append(LearningDestination.complete(lesson))
+                } label: {
                     Text("Continue")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
                         .foregroundStyle(.white)
-                        .background(.purple)
+                        .background(lesson.iconColor)
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                 }
             } else {
@@ -53,33 +57,31 @@ struct QuizView: View {
                         .frame(maxWidth: .infinity)
                         .padding()
                         .foregroundStyle(.white)
-                        .background(selectedAnswer == nil ? Color.gray : Color.purple)
+                        .background(selectedAnswer == nil ? Color.gray : lesson.iconColor)
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                 }
                 .disabled(selectedAnswer == nil)
             }
         }
         .padding()
-        .navigationTitle("Quiz")
-        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .navigationBar)
     }
 
-    private func answerCard(title: String, text: String) -> some View {
+    private func answerCard(label: String, text: String) -> some View {
         Button {
-            selectedAnswer = title
+            selectedAnswer = label
             showFeedback = false
         } label: {
             HStack(alignment: .top, spacing: 14) {
-                Image(systemName: selectedAnswer == title
+                Image(systemName: selectedAnswer == label
                       ? "largecircle.fill.circle"
                       : "circle")
-                    .foregroundStyle(.purple)
+                    .foregroundStyle(lesson.iconColor)
                     .font(.title2)
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(title)
+                    Text("Option \(label)")
                         .font(.headline)
-
                     Text(text)
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.leading)
@@ -89,8 +91,8 @@ struct QuizView: View {
             }
             .padding()
             .background(
-                selectedAnswer == title
-                ? Color.purple.opacity(0.12)
+                selectedAnswer == label
+                ? lesson.iconColor.opacity(0.12)
                 : Color(.secondarySystemGroupedBackground)
             )
             .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -99,25 +101,16 @@ struct QuizView: View {
     }
 
     private var feedbackCard: some View {
-        let isCorrect = selectedAnswer == correctAnswer
-
-        return HStack(alignment: .top, spacing: 12) {
-            Image(systemName: isCorrect
-                  ? "checkmark.circle.fill"
-                  : "xmark.circle.fill")
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill")
                 .foregroundStyle(isCorrect ? .green : .red)
                 .font(.title2)
 
             VStack(alignment: .leading, spacing: 5) {
                 Text(isCorrect ? "Correct!" : "Not quite")
                     .font(.headline)
-
-                Text(
-                    isCorrect
-                    ? "Message A uses urgency and asks you to click an unfamiliar link."
-                    : "Look for urgent language and suspicious links. Try selecting Message A."
-                )
-                .foregroundStyle(.secondary)
+                Text(isCorrect ? lesson.quizCorrectFeedback : lesson.quizIncorrectFeedback)
+                    .foregroundStyle(.secondary)
             }
         }
         .padding()
@@ -128,6 +121,6 @@ struct QuizView: View {
 
 #Preview {
     NavigationStack {
-        QuizView(path: .constant(NavigationPath()))
+        QuizView(lesson: allLessons[0], path: .constant(NavigationPath()))
     }
 }

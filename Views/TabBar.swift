@@ -17,22 +17,22 @@ struct TabBar: View {
             
             Spacer()
             
-            TabItem(icon: "Home", title: "Home", isActive: currentPage == 8)
+            TabItem(icon: "Home", title: theme.t("Home"), isActive: currentPage == 8)
                 .onTapGesture { currentPage = 8 }
-            
+
             Spacer()
-            
-            TabItem(icon: "Device", title: "Device", isActive: currentPage == 17)
+
+            TabItem(icon: "Device", title: theme.t("Device"), isActive: currentPage == 17)
                 .onTapGesture { currentPage = 17 }
-            
+
             Spacer()
-            
-            TabItem(icon: "Learning", title: "Learning", isActive: currentPage == 11)
+
+            TabItem(icon: "Learning", title: theme.t("Learning"), isActive: currentPage == 11)
                 .onTapGesture { currentPage = 11 }
-            
+
             Spacer()
-            
-            TabItem(icon: "Discover", title: "Discover", isActive: currentPage == 18)
+
+            TabItem(icon: "Discover", title: theme.t("Discover"), isActive: currentPage == 18)
                 .onTapGesture { currentPage = 18 }
             
             Spacer()

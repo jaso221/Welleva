@@ -49,7 +49,7 @@
 		8A81542430106E44004356BA /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542330106E3D004356BA /* TextRow.swift */; };
 		8A81542630107E8F004356BA /* TranslateSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542530107E83004356BA /* TranslateSetting.swift */; };
 		8A81542830107EF2004356BA /* LanguageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81542730107EE3004356BA /* LanguageRow.swift */; };
-		8A81545E30118762004356BA /* SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81545D30118756004356BA /* SettingPage.swift */; };
+		8A81545E30118762004356BA /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81545D30118756004356BA /* SettingsPage.swift */; };
 		8A8154623011879C004356BA /* SettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81546130118798004356BA /* SettingRow.swift */; };
 		8A815464301187C1004356BA /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A815463301187B9004356BA /* SectionHeader.swift */; };
 		8A815466301187D3004356BA /* ToggleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A815465301187CD004356BA /* ToggleRow.swift */; };
@@ -119,7 +119,7 @@
 		8A81542330106E3D004356BA /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
 		8A81542530107E83004356BA /* TranslateSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateSetting.swift; sourceTree = "<group>"; };
 		8A81542730107EE3004356BA /* LanguageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRow.swift; sourceTree = "<group>"; };
-		8A81545D30118756004356BA /* SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPage.swift; sourceTree = "<group>"; };
+		8A81545D30118756004356BA /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		8A81546130118798004356BA /* SettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRow.swift; sourceTree = "<group>"; };
 		8A815463301187B9004356BA /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		8A815465301187CD004356BA /* ToggleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRow.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 				8A81542530107E83004356BA /* TranslateSetting.swift */,
 				8A0EDF57300EED6B009FF75C /* Homepage.swift */,
 				8A81542730107EE3004356BA /* LanguageRow.swift */,
-				8A81545D30118756004356BA /* SettingPage.swift */,
+				8A81545D30118756004356BA /* SettingsPage.swift */,
 				8A81546730118C09004356BA /* UpdateAccount.swift */,
 				8A8153F2300FA74E004356BA /* SmallCard.swift */,
 				8A81546130118798004356BA /* SettingRow.swift */,
@@ -412,7 +412,7 @@
 				1BFB770C300DCACB00E24BB7 /* GeminiService.swift in Sources */,
 				8A81542630107E8F004356BA /* TranslateSetting.swift in Sources */,
 				1BFB76F8300DC90C00E24BB7 /* QuizView.swift in Sources */,
-				8A81545E30118762004356BA /* SettingPage.swift in Sources */,
+				8A81545E30118762004356BA /* SettingsPage.swift in Sources */,
 				1BFB7718300DCB4B00E24BB7 /* WelcomePage.swift in Sources */,
 				1BFB7710300DCADA00E24BB7 /* UserProfile.swift in Sources */,
 				1BFB7711300DCADA00E24BB7 /* ScanResult.swift in Sources */,

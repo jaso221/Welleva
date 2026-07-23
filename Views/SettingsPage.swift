@@ -40,20 +40,13 @@ struct SettingsPage: View {
                         currentPage = 20
                     }label: {
                         SettingRow(title: "Set Up Biometrics", hasInfo: true)
-<<<<<<< HEAD
-                    }
-                   
-                    SettingRow(title: "Manage emergency contacts")
-=======
                             .foregroundStyle(.black)
                     }
                     Button{
-                        
                     }label: {
                         SettingRow(title: "Manage emergency contacts")
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(.black)
                     }
->>>>>>> firebase
                     
                     
                     // MARK: - PREFERENCES

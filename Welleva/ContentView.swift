@@ -38,9 +38,9 @@ struct ContentView: View {
 
             // MARK: - Secondary features
             case 15: CheckInputView(currentPage: $currentPage)
-            case 16: PlaceholderPage(title: "Report Scam", currentPage: $currentPage)
-            case 17: PlaceholderPage(title: "Device", currentPage: $currentPage)
-            case 18: PlaceholderPage(title: "Discover", currentPage: $currentPage)
+            case 16: ReportScamView(currentPage: $currentPage)
+            case 17: DeviceView(currentPage: $currentPage)
+            case 18: DiscoverView(currentPage: $currentPage)
             case 19: PlaceholderPage(title: "Update Account", currentPage: $currentPage)
             case 20: PlaceholderPage(title: "Biometrics", currentPage: $currentPage)
 

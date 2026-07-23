@@ -10,6 +10,7 @@ import PhotosUI
 
 struct CheckInputView: View {
     @Binding var currentPage: Int
+    @EnvironmentObject var theme: AppTheme
 
     @State private var pastedInput: String = ""
     @State private var selectedItem: PhotosPickerItem?
@@ -44,21 +45,23 @@ struct CheckInputView: View {
     var body: some View {
         VStack(spacing: 0) {
 
-            // Top bar
+            // Themed top bar — matches homepage/other screens
             HStack {
                 Button {
                     currentPage = 8
                 } label: {
-                    Image("IntroBack")
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.white)
                 }
                 Spacer()
                 Text("Check Fake Info")
                     .font(.headline)
-                    .bold()
+                    .foregroundColor(.white)
                 Spacer()
                 Color.clear.frame(width: 44)
             }
             .padding()
+            .background(theme.barBackground)
 
             ScrollView {
                 VStack(spacing: 20) {
@@ -114,7 +117,7 @@ struct CheckInputView: View {
                                     .bold()
                                     .padding()
                                     .frame(maxWidth: .infinity)
-                                    .background(pastedInput.isEmpty && extractedText.isEmpty ? Color.gray : Color.blue)
+                                    .background(pastedInput.isEmpty && extractedText.isEmpty ? Color.gray : theme.primary)
                                     .foregroundStyle(.white)
                                     .cornerRadius(12)
                             }
@@ -122,6 +125,12 @@ struct CheckInputView: View {
                         .disabled(isProcessing || (pastedInput.isEmpty && extractedText.isEmpty))
                     }
                     .padding(.horizontal)
+
+                    // Processing indicator
+                    if isProcessing && !showResult {
+                        ProgressView()
+                            .padding(.top, 8)
+                    }
 
                     // Result card
                     if showResult {
@@ -151,6 +160,8 @@ struct CheckInputView: View {
                     Spacer(minLength: 40)
                 }
             }
+
+            TabBar(currentPage: $currentPage)
         }
         .onChange(of: selectedItem) { _, newItem in
             Task {
@@ -188,4 +199,5 @@ struct CheckInputView: View {
 
 #Preview {
     CheckInputView(currentPage: .constant(15))
+        .environmentObject(AppTheme())
 }

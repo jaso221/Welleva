@@ -10,6 +10,11 @@
 		1B6703F6300F386700C7A613 /* ScreenshotOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6703F5300F385F00C7A613 /* ScreenshotOCR.swift */; };
 		1B6703F8300F388700C7A613 /* ScamResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6703F7300F387B00C7A613 /* ScamResultView.swift */; };
 		1B6703FA300F38AB00C7A613 /* ScamCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6703F9300F389300C7A613 /* ScamCheckView.swift */; };
+		1B67D8CA3011F41B00BC0003 /* ReportScamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B67D8C93011F41B00BC0003 /* ReportScamView.swift */; };
+		1B67D8CC3011F42F00BC0003 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B67D8CB3011F42F00BC0003 /* DiscoverView.swift */; };
+		1B67D8CE3011F44200BC0003 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B67D8CD3011F44200BC0003 /* DeviceView.swift */; };
+		1B67D8D03011F97B00BC0003 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B67D8CF3011F97B00BC0003 /* Lesson.swift */; };
+		1B67D8D23011F99F00BC0003 /* LessonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B67D8D13011F99F00BC0003 /* LessonData.swift */; };
 		1BFB769530088AFD00E24BB7 /* Onboarding Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */; };
 		1BFB76F3300DC90C00E24BB7 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76EB300DC90C00E24BB7 /* AboutView.swift */; };
 		1BFB76F5300DC90C00E24BB7 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB76EE300DC90C00E24BB7 /* LearningView.swift */; };
@@ -72,6 +77,11 @@
 		1B6703F5300F385F00C7A613 /* ScreenshotOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotOCR.swift; sourceTree = "<group>"; };
 		1B6703F7300F387B00C7A613 /* ScamResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamResultView.swift; sourceTree = "<group>"; };
 		1B6703F9300F389300C7A613 /* ScamCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScamCheckView.swift; sourceTree = "<group>"; };
+		1B67D8C93011F41B00BC0003 /* ReportScamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportScamView.swift; sourceTree = "<group>"; };
+		1B67D8CB3011F42F00BC0003 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		1B67D8CD3011F44200BC0003 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		1B67D8CF3011F97B00BC0003 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		1B67D8D13011F99F00BC0003 /* LessonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonData.swift; sourceTree = "<group>"; };
 		1BFB767C30086A1B00E24BB7 /* Veritas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Veritas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BFB769430088AFD00E24BB7 /* Onboarding Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding Welcome.swift"; sourceTree = "<group>"; };
 		1BFB76EB300DC90C00E24BB7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -199,6 +209,9 @@
 				1BFB76EF300DC90C00E24BB7 /* LessonCompleteView.swift */,
 				1BFB76F0300DC90C00E24BB7 /* LessonDetailView.swift */,
 				1BFB76F1300DC90C00E24BB7 /* QuizView.swift */,
+				1B67D8C93011F41B00BC0003 /* ReportScamView.swift */,
+				1B67D8CB3011F42F00BC0003 /* DiscoverView.swift */,
+				1B67D8CD3011F44200BC0003 /* DeviceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +233,8 @@
 			children = (
 				1BFB770D300DCADA00E24BB7 /* UserProfile.swift */,
 				1BFB770E300DCADA00E24BB7 /* ScanResult.swift */,
+				1B67D8CF3011F97B00BC0003 /* Lesson.swift */,
+				1B67D8D13011F99F00BC0003 /* LessonData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -331,16 +346,21 @@
 				1BFB7724300DCB9200E24BB7 /* CheckInputView.swift in Sources */,
 				1BFB7725300DCB9200E24BB7 /* SignUp.swift in Sources */,
 				1BFB7726300DCB9200E24BB7 /* PrivacyFirst.swift in Sources */,
+				1B67D8CE3011F44200BC0003 /* DeviceView.swift in Sources */,
+				1B67D8D23011F99F00BC0003 /* LessonData.swift in Sources */,
 				1BFB7727300DCB9200E24BB7 /* Login.swift in Sources */,
 				8A81542830107EF2004356BA /* LanguageRow.swift in Sources */,
 				1BFB7728300DCB9200E24BB7 /* IntroView.swift in Sources */,
 				8A815466301187D3004356BA /* ToggleRow.swift in Sources */,
 				8A8153F5300FA75E004356BA /* TabItem.swift in Sources */,
+				1B67D8D03011F97B00BC0003 /* Lesson.swift in Sources */,
 				1BFB770B300DCACB00E24BB7 /* AuthService.swift in Sources */,
 				8A8153F3300FA755004356BA /* SmallCard.swift in Sources */,
 				1BFB77A5300F030F00E24BB7 /* ScamNumberStore.swift in Sources */,
+				1B67D8CC3011F42F00BC0003 /* DiscoverView.swift in Sources */,
 				8A81542430106E44004356BA /* TextRow.swift in Sources */,
 				8A81542230106D41004356BA /* SizeSetting.swift in Sources */,
+				1B67D8CA3011F41B00BC0003 /* ReportScamView.swift in Sources */,
 				1BFB770C300DCACB00E24BB7 /* GeminiService.swift in Sources */,
 				8A81542630107E8F004356BA /* TranslateSetting.swift in Sources */,
 				1BFB76F8300DC90C00E24BB7 /* QuizView.swift in Sources */,
@@ -497,7 +517,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.OJASSAT.Welleva;
+				PRODUCT_BUNDLE_IDENTIFIER = JOSEA.Welleva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -534,7 +554,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.OJASSAT.Welleva;
+				PRODUCT_BUNDLE_IDENTIFIER = JOSEA.Welleva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;

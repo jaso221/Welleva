@@ -1,8 +1,17 @@
+//
+//  LessonCompleteView.swift
+//  Welleva
+//
 import SwiftUI
 
 struct LessonCompleteView: View {
+    let lesson: Lesson
     @Binding var path: NavigationPath
-    
+
+    private var lessonIndex: Int {
+        (allLessons.firstIndex(of: lesson) ?? 0) + 1
+    }
+
     var body: some View {
         VStack(spacing: 28) {
             Spacer()
@@ -13,10 +22,9 @@ struct LessonCompleteView: View {
 
             VStack(spacing: 10) {
                 Text("Lesson Complete!")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                    .font(.largeTitle.bold())
 
-                Text("You learned how to recognise common signs of fake text messages.")
+                Text("You learned how to recognise common signs of \(lesson.title.lowercased()).")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -24,42 +32,42 @@ struct LessonCompleteView: View {
 
             VStack(spacing: 12) {
                 Text("+25 XP")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundStyle(.purple)
+                    .font(.title.bold())
+                    .foregroundStyle(lesson.iconColor)
 
-                Text("Progress: 1 of 5 lessons complete")
+                Text("Progress: \(lessonIndex) of \(allLessons.count) lessons complete")
                     .foregroundStyle(.secondary)
 
-                ProgressView(value: 0.2)
-                    .tint(.purple)
+                ProgressView(value: Double(lessonIndex) / Double(allLessons.count))
+                    .tint(lesson.iconColor)
             }
             .padding()
             .frame(maxWidth: .infinity)
-            .background(Color.purple.opacity(0.10))
+            .background(lesson.iconColor.opacity(0.10))
             .clipShape(RoundedRectangle(cornerRadius: 18))
 
             Spacer()
 
             Button {
-               path = NavigationPath()
+                path = NavigationPath()
             } label: {
                 Text("Back to Learning Centre")
                     .font(.headline)
                     .frame(maxWidth: .infinity)
                     .padding()
                     .foregroundStyle(.white)
-                    .background(.purple)
+                    .background(lesson.iconColor)
                     .clipShape(RoundedRectangle(cornerRadius: 16))
             }
         }
         .padding()
         .navigationBarBackButtonHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
 #Preview {
     NavigationStack {
-        LessonCompleteView(path: .constant(NavigationPath()))
+        LessonCompleteView(lesson: allLessons[0], path: .constant(NavigationPath()))
     }
 }

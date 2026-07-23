@@ -1,122 +1,90 @@
+//
+//  LearningView.swift
+//  Welleva
+//
 import SwiftUI
 
-enum LearningRoute: Hashable{
-    case lessonDetail
-    case quiz
-    case lessonComplete
+enum LearningDestination: Hashable {
+    case detail(Lesson)
+    case quiz(Lesson)
+    case complete(Lesson)
 }
 
 struct LearningView: View {
     @Binding var currentPage: Int
+    @EnvironmentObject var theme: AppTheme
     @State private var path = NavigationPath()
-    
-    
-    private let lessons = [
-        Lesson(
-            title: "Fake Text Messages",
-            subtitle: "Learn how to spot suspicious SMS messages",
-            icon: "message.fill",
-            colour: .purple
-        ),
-        Lesson(
-            title: "Phishing Emails",
-            subtitle: "Recognise fake emails and dangerous links",
-            icon: "envelope.fill",
-            colour: .blue
-        ),
-        Lesson(
-            title: "Phone Call Scams",
-            subtitle: "Learn the warning signs of scam calls",
-            icon: "phone.fill",
-            colour: .green
-        ),
-        Lesson(
-            title: "Fake Websites",
-            subtitle: "Check whether a website looks trustworthy",
-            icon: "globe",
-            colour: .orange
-        ),
-        Lesson(
-            title: "Banking Scams",
-            subtitle: "Protect your money and personal details",
-            icon: "creditcard.fill",
-            colour: .pink
-        )
-    ]
 
     var body: some View {
-        NavigationStack(path: $path) {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
-                    
-                    Button{
-                        currentPage = 8
-                    }label: {
-                        Image("IntroBack")
-                            .font(.title2)
-                            .foregroundStyle(Color.black)
-                    }
+        VStack(spacing: 0) {
+            TopBar(currentPage: $currentPage, title: "Learning")
 
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Learning Centre")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+            NavigationStack(path: $path) {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 24) {
 
-                        Text("Build your confidence and learn how to stay safe online.")
-                            .font(.body)
-                            .foregroundStyle(.secondary)
-                    }
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Learning Centre")
+                                .font(.title2.bold())
+                            Text("Build your confidence and learn how to stay safe online.")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(.horizontal)
 
-                    continueLearningCard
+                        continueLearningCard
 
-                    VStack(alignment: .leading, spacing: 14) {
-                        Text("All Lessons")
-                            .font(.title2)
-                            .fontWeight(.bold)
+                        VStack(alignment: .leading, spacing: 14) {
+                            Text("All Lessons")
+                                .font(.title3.bold())
+                                .padding(.horizontal)
 
-                        ForEach(lessons) { lesson in
-                            NavigationLink(value: LearningRoute.lessonDetail) {
-                                
-                                lessonCard(lesson)
+                            ForEach(allLessons) { lesson in
+                                Button {
+                                    path.append(LearningDestination.detail(lesson))
+                                } label: {
+                                    lessonCard(lesson)
+                                }
+                                .buttonStyle(.plain)
+                                .padding(.horizontal)
                             }
-                            .buttonStyle(.plain)
                         }
                     }
+                    .padding(.vertical)
                 }
-                .padding()
-            }
-            .background(Color(.systemGroupedBackground))
-            .navigationDestination(for: LearningRoute.self){ route in
-                switch route {
-                case.lessonDetail:
-                    LessonDetailView(path: $path)
-                case.quiz:
-                    QuizView(path: $path)
-                case.lessonComplete:
-                    LessonCompleteView(path: $path)
+                .background(Color(.systemGroupedBackground))
+                .toolbar(.hidden, for: .navigationBar)
+                .navigationDestination(for: LearningDestination.self) { destination in
+                    switch destination {
+                    case .detail(let lesson):
+                        LessonDetailView(lesson: lesson, path: $path)
+                    case .quiz(let lesson):
+                        QuizView(lesson: lesson, path: $path)
+                    case .complete(let lesson):
+                        LessonCompleteView(lesson: lesson, path: $path)
+                    }
                 }
-                
             }
+
+            TabBar(currentPage: $currentPage)
         }
     }
 
     private var continueLearningCard: some View {
-        NavigationLink (value: LearningRoute.lessonDetail){
+        Button {
+            path.append(LearningDestination.detail(allLessons[0]))
+        } label: {
             VStack(alignment: .leading, spacing: 16) {
                 HStack {
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Continue Learning")
                             .font(.headline)
                             .foregroundStyle(.white.opacity(0.9))
-
                         Text("Spotting Fake Text Messages")
-                            .font(.title3)
-                            .fontWeight(.bold)
+                            .font(.title3.bold())
                             .foregroundStyle(.white)
                     }
-
                     Spacer()
-
                     Image(systemName: "arrow.right.circle.fill")
                         .font(.system(size: 34))
                         .foregroundStyle(.white)
@@ -146,25 +114,22 @@ struct LearningView: View {
             .clipShape(RoundedRectangle(cornerRadius: 22))
         }
         .buttonStyle(.plain)
+        .padding(.horizontal)
     }
 
     private func lessonCard(_ lesson: Lesson) -> some View {
         HStack(spacing: 16) {
-            ZStack {
-                Circle()
-                    .fill(lesson.colour.opacity(0.15))
-                    .frame(width: 54, height: 54)
-
-                Image(systemName: lesson.icon)
-                    .font(.title2)
-                    .foregroundStyle(lesson.colour)
-            }
+            Image(systemName: lesson.icon)
+                .font(.title2)
+                .foregroundStyle(lesson.iconColor)
+                .frame(width: 54, height: 54)
+                .background(lesson.iconBackground)
+                .clipShape(Circle())
 
             VStack(alignment: .leading, spacing: 5) {
                 Text(lesson.title)
                     .font(.headline)
                     .foregroundStyle(.primary)
-
                 Text(lesson.subtitle)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -182,14 +147,7 @@ struct LearningView: View {
     }
 }
 
-struct Lesson: Identifiable {
-    let id = UUID()
-    let title: String
-    let subtitle: String
-    let icon: String
-    let colour: Color
-}
-
 #Preview {
     LearningView(currentPage: .constant(11))
+        .environmentObject(AppTheme())
 }

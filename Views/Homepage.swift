@@ -131,7 +131,7 @@ struct HomePage: View {
                             currentPage = 15
                         } label: {
                             SmallCard(
-                                title: "Check News",
+                                title: "Check Fake Info",
                                 image: "CheckNews"
                             )
                         }

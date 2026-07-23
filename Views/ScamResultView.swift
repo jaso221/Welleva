@@ -33,7 +33,18 @@ struct ScamResultView: View {
     
     var body: some View {
         VStack(spacing: 24) {
-            
+
+            HStack {
+                Button {
+                    dismiss()
+                } label: {
+                    Image("IntroBack")
+                }
+                Spacer()
+            }
+            .padding(.horizontal)
+            .padding(.top)
+
             Spacer()
             
             Image(systemName: verdictIcon)

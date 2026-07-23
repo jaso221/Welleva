@@ -330,7 +330,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1BFB767730086A1B00E24BB7 /* Build configuration list for PBXProject "Veritas" */;
+			buildConfigurationList = 1BFB767730086A1B00E24BB7 /* Build configuration list for PBXProject "Welleva" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -568,6 +568,7 @@
 				DEVELOPMENT_TEAM = 6H3336F8SK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Veritas;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -604,6 +605,7 @@
 				DEVELOPMENT_TEAM = 6H3336F8SK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Veritas;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -693,7 +695,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1BFB767730086A1B00E24BB7 /* Build configuration list for PBXProject "Veritas" */ = {
+		1BFB767730086A1B00E24BB7 /* Build configuration list for PBXProject "Welleva" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BFB768530086A1C00E24BB7 /* Debug */,

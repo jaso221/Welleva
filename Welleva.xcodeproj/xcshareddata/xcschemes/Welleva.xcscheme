@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "2660"
-   wasCreatedForAppExtension = "YES"
-   version = "2.0">
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
@@ -16,24 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1BFB77B3300F17B700E24BB7"
-               BuildableName = "VeritasCallDirectory.appex"
-               BlueprintName = "VeritasCallDirectory"
-               ReferencedContainer = "container:Veritas.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "1BFB767B30086A1B00E24BB7"
                BuildableName = "Veritas.app"
                BlueprintName = "Veritas"
-               ReferencedContainer = "container:Veritas.xcodeproj">
+               ReferencedContainer = "container:Welleva.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,16 +32,14 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
-      askForAppToLaunch = "Yes"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
-      launchAutomaticallySubstyle = "2"
       queueDebuggingEnableBacktraceRecording = "Yes">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
@@ -65,7 +48,7 @@
             BlueprintIdentifier = "1BFB767B30086A1B00E24BB7"
             BuildableName = "Veritas.app"
             BlueprintName = "Veritas"
-            ReferencedContainer = "container:Veritas.xcodeproj">
+            ReferencedContainer = "container:Welleva.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -74,9 +57,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES"
-      askForAppToLaunch = "Yes"
-      launchAutomaticallySubstyle = "2">
+      debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
@@ -84,7 +65,7 @@
             BlueprintIdentifier = "1BFB767B30086A1B00E24BB7"
             BuildableName = "Veritas.app"
             BlueprintName = "Veritas"
-            ReferencedContainer = "container:Veritas.xcodeproj">
+            ReferencedContainer = "container:Welleva.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -40,9 +40,14 @@ struct SettingsPage: View {
                         currentPage = 20
                     }label: {
                         SettingRow(title: "Set Up Biometrics", hasInfo: true)
+                            .foregroundStyle(.black)
                     }
-                   
-                    SettingRow(title: "Manage emergency contacts")
+                    Button{
+                        
+                    }label: {
+                        SettingRow(title: "Manage emergency contacts")
+                            .foregroundStyle(Color.black)
+                    }
                     
                     
                     // MARK: - PREFERENCES

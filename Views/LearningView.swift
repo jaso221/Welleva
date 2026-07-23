@@ -3,6 +3,7 @@ import SwiftUI
 struct LearningView: View {
     @Binding var currentPage: Int
     
+    
     private let lessons = [
         Lesson(
             title: "Fake Text Messages",
@@ -40,6 +41,14 @@ struct LearningView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
+                    
+                    Button{
+                        currentPage = 8
+                    }label: {
+                        Image("IntroBack")
+                            .font(.title2)
+                            .foregroundStyle(Color.black)
+                    }
 
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Learning Centre")

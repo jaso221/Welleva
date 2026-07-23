@@ -1,7 +1,14 @@
 import SwiftUI
 
+enum LearningRoute: Hashable{
+    case lessonDetail
+    case quiz
+    case lessonComplete
+}
+
 struct LearningView: View {
     @Binding var currentPage: Int
+    @State private var path = NavigationPath()
     
     
     private let lessons = [
@@ -38,7 +45,7 @@ struct LearningView: View {
     ]
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     
@@ -68,9 +75,8 @@ struct LearningView: View {
                             .fontWeight(.bold)
 
                         ForEach(lessons) { lesson in
-                            NavigationLink {
-                                LessonDetailView()
-                            } label: {
+                            NavigationLink(value: LearningRoute.lessonDetail) {
+                                
                                 lessonCard(lesson)
                             }
                             .buttonStyle(.plain)
@@ -80,13 +86,22 @@ struct LearningView: View {
                 .padding()
             }
             .background(Color(.systemGroupedBackground))
+            .navigationDestination(for: LearningRoute.self){ route in
+                switch route {
+                case.lessonDetail:
+                    LessonDetailView(path: $path)
+                case.quiz:
+                    QuizView(path: $path)
+                case.lessonComplete:
+                    LessonCompleteView(path: $path)
+                }
+                
+            }
         }
     }
 
     private var continueLearningCard: some View {
-        NavigationLink {
-            LessonDetailView()
-        } label: {
+        NavigationLink (value: LearningRoute.lessonDetail){
             VStack(alignment: .leading, spacing: 16) {
                 HStack {
                     VStack(alignment: .leading, spacing: 6) {

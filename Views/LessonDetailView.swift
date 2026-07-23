@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct LessonDetailView: View {
+    @Binding var path: NavigationPath
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
@@ -52,9 +54,7 @@ struct LessonDetailView: View {
                     )
                 }
 
-                NavigationLink {
-                    QuizView()
-                } label: {
+                NavigationLink (value: LearningRoute.quiz){
                     Text("Start Quick Quiz")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
@@ -97,6 +97,6 @@ struct LessonDetailView: View {
 
 #Preview {
     NavigationStack {
-        LessonDetailView()
+        LessonDetailView(path: .constant(NavigationPath()))
     }
 }

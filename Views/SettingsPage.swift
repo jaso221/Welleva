@@ -1,3 +1,4 @@
+
 //
 //  SettingPage.swift
 //  Welleva
@@ -13,6 +14,7 @@ struct SettingsPage: View {
 
     @Binding var currentPage: Int
     @EnvironmentObject var authService: AuthService
+    @Binding var user: UserProfile
 
     @State private var biometricsEnabled = true
     @State private var floatingWidgetEnabled = true
@@ -38,6 +40,10 @@ struct SettingsPage: View {
 
                     Button {
                         authService.signOut()
+                        
+                            user = UserProfile(
+                                id: "", name: "", email: "", password: "", contactNumber: "", contactName: ""
+                            )
                     } label: {
                         Text("Sign Out")
                             .foregroundStyle(Color.red)
@@ -58,7 +64,7 @@ struct SettingsPage: View {
                     }
 
                     Button {
-                        //
+                        currentPage = 21
                     } label: {
                         SettingRow(title: "Manage emergency contacts")
                             .foregroundStyle(.black)

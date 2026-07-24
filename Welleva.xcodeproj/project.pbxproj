@@ -60,6 +60,7 @@
 		8A815466301187D3004356BA /* ToggleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A815465301187CD004356BA /* ToggleRow.swift */; };
 		8A81546830118C12004356BA /* UpdateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A81546730118C09004356BA /* UpdateAccount.swift */; };
 		8AE6AB3330124CEB00FF9E06 /* Biometrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6AB3230124CE900FF9E06 /* Biometrics.swift */; };
+		8AE6AB463012EEE800FF9E06 /* ManageContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6AB453012EEE100FF9E06 /* ManageContact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -125,6 +126,7 @@
 		8A815465301187CD004356BA /* ToggleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleRow.swift; sourceTree = "<group>"; };
 		8A81546730118C09004356BA /* UpdateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccount.swift; sourceTree = "<group>"; };
 		8AE6AB3230124CE900FF9E06 /* Biometrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biometrics.swift; sourceTree = "<group>"; };
+		8AE6AB453012EEE100FF9E06 /* ManageContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageContact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -192,6 +194,7 @@
 				8A81542730107EE3004356BA /* LanguageRow.swift */,
 				8A81545D30118756004356BA /* SettingsPage.swift */,
 				8A81546730118C09004356BA /* UpdateAccount.swift */,
+				8AE6AB453012EEE100FF9E06 /* ManageContact.swift */,
 				8AE6AB3230124CE900FF9E06 /* Biometrics.swift */,
 				8A8153F2300FA74E004356BA /* SmallCard.swift */,
 				8A81546130118798004356BA /* SettingRow.swift */,
@@ -376,6 +379,7 @@
 				1BFB7718300DCB4B00E24BB7 /* WelcomePage.swift in Sources */,
 				1BFB7710300DCADA00E24BB7 /* UserProfile.swift in Sources */,
 				1BFB7711300DCADA00E24BB7 /* ScanResult.swift in Sources */,
+				8AE6AB463012EEE800FF9E06 /* ManageContact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

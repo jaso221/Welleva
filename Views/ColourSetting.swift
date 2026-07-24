@@ -1,4 +1,5 @@
 
+
 //
 //  Colour.swift
 //  Welleva
@@ -11,7 +12,7 @@ import Combine
 struct ColourSetting: View {
     
     @Binding var currentPage: Int
-    @Binding var userName: String
+    @Binding var user: UserProfile
     
     @EnvironmentObject var theme: AppTheme
     

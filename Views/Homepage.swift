@@ -1,3 +1,4 @@
+
 //
 //
 //  Homepage.swift
@@ -11,7 +12,7 @@ import Combine
 struct HomePage: View {
     
     @Binding var currentPage: Int
-    @Binding var userName: String
+    @Binding var user: UserProfile
     
     @EnvironmentObject var theme: AppTheme
     
@@ -25,35 +26,43 @@ struct HomePage: View {
                 Button {
                     currentPage = 9
                 } label: {
-                    Image("Setting")
+                    Image(systemName: "gearshape")
+                        .font(.title2)
+                        .foregroundColor(.white)
                 }
-                
+
                 Spacer()
-                
+
                 Text(theme.t("Home"))
                     .font(.headline)
                     .foregroundColor(.white)
-                
+
                 Spacer()
-                
+
                 HStack(spacing: 16) {
-                    
+
                     Button {
                         currentPage = 12
                     } label: {
-                        Image("Translate")
+                        Image(systemName: "globe")
+                            .font(.title2)
+                            .foregroundColor(.white)
                     }
-                    
+
                     Button {
                         currentPage = 13
                     } label: {
-                        Image("Size")
+                        Image(systemName: "textformat.size")
+                            .font(.title2)
+                            .foregroundColor(.white)
                     }
-                    
+
                     Button {
                         currentPage = 14
                     } label: {
-                        Image("Colour")
+                        Image(systemName: "paintpalette")
+                            .font(.title2)
+                            .foregroundColor(.white)
                     }
                 }
             }
@@ -65,44 +74,52 @@ struct HomePage: View {
             ScrollView {
                 
                 VStack(alignment: .leading, spacing: 20) {
-                    
-                    HStack {
-                        
-                        Image("User")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                        
-                        VStack(alignment: .leading) {
-                            Text(theme.t("Hello,"))
-                                .font(.system(size: theme.fontSize))
-                                .foregroundColor(.black)
+                    Button{
+                        currentPage = 19
+                    }label: {
+                        HStack {
                             
-                            Text(userName.isEmpty ? "User" : userName)
-                                .font(.system(size: theme.fontSize))
-                                .bold()
-                                .foregroundColor(theme.primary)
+                            Image("User")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle())
+                            
+                            VStack(alignment: .leading) {
+                                Text(theme.t("Hello,"))
+                                    .font(.system(size: theme.fontSize))
+                                    .foregroundColor(.black)
+                                
+                                Text(user.name.isEmpty ? "User" : user.name)
+                                    .font(.system(size: theme.fontSize))
+                                    .bold()
+                                    .foregroundColor(theme.primary)
+                            }
                         }
                     }
       
-                    HStack {
-                        Image("WelcomeQuestion")
-                            .frame(width: 30,height: 30)
-                            .clipShape(Circle())
+                    Button{
+                        currentPage = 17
+                    }label: {
                         
-                        VStack(alignment: .leading) {
-                            Text(theme.t("Your Device is Protected"))
-                                .bold()
-
-                            Text(theme.t("Everything looks safe today"))
-                                .foregroundColor(theme.primary)
+                        HStack {
+                            Image("WelcomeQuestion")
+                                .frame(width: 30,height: 30)
+                                .clipShape(Circle())
+                            
+                            VStack(alignment: .leading) {
+                                Text(theme.t("Your Device is Protected"))
+                                    .bold()
+                                
+                                Text(theme.t("Everything looks safe today"))
+                                    .foregroundColor(theme.primary)
+                            }
+                            
+                            Spacer()
                         }
-                        
-                        Spacer()
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(20)
                     }
-                    .padding()
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(20)
                     
                     Button {
                         currentPage = 10

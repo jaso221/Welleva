@@ -1,12 +1,13 @@
+
 import SwiftUI
 import FirebaseAuth
 
 struct ContentView: View {
 
     @State private var currentPage: Int = 0
-    @State private var userName: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @State private var user = UserProfile(
+        id: UUID().uuidString, name: "", email: "", password: "", contactNumber: "", contactName: ""
+    )
 
     // Use the single AppTheme provided by WellevaApp instead of creating a duplicate.
     // This ensures TabBar / TabItem receive the same theme instance via the environment.
@@ -25,27 +26,28 @@ struct ContentView: View {
             case 3:  Intro2(currentPage: $currentPage)
             case 4:  EncryptedView(currentPage: $currentPage)
             case 5:  PrivacyFirst(currentPage: $currentPage)
-            case 6:  SignUp(currentPage: $currentPage, userName: $userName)
-            case 7:  Login(currentPage: $currentPage, userName: $userName)
+            case 6:  SignUp(currentPage: $currentPage, user: $user)
+            case 7:  Login(currentPage: $currentPage, user: $user)
 
             // MARK: - Main app
-            case 8:  HomePage(currentPage: $currentPage, userName: $userName)
-            case 9:  SettingsPage(currentPage: $currentPage)
+            case 8:  HomePage(currentPage: $currentPage, user: $user)
+            case 9:  SettingsPage(currentPage: $currentPage, user: $user)
             case 10: ScamCheckView(currentPage: $currentPage)
             case 11: LearningView(currentPage: $currentPage)
 
             // MARK: - Settings screens
             case 12: TranslateSetting(currentPage: $currentPage)
             case 13: SizeSetting(currentPage: $currentPage)
-            case 14: ColourSetting(currentPage: $currentPage, userName: $userName)
+            case 14: ColourSetting(currentPage: $currentPage, user: $user)
 
             // MARK: - Secondary features
             case 15: CheckInputView(currentPage: $currentPage)
             case 16: ReportScamView(currentPage: $currentPage)
             case 17: DeviceView(currentPage: $currentPage)
             case 18: DiscoverView(currentPage: $currentPage)
-            case 19: UpdateView(currentPage: $currentPage, username: $userName, email: $email, password: $email)
+            case 19: UpdateAccount(currentPage: $currentPage, user: $user)
             case 20: Biometrics(currentPage: $currentPage)
+            case 21: ManageContact(currentPage: $currentPage, user: $user)
 
             default: WelcomePage(currentPage: $currentPage)
             }
@@ -53,14 +55,29 @@ struct ContentView: View {
         .onAppear {
             if authService.isSignedIn {
                 // Load persisted name: Firebase profile first, UserDefaults as fallback
-                userName = Auth.auth().currentUser?.displayName
+                let firebaseUser = Auth.auth().currentUser
+                user.id = firebaseUser?.uid ?? UUID().uuidString
+                user.name = firebaseUser?.displayName
                     ?? UserDefaults.standard.string(forKey: "userName")
                     ?? ""
+                user.email = firebaseUser?.email ?? ""
+                
+                let contact = ContactStorage.loadContact(for: user.id)
+                user.contactName = contact.name
+                user.contactNumber = contact.number
+                
                 currentPage = 8
             }
         }
         .onChange(of: authService.isSignedIn) { wasSignedIn, signedIn in
             if signedIn {
+                let firebaseUser = Auth.auth().currentUser
+                user.id = firebaseUser?.uid ?? UUID().uuidString
+              
+                let contact = ContactStorage.loadContact(for: user.id)
+                user.contactName = contact.name
+                user.contactNumber = contact.number
+                
                 currentPage = 8
             } else if wasSignedIn {
                 currentPage = 0

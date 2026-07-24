@@ -1,3 +1,4 @@
+
 //
 //  WelcomePage.swift
 //  Welleva
@@ -27,7 +28,7 @@ struct WelcomePage: View {
                 
                 Text("Veritas")
                     .font(.title)
-                    .foregroundColor(.red)
+                    .foregroundColor(.redPink)
                     .bold()
                 
                 Text("Your digital companion for a safer online experience")
@@ -62,7 +63,7 @@ struct WelcomePage: View {
                     .animation(.easeInOut(duration: 1.0), value: animateCircles)
                 
                 Circle()
-                    .fill(Color(red: 251/255, green: 113/255, blue: 133/255))
+                    .fill(Color.redPink)
                     .frame(width: 180, height: 180)
                     .scaleEffect(animateCircles ? 1.0 : 0.5)
                     .opacity(animateCircles ? 1.0 : 0.0)
@@ -112,7 +113,7 @@ struct WelcomePage: View {
                 .bold()
                 .frame(width: UIScreen.main.bounds.width * 2/3)
                 .padding()
-                .background(Color(red: 225/255,green: 29/255,blue: 72/255))
+                .background(Color.redPink)
                 .cornerRadius(20)
                 
                 HStack{

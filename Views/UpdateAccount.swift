@@ -1,3 +1,4 @@
+
 //
 //  UpdateAccount.swift
 //  Welleva
@@ -6,12 +7,10 @@
 //
 import SwiftUI
 
-struct UpdateView: View {
+struct UpdateAccount: View {
 
     @Binding var currentPage: Int
-    @Binding var username: String
-    @Binding var email: String
-    @Binding var password: String
+    @Binding var user: UserProfile
 
     @State private var editingUsername = ""
     @State private var editingEmail = ""
@@ -35,11 +34,11 @@ struct UpdateView: View {
                     
                     section(
                         title: "Member Name",
-                        value: username,
+                        value: user.name,
                         isEditing: $isEditingUsername,
                         editingText: $editingUsername
                     ) {
-                        username = editingUsername
+                        user.name = editingUsername
                     }
                 }
                 .padding()
@@ -55,11 +54,11 @@ struct UpdateView: View {
                     
                     section(
                         title: "Email Address",
-                        value: email,
+                        value: user.email,
                         isEditing: $isEditingEmail,
                         editingText: $editingEmail
                     ) {
-                        email = editingEmail
+                        user.email = editingEmail
                     }
                 }
                 .padding()
@@ -75,12 +74,12 @@ struct UpdateView: View {
                     
                     section(
                         title: "Change password",
-                        value: password.isEmpty ? "Not Set" : "********",
+                        value: user.password.isEmpty ? "Not Set" : "********",
                         isEditing: $isEditingPassword,
                         editingText: $editingPassword,
                         isSecure: true
                     ) {
-                        password = editingPassword
+                        user.password = editingPassword
                     }
                 }
                 .padding()
@@ -161,9 +160,9 @@ struct UpdateView: View {
     }
 
     func deleteAccount() {
-        username = ""
-        email = ""
-        password = ""
+        user.name = ""
+        user.email = ""
+        user.password = ""
 
         currentPage = 19
     }

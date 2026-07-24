@@ -21,29 +21,37 @@ struct TopBar: View {
             Button {
                 currentPage = 9
             } label: {
-                Image("Setting")
+                Image(systemName: "gearshape")
+                    .font(.title2)
+                    .foregroundColor(.white)
             }
-            
+
             Spacer()
-            
+
             Text(theme.t(title))
                 .foregroundColor(.white)
                 .font(.headline)
-            
+
             Spacer()
-            
+
             HStack(spacing: 16) {
-                
+
                 Button { currentPage = 12 } label: {
-                    Image("Translate")
+                    Image(systemName: "globe")
+                        .font(.title2)
+                        .foregroundColor(.white)
                 }
-                
+
                 Button { currentPage = 13 } label: {
-                    Image("Size")
+                    Image(systemName: "textformat.size")
+                        .font(.title2)
+                        .foregroundColor(.white)
                 }
-                
+
                 Button { currentPage = 14 } label: {
-                    Image("Colour")
+                    Image(systemName: "paintpalette")
+                        .font(.title2)
+                        .foregroundColor(.white)
                 }
             }
         }

@@ -1,4 +1,4 @@
-ContentView
+
 import SwiftUI
 import FirebaseAuth
 
